@@ -1,6 +1,7 @@
 export interface Article {
   id: string
   title: string
+  languge: string
   excerpt: string
   category: string
   author: string
@@ -16,12 +17,13 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: '1',
-    title: 'Breaking Down CVE-2024-1234: A Deep Dive into Modern Buffer Overflows',
-    excerpt: 'An in-depth analysis of a recently disclosed buffer overflow vulnerability affecting enterprise software, complete with proof-of-concept and mitigation strategies.',
-    category: 'pwn',
-    author: 'Yoni Levi',
+    title: 'RoadMap for the software development world!',
+    languge: 'Hebrew',
+    excerpt: 'עולם חשוב ועיקרי בהייטק שבעצם הכל מתבסס עליו, סטארטפריסטים, חברות קטנות, חברות גדולות ואפילו מעצמות ה- FAANG, כולם בסוף מסתמכים על ה- “פרודקט” או בעברית המוצר הטכנלוגי.',
+    category: 'Software Development',
+    author: 'Ido Gutman',
     authorAvatar: 'YL',
-    date: '2025-05-15',
+    date: '2026-05-21',
     readTime: 12,
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
     tags: ['CVE', 'Buffer Overflow', 'Pwn', 'Exploit Development'],
@@ -31,6 +33,7 @@ export const articles: Article[] = [
   {
     id: '2',
     title: 'Web CTF Writeup: Exploiting SSRF in Cloud Environments',
+    languge: 'Hebrew',
     excerpt: 'A walkthrough of a tricky SSRF challenge from a recent CTF, abusing AWS metadata endpoints and IAM roles for privilege escalation.',
     category: 'ctf',
     author: 'Noa Cohen',
@@ -44,6 +47,7 @@ export const articles: Article[] = [
   {
     id: '3',
     title: 'Cryptography Under the Hood: RSA Side-Channel Attacks',
+    languge: 'Hebrew',
     excerpt: 'Understanding timing attacks against RSA implementations and how to detect and prevent them in production cryptographic systems.',
     category: 'crypto',
     author: 'Eyal Mizrahi',
@@ -57,6 +61,7 @@ export const articles: Article[] = [
   {
     id: '4',
     title: 'OSINT for Bug Hunters: Uncovering Hidden Attack Surfaces',
+    languge: 'Hebrew',
     excerpt: 'A practical guide to using open-source intelligence tools and techniques to discover forgotten subdomains, leaked credentials, and exposed services.',
     category: 'osint',
     author: 'Shira Bar',
@@ -70,6 +75,7 @@ export const articles: Article[] = [
   {
     id: '5',
     title: 'Reverse Engineering Modern Malware: Dissecting AsyncRAT',
+    languge: 'Hebrew',
     excerpt: 'A step-by-step reverse engineering walkthrough of a popular open-source RAT, covering obfuscation techniques and C2 communication patterns.',
     category: 'malware',
     author: 'Avi Stern',
@@ -83,6 +89,7 @@ export const articles: Article[] = [
   {
     id: '6',
     title: 'Memory Forensics with Volatility 3: A Practical Approach',
+    languge: 'Hebrew',
     excerpt: 'Learn how to extract critical artifacts from memory dumps using Volatility 3, covering process injection, network artifacts, and credential harvesting.',
     category: 'forensics',
     author: 'Tal Katz',
