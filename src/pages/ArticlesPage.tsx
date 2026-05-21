@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { FaClock, FaUser, FaArrowRight, FaBookOpen } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import { articles, categoryColors, type Article } from '@/services/articlesData'
+import { useNavigate } from "react-router-dom"
 
 const categories = ['all', 'web', 'pwn', 'crypto', 'forensics', 'malware', 'osint', 'ctf']
 
@@ -11,9 +12,11 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
   const { theme } = useTheme()
   const { t } = useTranslation()
   const catColor = categoryColors[article.category] || categoryColors.ctf
+  const navigate = useNavigate()
 
   return (
-    <motion.article
+    <motion.div
+      onClick={() => navigate(article.href)}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
@@ -119,7 +122,7 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
           <FaArrowRight size={10} className="group-hover:translate-x-1 transition-transform duration-200" />
         </a>
       </div>
-    </motion.article>
+    </motion.div>
   )
 }
 

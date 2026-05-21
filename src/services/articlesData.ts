@@ -27,7 +27,7 @@ export const articles: Article[] = [
     readTime: 12,
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
     tags: ['CVE', 'Buffer Overflow', 'Pwn', 'Exploit Development'],
-    href: '/articles/software-development/roadmap.html',
+    href: 'software-development-roadmap',
     featured: true,
   },
   {
@@ -110,4 +110,14 @@ export const categoryColors: Record<string, { bg: string; text: string; border: 
   malware: { bg: 'rgba(255,165,0,0.1)', text: '#FFA500', border: 'rgba(255,165,0,0.3)' },
   osint: { bg: 'rgba(0,102,255,0.1)', text: '#0066FF', border: 'rgba(0,102,255,0.3)' },
   ctf: { bg: 'rgba(255,215,0,0.1)', text: '#FFD700', border: 'rgba(255,215,0,0.3)' },
+}
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return articles.find((article) => {
+    const lastPart = article.href.split('/').pop() // "roadmap.html"
+    if (!lastPart) return false
+
+    const articleSlug = lastPart.replace('.html', '')
+    return articleSlug === slug
+  })
 }

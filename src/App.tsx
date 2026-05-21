@@ -7,6 +7,7 @@ import RootLayout from '@/components/layout/RootLayout'
 // Lazy load pages for code splitting
 const HomePage = lazy(() => import('@/pages/HomePage'))
 const ArticlesPage = lazy(() => import('@/pages/ArticlesPage'))
+const ArticlePage = lazy(() => import('@/pages/ArticlePage'))
 const ImpactPage = lazy(() => import('@/pages/ImpactPage'))
 const CollaboratePage = lazy(() => import('@/pages/CollaboratePage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
@@ -30,6 +31,7 @@ const App: React.FC = () => {
               <Route path="/" element={<RootLayout />}>
                 <Route index element={<HomePage />} />
                 <Route path="articles" element={<ArticlesPage />} />
+                <Route path="articles/:slug" element={<ArticlePage />} />
                 <Route path="impact" element={<ImpactPage />} />
                 <Route path="collaborate" element={<CollaboratePage />} />
                 <Route path="*" element={<NotFoundPage />} />
