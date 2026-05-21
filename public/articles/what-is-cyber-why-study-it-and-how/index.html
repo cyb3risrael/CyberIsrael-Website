@@ -1,0 +1,1313 @@
+<!-- prettier-ignore -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>מה זה סייבר, למה ללמוד אותו? ואיך בכלל?!</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		/* Override strong tags inside headings to maintain consistent weight */
+		h1 strong,
+		h2 strong,
+		h3 strong {
+			font-weight: 600;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 10px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+
+			table.collection-content {
+				width: 100%;
+				table-layout: fixed;
+			}
+
+			table.collection-content th,
+			table.collection-content td {
+				overflow-wrap: anywhere;
+			}
+
+			table.collection-content td>.user,
+			table.collection-content td>time {
+				white-space: pre-wrap;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content-wrapper {
+			overflow-x: auto;
+		}
+
+		@media only print {
+			.collection-content-wrapper {
+				overflow-x: visible;
+			}
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.collection-content td {
+			white-space: pre-wrap;
+			word-break: break-word;
+		}
+
+		.column-list {
+			display: flex;
+			gap: 46px;
+		}
+
+		.column {
+			min-width: 0;
+			overflow: hidden;
+		}
+
+		.column>*:first-child {
+			margin-top: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		table {
+			border-collapse: collapse;
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol.numbered-list.numbered-list-digits-2 {
+			padding-inline-start: 2em;
+		}
+
+		ol.numbered-list.numbered-list-digits-3plus {
+			padding-inline-start: 2.4em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+
+		.icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.callout img.notion-static-icon {
+			width: 1em;
+			height: 1em;
+		}
+
+		.callout p {
+			margin: 0;
+		}
+
+		.callout h1,
+		.callout h2,
+		.callout h3 {
+			margin: 0 0 0.6rem;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		blockquote.quote-large {
+			font-size: 1.25em;
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(44, 44, 43, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(125, 122, 117, 1);
+			fill: rgba(125, 122, 117, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 118, 90, 1);
+			fill: rgba(159, 118, 90, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(210, 123, 45, 1);
+			fill: rgba(210, 123, 45, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 148, 52, 1);
+			fill: rgba(203, 148, 52, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(80, 148, 110, 1);
+			fill: rgba(80, 148, 110, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(56, 125, 201, 1);
+			fill: rgba(56, 125, 201, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(154, 107, 180, 1);
+			fill: rgba(154, 107, 180, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(207, 81, 72, 1);
+			fill: rgba(207, 81, 72, 1);
+		}
+
+		.highlight-default_background {
+			color: rgba(44, 44, 43, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(42, 28, 0, 0.07);
+		}
+
+		.highlight-brown_background {
+			background: rgba(139, 46, 0, 0.086);
+		}
+
+		.highlight-orange_background {
+			background: rgba(224, 101, 1, 0.129);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(211, 168, 0, 0.137);
+		}
+
+		.highlight-teal_background {
+			background: rgba(0, 100, 45, 0.09);
+		}
+
+		.highlight-blue_background {
+			background: rgba(0, 124, 215, 0.094);
+		}
+
+		.highlight-purple_background {
+			background: rgba(102, 0, 178, 0.078);
+		}
+
+		.highlight-pink_background {
+			background: rgba(197, 0, 93, 0.086);
+		}
+
+		.highlight-red_background {
+			background: rgba(223, 22, 0, 0.094);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(125, 122, 117, 1);
+			fill: rgba(125, 122, 117, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 118, 90, 1);
+			fill: rgba(159, 118, 90, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(210, 123, 45, 1);
+			fill: rgba(210, 123, 45, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 148, 52, 1);
+			fill: rgba(203, 148, 52, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(80, 148, 110, 1);
+			fill: rgba(80, 148, 110, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(56, 125, 201, 1);
+			fill: rgba(56, 125, 201, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(154, 107, 180, 1);
+			fill: rgba(154, 107, 180, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(207, 81, 72, 1);
+			fill: rgba(207, 81, 72, 1);
+		}
+
+		.block-color-default_background {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray_background {
+			background: rgba(240, 239, 237, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(245, 237, 233, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 235, 222, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(249, 243, 220, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(232, 241, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(229, 242, 252, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(243, 235, 249, 1);
+		}
+
+		.block-color-pink_background {
+			background: rgba(250, 233, 241, 1);
+		}
+
+		.block-color-red_background {
+			background: rgba(252, 233, 231, 1);
+		}
+
+		.select-value-color-default {
+			background-color: rgba(42, 28, 0, 0.07);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(28, 19, 1, 0.11);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(127, 51, 0, 0.156);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(196, 88, 0, 0.203);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(209, 156, 0, 0.282);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(0, 96, 38, 0.156);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(0, 118, 217, 0.203);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(92, 0, 163, 0.141);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(183, 0, 78, 0.152);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(206, 24, 0, 0.164);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="35447f9b-8cda-8046-bd26-c85041110d3e" class="page sans">
+		<header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_5.png"
+				style="object-position:center 40%" />
+			<div class="page-header-icon page-header-icon-with-cover"><span class="icon">🐈</span></div>
+			<h1 class="page-title" dir="auto"><strong>מה זה סייבר, למה ללמוד אותו? ואיך בכלל?!</strong></h1>
+			<p class="page-description" dir="auto"></p>
+		</header>
+		<div class="page-body">
+			<div style="display:contents" dir="ltr">
+				<nav id="35447f9b-8cda-80dd-8f2a-ce332b1f75a6" class="block-color-gray table_of_contents">
+					<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-807c-aecf-f0d91cdda375"><mark class="highlight-pink"><strong>מה זה
+									סייבר?</strong></mark></a></div>
+					<div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-800b-9d97-fd2815a68dfd"><mark class="highlight-red">למה ללמוד את
+								התחום?</mark></a></div>
+					<div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-8049-868a-ebfbcbf5d780">בוא נספר סיפור איי שם ב- 17 ביוני 2010</a>
+					</div>
+					<div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-80fd-ad7e-e474946b2336">טוב אבל בואו נהיה פרקטים לא כל תפקיד משפיע עד
+							כדי כך על העולם לא?</a></div>
+					<div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-808e-b9fc-fd15b39d4879"><strong>בקיצור התחום דיי משמעותי אפשר לומר אבל
+								איך אפשר לדעת האם הוא מתאים לי?</strong></a></div>
+					<div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-8009-a1ea-c428572ee104"><mark class="highlight-pink">איך ללמוד? איך
+								להיכנס לתחום? מה לעשות? מתי? ומאיפה?</mark></a></div>
+					<div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link"
+							href="#35447f9b-8cda-8001-b95c-d1ccbb3b565a">יאללה בואו ניכנס תכלס למקורות ודברים…</a></div>
+				</nav>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h1 id="35447f9b-8cda-807c-aecf-f0d91cdda375" class=""><mark class="highlight-pink"><strong>מה זה
+							סייבר?</strong></mark></h1>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8003-9a2b-ff92f49ca3a7" class="">סייבר הוא תת תחום של עולם המחשבים הוא כולל בתוכו
+					כל &quot;דרך&quot; או שיטה לגרום למחשב / קבוצת מחשבים להתנהג באופן שהיא לא תוכננה אליו וכל דרך או
+					&quot;שיטה&quot; לנסות להתגונן מהתופעות האלו.<br /></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8052-bd3c-e816ef6a0240" class="">אבל בתכלס רוב המשרות שתראו בשוק לא יהיו “תוקף
+					סייבר” או “מגן סייבר”…<br />אתם תראו בעיקר תחומים שמתפצלים ל-2 תחומים: פיתוח ומחקר…</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80aa-bc8b-f3bdfbace70a" class="">נשמע קצת רחב לא? נעשה סדר בדברים</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-808d-9ef7-d9cbdc8db0a0" class=""><mark class="highlight-teal"><strong>בראיית על ~
+							או כמו שחלק ממכם יגידו ב-High Level עולם הסייבר מתחלק כך:</strong></mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<div id="35447f9b-8cda-8076-9ffa-cec93965aa4b" class="column-list">
+					<div style="display:contents" dir="auto">
+						<div id="35447f9b-8cda-802a-9d72-fec2d55a15cc" style="width:50%" class="column">
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-802b-8082-ca9c2b85961b" class=""><mark
+										class="highlight-blue"><strong>והגנה</strong></mark></p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-80c0-a833-f62f2b017bd7" class="">אנשי ההגנה תפקידם יהיה לנסות
+									להתגונן מבעיות אלו, לפתח קוד איכותי שמסוגל להתמודד עם נסינות להקרסות, למנוע גניבת /
+									שינוי מידע בעזרת מנגוני הצפנה ואותנקציה, לנטר פעילויות חשודות באתר / ברשת וכו…</p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8000-bee0-e9773c271532" class="">
+								</p>
+							</div>
+						</div>
+					</div>
+					<div style="display:contents" dir="auto">
+						<div id="35447f9b-8cda-80dd-9c13-f4d83d5cb529" style="width:50%" class="column">
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8056-9b9f-c455525a777f" class=""><mark
+										class="highlight-red"><strong>התקפה</strong></mark></p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-80d3-b4ec-dc64a0dc7c77" class="">אנשי ההתקפה ינסו לפרוץ / להקריס /
+									לשנות מידע או אפילו לגנוב אותו…</p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8095-83bc-eeaf12d373f3" class="">
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80e0-9aab-db1e8ea5ddf6" class=""><mark class="highlight-teal"><strong>בראייה שנכנסת
+							יותר לפרטים ~להלן ה - Low Level; העולם מתחלק כך:</strong></mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<div id="35447f9b-8cda-80f4-9bc6-d5c661928255" class="column-list">
+					<div style="display:contents" dir="auto">
+						<div id="35447f9b-8cda-8012-9479-d8953e086397" style="width:50%" class="column">
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8047-9283-dfa42a72abed" class=""> <mark
+										class="highlight-purple"><strong>ופיתוח</strong></mark></p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8022-8fe8-fe5fedcaab01" class="">אנשי הפיתוח לוקחים את הרעיונות /
+									פתרונות / תובנות שהם לומדים מאנשי המחקר ומשתמשים בהם כדי לבנות מערכות פחות פגיעות…
+									חלקם מפתחים כלים לניטור וזיהוי פעילויות חשודות / וירוסים וכו…</p>
+							</div>
+						</div>
+					</div>
+					<div style="display:contents" dir="auto">
+						<div id="35447f9b-8cda-80eb-9893-fa4d239da278" style="width:50%" class="column">
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8089-b4f6-ecbb4b219397" class=""><mark
+										class="highlight-purple"><strong>מחקר</strong></mark></p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-80b5-b634-ff2ffc900de1" class="">אנשי המחקר אחראים למצוא פריצות
+									חדשות / לנתח איומים ולהסיק מסקנות על פעילויות חשודות או אירועים.</p>
+							</div>
+							<div style="display:contents" dir="auto">
+								<p id="35447f9b-8cda-8056-9363-f0ab9df089ff" class="">
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80fe-b3f8-eeb062eb38df" class="block-color-red"><strong><span
+							style="border-bottom:0.05em solid">בגדול גם בהגנה וגם בהתקפה יש שימוש נרחב הן במחקר והן
+							בפיתוח</span></strong><br /><mark class="highlight-default_background">גם תוקפים צריכים לפתח
+						בסוף את הוירוס שלהם ולחקור כדי לדעת באיזה פירצות הוא ישתמש וגם מגנים צריכים לפתח מנגונים להימנע
+						מהוירוסים האלו ולבנות את המערכות שלהם בצורה בטוחה יותר.</mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80d1-a300-d5f12944618b" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80c1-ab33-e6ac679d0edf" class="">דוגמאות לתפקידים / עיסוקים (שנרחיב עליהם במאמרי
+					המשך…)</p>
+			</div>
+			<div style="display:contents" dir="ltr">
+				<table id="35447f9b-8cda-808a-9b4f-e43237626f1a" class="simple-table">
+					<tbody>
+						<div style="display:contents" dir="ltr">
+							<tr id="35447f9b-8cda-801c-8abf-e07469363516">
+								<td id="w[:q" class="" style="width:239.66666666666666px"></td>
+								<td id="cTmX" class="" style="width:240.66250610351562px">הגנה</td>
+								<td id="POKa" class="" style="width:239.66666666666666px">התקפה</td>
+							</tr>
+						</div>
+						<div style="display:contents" dir="ltr">
+							<tr id="35447f9b-8cda-80e7-a56e-dc727bf6a750">
+								<td id="w[:q" class="" style="width:239.66666666666666px">מחקר </td>
+								<td id="cTmX" class="" style="width:240.66250610351562px">Threat Intelligence
+									Researcher, Malware Analyst / Malware Researcher, Cloud Security
+									Researcher,<br />Digital forensics,<br />…</td>
+								<td id="POKa" class="" style="width:239.66666666666666px">Offensive Security Researcher,
+									<br />Web Security Researcher,<br />Penetration Tester<br />…<br />רוב התפקידים פה
+									יכולים להיות מצויים גם בהגנה (בשמות שונים) ולמעשה לרוב בעבודות פורמליות תמצאו אותם
+									בעיסוק הגנתי עיקרי
+								</td>
+							</tr>
+						</div>
+						<div style="display:contents" dir="ltr">
+							<tr id="35447f9b-8cda-80b6-a291-ca3c1205db8e">
+								<td id="w[:q" class="" style="width:239.66666666666666px">פיתוח</td>
+								<td id="cTmX" class="" style="width:240.66250610351562px">Security Engineer, Application
+									Security Engineer (AppSec), DevSecOps Engineer</td>
+								<td id="POKa" class="" style="width:239.66666666666666px">Exploit Developers…</td>
+							</tr>
+						</div>
+					</tbody>
+				</table>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8010-a3d1-d9c90ed27c15" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h2 id="35447f9b-8cda-800b-9d97-fd2815a68dfd" class=""><mark class="highlight-red">למה ללמוד את
+						התחום?</mark></h2>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8002-884d-ce16245cf49c" class="">אזזז אולי כבר הבנתם מהשם של החברה שלנו, אולי שמעתם
+					ראיתם וקראתם כבר בעבר אבל אם לא.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<blockquote id="35447f9b-8cda-8052-97a1-ff776dac810d" class="">
+					<div style="display:contents" dir="auto">
+						<p id="35447f9b-8cda-8001-9bc3-cf792b897ead" class=""><em><mark
+									class="highlight-teal"><strong>סייבר זה אחד התחומים המגניבים ביותר (דעה שלנו)
+									</strong></mark></em><em><mark class="highlight-teal"><strong><span
+											style="border-bottom:0.05em solid">והמשפיעים
+											ביותר</span></strong></mark></em><em><mark class="highlight-teal"><strong>
+										על העולם ועל עתיד של כל אחד ואחת מאיתנו (עובדה) </strong></mark></em></p>
+					</div>
+				</blockquote>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h3 id="35447f9b-8cda-8049-868a-ebfbcbf5d780" class="">בוא נספר סיפור איי שם ב- 17 ביוני 2010</h3>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80d0-8fe3-e681a3724b54" class="">זה היה עוד יום שבטהרן. השעה הייתה 8:36 בבוקר,
+					והמהנדס אשרף נכנס למתקן הגרעין האיראני בנתנז כהרגלו. הכול נראה רגיל - מסכים ירוקים, אורות מהבהבים
+					בקצב הנכון, וצנטריפוגות (אותן מכונות שאמורות להסתובב בקצב קבוע מהיר ומדוייק להפרדת חומרים כימים)
+					מסתובבות במהירות הקבועה.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80fb-a47e-fdba1689a3e5" class="">אבל משהו קטן לא הסתדר.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8033-be6a-dedc83c3f0d7" class="">זו אחר זו הצינטרפיגות יצור איראן אורגינל, גם חדשות
+					ואף הישנות - מפסיקות לעבוד. באחת מהן נראה שאחד המנועים נשחק, בשנייה הסוללה התחממה על יתר המידה,
+					בשלישית והרביעית נראה שויסות החום לא עבד כמו שצריך ועכשיו החומרים בפנים מתפרקים בצורה הלא צפוייה.
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80bf-8f11-ec7131aab9f0" class="">הכל נראה קצתתתת מוזר.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80e1-ad72-c7995081740c" class="">אשרף קימט את מצחו “בטח תקלה רגעית”, הוא מלמל לעצמו
+					בהתחלה. שבוע אחרי כשהייתה תקלה דומה הוא האשים את חברת היצור, ושבוע אחרי את עובדי הבנייה החדשים
+					שחיברו את הבורג הלא מתאים. שבוע אחר שבוע הוא ניסה למצוא הגיון בכאוס.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80dc-83a8-fef62c773edc" class="">מה שהוא לא ידע, זה שבתוך המערכת הסתתר אחד הקודים
+					הזדוניים המתוחכמים ביותר שנוצרו אי פעם <strong>Stuxnet</strong>.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80de-894b-c0738af5504c" class="">הקוד הזה לא היה תוכנה שנכתבה על ידי מפתחי
+					הצנטריפוגות, ולא חלק מאחת המערכות הרשמיות במקום - אלא וירוס, תולעת זדונית שחדרה למערכת מבחוץ.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80f5-8984-c04398172b3e" class="">הווירוס הזה לא היה רגיל. הוא לא ניסה לגנוב סיסמאות
+					או להקריס מחשבים, הוא אפילו לא ניסה לנעול קבצים ולבקש עליהם כופר תמורת פתיחה מחדש של הקבצים.
+					<br /><br />הוא היה בנוי בצורה מיוחדת ומדוייקת כמעט כמו יצירת מופת עתיקה. למטרה אחת ויחידה. לשבש
+					להשבית ולעכב את העשרת האורניום למטרות נשק גריעיני בתוכנית הגרעיון האיראנית.
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-801a-9b52-e71719a6d534" class="">סטקסנט שלח פקודות זדוניות לצנטריפוגות: להאיץ,
+					להאט, ושוב להאיץ מחדש בצורה שגרמה לשיבוש הצינטרפוגות במתקן; במקביל, הוא הציג למהנדסים נתונים
+					מזויפים. במסכים שם הכל נראה תקין לחלוטין.<br /><br />אשרף הביט בנתונים ולא ידע מה מתרחש מול עינו
+					ומתחת לאפו ברגעי אמת.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8047-b44d-d51aacd15c2d" class="">במרחק אלפי קילומטרים, מבלי לדרוך אף רגל אחת במתקן,
+					התוכנה המשיכה לבצע את עבודתה בשקט.<br /><br />לפי הערכות רבות, Stuxnet פותח במסגרת מבצע סייבר מתוחכם
+					במיוחד, ככל הנראה על ידי ארגון / מספר ארגונים גדולים בעל אינטרס לשבש את תוכנית הגרעין האירנית והיה
+					אחד הנשקים הדיגיטליים הראשונים שהשפיעו ישירות על העולם הפיזי.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80c7-aca0-e988df487fc4" class=""><strong>קצת מקורות מומלצים להעמקה:</strong></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8038-ae4d-f4ef28561bd4" class=""><a
+						href="https://en.wikipedia.org/wiki/Stuxnet">https://en.wikipedia.org/wiki/Stuxnet</a></p>
+			</div>
+			<div style="display:contents" dir="ltr">
+				<figure id="35447f9b-8cda-8029-8174-f243cab28f5b">
+					<div class="source"><a
+							href="https://youtu.be/MJRH4-DtMHE?si=AcU1aFPFvPzoiM7m">https://youtu.be/MJRH4-DtMHE?si=AcU1aFPFvPzoiM7m</a>
+					</div>
+				</figure>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80f2-b266-f3a1f87dad99" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h3 id="35447f9b-8cda-80fd-ad7e-e474946b2336" class="">טוב אבל בואו נהיה פרקטים לא כל תפקיד משפיע עד כדי
+					כך על העולם לא?</h3>
+			</div>
+			<div style="display:contents" dir="ltr">
+				<figure id="35447f9b-8cda-8082-a413-c3a37749d055" class="image"><a
+						href="%D7%9E%D7%94%20%D7%96%D7%94%20%D7%A1%D7%99%D7%99%D7%91%D7%A8,%20%D7%9C%D7%9E%D7%94%20%D7%9C%D7%9C%D7%9E%D7%95%D7%93%20%D7%90%D7%95%D7%AA%D7%95%20%D7%95%D7%90%D7%99%D7%9A%20%D7%91%D7%9B%D7%9C%D7%9C%20!/image.png"><img
+							style="width:448.984375px"
+							src="%D7%9E%D7%94%20%D7%96%D7%94%20%D7%A1%D7%99%D7%99%D7%91%D7%A8,%20%D7%9C%D7%9E%D7%94%20%D7%9C%D7%9C%D7%9E%D7%95%D7%93%20%D7%90%D7%95%D7%AA%D7%95%20%D7%95%D7%90%D7%99%D7%9A%20%D7%91%D7%9B%D7%9C%D7%9C%20!/image.png" /></a>
+				</figure>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-802b-beda-d99dcec120f9" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80ac-97b1-ebd6e2acce3f" class="">נ<strong>יתן פה כמה דוגמאות להמחשה על המשמעות של
+						לעבוד בעולם הסייבר ועל ההשפעות שלו:</strong></p>
+			</div>
+			<div style="display:contents" dir="ltr">
+				<figure id="35447f9b-8cda-8070-bef5-db1608cf6873">
+					<div class="source"><a
+							href="https://youtu.be/7Ejd0zquKOQ?si=VzuoCAohNVKPE7yK">https://youtu.be/7Ejd0zquKOQ?si=VzuoCAohNVKPE7yK</a>
+					</div>
+				</figure>
+			</div>
+			<div style="display:contents" dir="ltr">
+				<figure id="35447f9b-8cda-8044-92cb-db33f69670e2">
+					<div class="source"><a
+							href="https://youtu.be/pCxvyIx922A?si=bTCJnTSQ72pLI_Xi">https://youtu.be/pCxvyIx922A?si=bTCJnTSQ72pLI_Xi</a>
+					</div>
+				</figure>
+			</div>
+			<div style="display:contents" dir="ltr">
+				<figure id="35447f9b-8cda-80e8-be56-f501ed3595e6">
+					<div class="source"><a
+							href="https://youtu.be/NZDiQczOsdc?si=TinqJhO-FuyZVgkY">https://youtu.be/NZDiQczOsdc?si=TinqJhO-FuyZVgkY</a>
+					</div>
+				</figure>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8030-8ff1-f4e855209c34" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h3 id="35447f9b-8cda-808e-b9fc-fd15b39d4879" class=""><strong>בקיצור התחום דיי משמעותי אפשר לומר אבל
+						איך אפשר לדעת האם הוא מתאים לי?</strong></h3>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-809b-b7d3-cf7f1e0bbd67" class="">אומנם אנחנו מוצאים את התחום מעניין אבל איך אפשר
+					לדעת שהתחום באמת מתאים לך? אפשר לנסות להשתמש בשאלות גנריות (ולפעמים דיי מדוייקות בשביל להבין מה
+					נעשה)…</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8070-b03c-d0283e149f01" class=""><br /><mark class="highlight-red">האם אתה אוהב
+						אתגרים? (תחום מאתגר מה לא?)</mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80f2-96c3-c9a3307e4c5f" class=""><mark class="highlight-red">האם מעניין אותך ללמוד
+						על טכנלוגיות חדשות באופן תדיר ולחשוב מחוץ לקופסה כדי להבין מה עלול להשתבש?</mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8085-864a-e98cb8fd01dc" class=""><mark class="highlight-red">האם לא אכפת לך לשבת
+						ימים לפעמים אפילו חודשים ושנים כדי להצליח לפתור בעיה שצצה? </mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8084-a18a-ea821c793ec4" class="">אם התשובה ללפחות אחת מהשאלות פה היא כן בשבילך אז
+					אולי כדאי לך לפחות להשקיע קצת כדי להעמיק בתחום ולהכיר איתו יותר לעומק…</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-809a-a427-fbb03ba56ea8" class="">אבל תכלס אנחנו פה כדי לתת עצה אמיתית - לא איזה
+					קשקוש גנרי שתמצאו ביום יום.</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8015-abfb-db26b45dec62" class="">אז מה העצה שלנו אתם שואלים?<strong> בכנות פשוט
+						להתחיל (תכף נפרט…).</strong> רק ככה אפשר לדעת אם כל תחום מעניין אתכם, פשוט להתנסות בו כמה שיותר
+					ולהבין מה מו מי :).</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80f1-aaeb-fe4702a7fb65" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h2 id="35447f9b-8cda-8009-a1ea-c428572ee104" class=""><mark class="highlight-pink">איך ללמוד? איך
+						להיכנס לתחום? מה לעשות? מתי? ומאיפה?</mark></h2>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-805c-9369-fecc7f1c9e90" class="">אבל סייברישראל (קהיילת הסייבר המגניבה ביותר בארץ),
+					איך אפשר להתחיל?, מה ללמוד? מה לחקור? מה לפתח?…</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8036-aa04-dfae762c7706" class="">או, זה שאלה שאנחנו אוהבים ;)</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8085-9b5a-c11d735079e2" class="">אז כמו שאמרנו להתחיל == <br />ללמוד, לחקור, לקרוא
+					ואולי הכי חשוב To get your hands dirty ולהתחיל לפתח / לפרוץ לדברים בעצמכם <mark
+						class="highlight-red">(אבל היי!</mark><mark class="highlight-red"><strong> רק בהתאם ובתיאום עם
+							החוק!!!</strong></mark><mark class="highlight-red">). </mark> </p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<h3 id="35447f9b-8cda-8001-b95c-d1ccbb3b565a" class="">יאללה בואו ניכנס תכלס למקורות ודברים…</h3>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80e2-86a5-c64ea1b8f66e" class=""><mark class="highlight-teal">קיימים מספר Roadmaps
+						(או לא בלעז “מפות דרכים”) ללמידה עצמאית של התחום ודרכים להיכנס אליו. </mark></p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80d0-8af1-efc1da220ddc" class=""><br />אנחנו יצרנו 2 מהם שאנחנו ממליצים לכם לקרוא
+					ולעקוב אחריהם; אחת לעולם הפיתוח, ואחת לעולם המחקר כי כמו שאמרנו התחום כולל בתוכו את 2 עולמות התוכן
+					האלו. </p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-802d-8be3-e4d3f1a81092" class=""><a
+						href="https://www.notion.so/RoadMap-33f47f9b8cda807e939cf5daebb33fbb?pvs=21"><span
+							class="icon">🕸️</span>RoadMap כללי לעולם הפיתוח</a> </p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8074-96e0-ed293da24f99" class=""><a
+						href="https://www.notion.so/RoadMap-35447f9b8cda804bae65f3448a99e7a4?pvs=21"><span
+							class="icon">💥</span>RoadMap כללי לעולם המחקר</a> </p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8070-a24a-ea4b10310699" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8046-9859-f928b2f53f9a" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80cc-b93d-f289ebfbc410" class="">כמובן שקיימים Roadmaps אחרים שתוכלו לעקוב אחריהם
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-8007-b1cd-c54940a803de" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80d1-9eba-f66e93e21351" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80c5-9999-c4fb23f496e7" class="">
+				</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80c6-9c6a-fe6f2f73fc8a" class="">ואם כבר עניין אתכם לקרוא מאמר זה אולי תאהבו גם את
+					ההסברים על העולמות האלו ועל התפקידים בהם:</p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-800b-9ec3-c7e7660092dc" class=""><a
+						href="https://www.notion.so/35347f9b8cda8023b4a9ceb0917fb1c2?pvs=21"><span
+							class="icon">🐿️</span>עולם הפיתוח - למה הוא מרתק? מה הוא מכיל? ואיך להיכנס אליו? </a> </p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-80c7-8328-f7a1409220c9" class=""><a
+						href="https://www.notion.so/35447f9b8cda80f4884af2433beea998?pvs=21"><span
+							class="icon">🍸</span>עולם המחקר - מה הוא מכיל?</a> </p>
+			</div>
+			<div style="display:contents" dir="auto">
+				<p id="35447f9b-8cda-806b-bcbd-f28c633be61a" class="">
+				</p>
+			</div>
+		</div>
+	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+
+</html>

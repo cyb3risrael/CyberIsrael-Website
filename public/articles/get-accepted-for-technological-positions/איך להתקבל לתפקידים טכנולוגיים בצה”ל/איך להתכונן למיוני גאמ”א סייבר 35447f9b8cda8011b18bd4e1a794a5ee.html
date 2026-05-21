@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>איך להתכונן למיוני גאמ”א סייבר?</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="35447f9b-8cda-8011-b18b-d4e1a794a5ee" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💻</span></div><h1 class="page-title" dir="auto">איך להתכונן למיוני גאמ”א סייבר?</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-805c-aea1-f88548b711f5" class="">הקדמה</h3></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-800c-a976-fb6286f7f868" class="">“גאמ”א סייבר הוא מסלול המחשוב של אגף המודיעין שמגייס את אנשי החומרה והתוכנה בצה”ל אשר מנהלים את המערכה ויוצרים את שדה הקרב הוירטואלי.” (מתוך אתר מתגייסים)</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e3-a13b-e229e15861c1" class="">ועכשיו אם לדבר יותר פרקטית… גאמא זה מסלול שאליו מתקבלים המלש”בים שנמצאים באחוזון העליון מבחינת יכולות מקצועיות בתחום המחשבים והסייבר בשביל <mark class="highlight-red"><strong>לנהל את שדה הקרב הקיברנטי של ישראל אל מול העולם.</strong></mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-806a-8bf5-efca8619e7ff" class=""><strong>שירות במסלול כולל קד”צ, חתימת דין גבר כדין אישה, וחתימת 3 שנות קבע.</strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-801c-a225-ee215c6657bd" class="">האנשים שמתקבלים אל המסלול הם אנשים שיש להם זיקה גדולה מאוד לתחום המחשבים, כי אם אתה צריך להיות טוב מאוד במשהו לתקופת זמן ארוכה (כמו שירות בגאמא), אתם תצטרכו לאהוב מאוד את מה שאתם עושים.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-803a-ad19-c9a331f33bee" class="">המסלול מורכב מקורסים שונים אשר כל אחד מכווין למקום אחר בקהיליית המודיעין.</p></div><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-80fc-8383-c6cb2abca476" class=""><strong>אני רוצה להתקבל לגאמא! מה אני עושה?</strong></h3></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80bc-8c6a-eea662a27c64" class="">למזלכם, גאמא הוא מיון שדורש ידע מקדים רחב מאוד. זאת לעומת מיונים אחרים כגון שחקים, כלל חמן, או אשכול מקצועות המחשב שלא מסתמכים על ידע קדום כמעט בכלל.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e1-bdde-e55d26d5cbbd" class=""><mark class="highlight-teal"><strong>לכן בעזרת השקעה מראש תוכלו להגדיל את הסיכויים שלכם להתקבל למסלול, איזה כיף!</strong></mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8066-a52b-e5e3d1b5eaae" class=""><strong>בשביל להתקבל לגאמא תצטרכו לפעול בשני צירים:</strong></p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-804f-aa71-f9730bf33a22" class="bulleted-list"><li style="list-style-type:disc">להיות תותחים בתחום המחשבים והסייבר</li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80ca-9e33-eef16f70c5af" class="bulleted-list"><li style="list-style-type:disc">למקד את הידע שלכם לנושאים רלוונטים למיונים</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e5-b761-fcd61193e531" class="">אם יהיה לכם רק ציר אחד מן השניים, זה לא יבטיח לכם הצלחה.</p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-808f-b642-fd3d2792179b" class="bulleted-list"><li style="list-style-type:disc">אם אך ורק תתכוננו למיונים ולא תתעמקו בתחום המחשבים והסייבר אתם תיפלו, מכיוון שכמו שאמרנו מטרת המיון היא למצוא את האנשים שיש להם זיקה גדולה לתחום (בסופו של דבר אם בן אדם לא יאהב מחשב הוא לא יוכל לשבת 6+ שנים מולו…)</li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8067-a0ba-c543f34f7dd7" class="bulleted-list"><li style="list-style-type:disc">מצד שני אם אך ורק תהיו תותחים בתחום המחשבים והסייבר יכול להיות מאוד מצב שתתפזרו לכיוונים אשר המיון לא נוגע בהם. ועל אף שתהיו תותחי על חלל, אתם תגיעו למיונים ולא תדעו מה לעשות בכלל!</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8059-a5b8-e34c1ff84044" class="">אז בואו נראה איך אנחנו פועלים בכל ציר מן השניים</p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-805b-868e-ecfaec81b9bf" class="bulleted-list"><li style="list-style-type:disc"><strong>ציר “להיות תותח מחשבים וסייבר”</strong><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8070-b808-c81e0437be97" class="">להיות תותח מחשבים וסייבר זו סוגיה מורכבת, תחשבו לעצמכם שזה פשוט אומר איך אני נכנס לתחום ענק ונהיה טוב בו! בשביל זה כתבנו לכם מאמר שלם, קראו אותו!</p></div><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="35447f9b-8cda-8046-bd26-c85041110d3e" class="link-to-page"><a href="https://www.notion.so/35447f9b8cda8046bd26c85041110d3e?pvs=21"><span class="icon">🐈</span>מה זה סייבר, למה ללמוד אותו? ואיך בכלל?!</a></figure></div></div></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80f5-bc81-cf47239067d4" class="bulleted-list"><li style="list-style-type:disc"><strong>ציר “להתכונן למיונים”</strong><div style="display:contents" dir="auto"><p id="35447f9b-8cda-801a-b14c-ebeda7fd261e" class="">בשביל להתכונן למיונים תצטרכו לדעת טוב מאוד איך מתנהלים מיונים, איזה שלבים יש, ומה כל שלב מכיל בתוכו!<br/>לקראת כל שלב תצטרכו להתכונן ולהיות מוכנים בצורה המיטבית ביותר, וזה בא יד ביד עם להיות תותח מחשבים. השלבים שבמיונים מתעסקים בנושאים ספציפיים ולא גולשים לכל עולם המחשבים והסייבר.<br/>לכן ברגע שתכירו את המיונים, ותכירו את תחום המחשבים והסייבר, אתם תדעו לאיזה תחומים פרקטיים אתם תצטרכו להכין את עצמכם אליהם.</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-803a-9110-e02432b9ed15"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80a3-8b85-fcc3c6203937" class="">שאלה רבה חוזרת על עצמה תמיד, איך אני יודע שאני ברמה המספקת למיונים?<br/>כאן התשובה היחידה שנוכל לספק לכם זה שתצטרכו להשוות את עצמכם למתמיינים האחרים.<br/>הרי איך בסוף מיון בצהל עובד? הוא מסתכל עליכם ועל המתמיינים שאיתכם ובוחר בסוף את ה-X הכי טובים.<br/>אז בשביל לדעת כמה טובים אתם, תצטרכו להקיף את עצמכם בכמה שיותר אנשים שגם מתמיינים לאותו דבר! תצטרכו לשאול אותם ולראות איך הלך להם (וכנראה הם לא יוכלו לענות בצורה פרקטית כי יחייבו אותם לא למסור מידע על המיון), אבל כן תוכלו להבין לאיזה שלב כל אחד הגיע, כמה שאלות כל אחד הצליח לענות, מה התחושה הכללית שיצא לו מהראיון, כמות הראיונות שקיבלתם, ועוד.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80d5-bc3b-fdec3a31649c" class="">ובטח אתם תוהים לעצמכם איפה תוכלו למצוא מתמיינים ולפתח איתם קשרים?</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e5-b30a-e1c99186c94a" class=""><mark class="highlight-blue"><strong>אצלנו בCyberIsrael יש כבר כ-1000 מתמיינים אשר מדברים יום יום בקבוצות וואטספ ובדיסקורד על איך עברו עליהם המיונים ואיך הם מתכוננים אליהם! הם לומדים מהתכנים שמועלים לאינסטגרם ולטיקטוק ומייצרים קשרים ושיתופי פעולה ומכינים פרוייקטים מטורפים אשר עוזרים להם למיונים ולעתיד שלהם כאחד!</strong></mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8081-87ba-e1d8df92bd8d" class=""><mark class="highlight-blue"><strong>אתם יותר ממוזמנים להצטרף אלינו! </strong></mark><mark class="highlight-blue"><strong>להוסיף לינק של להצטרף אלינו</strong></mark></p></div></div></figure></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-807f-ba8e-fa1d4118cb5d" class="">מיוני גאמ”א</h3></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8072-8ff8-feaa03c507a8" class="">טוב אז בואו נדבר תכלס, מה הם השלבים שיש במיוני גאמא ואיך להתכונן אליהם.<br/>ניקח כל שלב מיון מאתר מתגייסים, ונפרט עליו.</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-804a-90d8-cbf604e0766a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="35447f9b-8cda-807a-8f0e-dd799b599de5" class="numbered-list" start="1"><li>שאלון מקוון – השלב הראשון בתהליך המיון הוא שאלון ידע מקוון שנפתח למועמדים הרלוונטיים למילוי מהבית. השאלון מכיל רשימות של מושגים מעולמות תוכן שונים במחשבים (שפות תכנות, מערכות הפעלה, רשתות, אבטחת מידע ועוד), והמועמדים מתבקשים לסמן אילו מהמושגים הם מכירים ברמה שיוכלו להסביר אותם אם יישאלו על כך.</li></ol></div></div></figure></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f6-9297-f11950d38fca" class="">בדרך כלל <strong>בתחילת יולי</strong> נפתח באתר מתגייסים השלב הראשון של גאמא - השאלון האינטרנטי. השאלון מכיל הרבה שאלות על הרקע שלכם, ושאלות מקצועיות על מושגים בסיסיים בעולמות השפות תכנות, מערכות הפעלה, רשתות, אבטחת מידע ועוד. המתמיינים יצטרכו לסמן אילו מושגים הם מכירים בעולמות תוכן השונים, ברמה שהם יוכלו לפרט על כל מושג מספר משפטים.<br/>שימו לב שלא באמת תצטרכו לפרט על כל מושג, אלא רק לסמן אותו בלחיצת כפתור במידה ואתם מכירים אותו.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80d9-a6a7-f10aacbde895" class="">הגעתם לשאלון ואתם רואים שאתם לא מכירים מושגים? אין שום בעיה לסמן מספר מושגים וללמוד עליהם באותו רגע, או ללמוד עליהם לאחר סיום השאלון! <mark class="highlight-teal"><strong>מה שהכי חשוב זה שתבינו בכל עולמות התוכן שאתם בקיאים בהם מעבר למושגים עצמם עד לשלב הבא של המיון! </strong></mark><mark class="highlight-red"><strong>ותזהרו עם לסמן דברים או לומר שאתם יודעים X ולא לדעת אותו עד לשלב הבא של הראיון (זה יכול מאוד לפגוע בכם)… </strong></mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8055-9f00-dfcedb7aa1ad" class="">ישנם מתמיינים אשר מנסים להתחכם, ופשוט מנסים לחקור אילו מושגים יופיעו מבעוד מועד ולומדים אך ורק עליהם מבלי להכיר את כלל עולמות התוכן, או לחלופין אומרים לעצמם שיספיק להם להכיר אך ורק את המושגים שיש בשאלון.  <mark class="highlight-red">אנחנו לא ממליצים כלל לפעול בצורה כזאת!<br/>אם אתם תבינו אך ורק את המושגים שיופיעו בשאלון, ללא הכרת עולם התוכן השלם שיש מעבר למושגים אתם לא תוכלו להצליח כלל בשלבים הבאים של המיון. המיון ימשיך ויבדוק אתכם בהבנה הכוללת שלכם בעולמות המחשבים והסייבר, וברגע שיראו שאתם לא יודעים מעבר למושגים הבסיסיים של עולמות תוכן אתם תיפלו מיידית.</mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8054-840b-e5e67daeaa43" class=""><mark class="highlight-default"><span style="border-bottom:0.05em solid">אז איך נתכונן לשלב הזה?<br/></span></mark><mark class="highlight-default">בשביל לעבור את השלב בהצלחה רבה, תצטרכו לחיות ולהתעסק בעולמות התוכן שיהיו בשאלונים טרם שלב המיון. פרקטית זה אומר להיות תותחי מחשבים וסייבר</mark><mark class="highlight-default"><strong> בדגש על העולמות שימיינו אתכם עליהם בשאלונים!</strong></mark></p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80c6-b53d-ea847ea75936" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">שפות תכנות</mark></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80aa-b2f8-ee3d7b15f447" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">מערכות הפעלה</mark></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8005-86cc-f42df83e31e0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">רשתות</mark></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80d3-897c-ea7b5624532e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">אבטחת מידע</mark></li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-809c-b548-c184300ae74f" class="">שימו לב להתרכז בעולמות התוכן הללו! ואל תזלגו לעולמות תוכן אחרים אשר לא ימיינו אתכם עליהם. אמנם לעשות פרוייקטים מרשימים בעולמות תוכן אחרים יכול להוסיף לכם מאוד אבל אל תדאגו, יהיה לכם את כל החיים ללמוד Machine Learning, Data Science ועוד…</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8019-8ad3-e0e9fa0ae57a" class=""><strong>מזכירים לכם שוב שיש לנו מאמר אשר מסביר איך להיות תותחי מחשבים וסייבר!</strong></p></div><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="35447f9b-8cda-8046-bd26-c85041110d3e" class="link-to-page"><a href="https://www.notion.so/35447f9b8cda8046bd26c85041110d3e?pvs=21"><span class="icon">🐈</span>מה זה סייבר, למה ללמוד אותו? ואיך בכלל?!</a></figure></div></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-8048-ab59-f8e1bfae6196"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="35447f9b-8cda-8088-94e9-d81e93229243" class="numbered-list" start="2"><li>כנס מבחנים – יום המבחנים למסלולי גאמ&quot;א סייבר מתקיים במתקן מיון של חיל המודיעין. יום זה מורכב ממבחנים רבים ומשאלונים אישיים, כולם ממוחשבים. בתחילת היום מועברים שני מבחנים הבוחנים את הפוטנציאל של המועמדים ללמוד נושאים חדשים, הראשון בתחום הפיתוח והשני בתחום הרשתות. לאחר מכן ניתנת למועמדים סדרה של מבחני ידע מגוונים הבוחנים את רמת הידע בנושאים הבאים: <br/>סי שארפ, ג&#x27;אווה, OOP,‏ C,‏ Assembly, פייתון, Windows,‏ Unix, אבטחת מידע, רשתות ו-Web.</li></ol></div></div></figure></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8078-9c57-ce26543cb95d" class="">יום המבחנים עצמו הוא המיון הפיזי הראשון שלכם והוא ימשך כמה שעות טובות, המבחנים הרבים שיתנו לכם הם במגוון נושאים. הנושאים כפי שאתם רואים ידועים מראש ולכן ניתן להתכונן אליהם טוב מאוד בבית. קחו כל נושא, ותתחילו לחקור אותו ותדעו אותו בצורה רחבה ומעמיקה. כאן אין דרך קסמים לעבור את השלב, חוץ מלשבת בבית ולהתעסק פרקטית בכל תחום.</p></div><div style="display:contents" dir="auto"><p id="35947f9b-8cda-80a7-ac68-e58746277446" class="">שימו לב שכאן גם יבחנו אתכם על הנושאים שסימנתם בשאלון האינטרנטי! לכן <strong>בשלב זה חובה עליכם לדעת את המושגים שסימנתם בשאלון האינטרנטי! </strong>אחרת יפילו אתכם על אמינות</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8095-a839-c6b76062aa22" class="">אם אתם רואים שאין לכם מספיק זמן ללמוד את כל הנושאים, <mark class="highlight-teal">עדיף שתהיו בקיאים בנושאים בודדים מאשר שתדעו את כל הנושאים ברמה שטחית.</mark></p></div><div style="display:contents" dir="auto"><p id="35947f9b-8cda-8080-9abf-f5e495dc8da2" class="">אה, וכמובן שתעברו מבחן עם 300 שאלות על האישיות שלכם, תהיו מוכנים נפשית ותהנו!</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-8066-ab5e-f05ccbb82d21"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="35447f9b-8cda-80f6-93ce-e262082e635c" class="numbered-list" start="3"><li>סדנה מעשית – השלב הבא בתהליך המיון לגאמ&quot;א סייבר הוא סדנה מעשית המתקיימת אף היא במתקן מיון של חיל המודיעין. במסגרת הסדנה נבדק הידע המעשי של המועמדים במשימות שונות בתחומי הפיתוח והמחקר, בהתאם להישגיהם בשלבי המיון הקודמים. במהלך הסדנה מקבלים המועמדים ליווי צמוד מאנשי מקצוע הנמצאים במקום ומלווים אותם לאורך יום המיון במטלות השונות שהם נדרשים לבצע. הסדנה מתבצעת על גבי רשת סגורה שאינה מחוברת לרשת האינטרנט.</li></ol></div></div></figure></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f3-a68b-e211aeeb822a" class="">הסדנה היא השלב המסנן ביותר של המיון.<br/>המיון מחולק לשני חלקים כאשר האחד מתרכז במשימות פיתוח, והשני מתרכז במשימות מחקר, וזה מה שהופך את הסדנה לכזאת קשה.<br/>בשביל להיות בקיא בעולם הפיתוח ובעולם המחקר נדרשת עבודה רבה. אך אם הגעתם עד לשלב זה, כנראה שיש לכם את הפוטנציאל לעשות זאת.<br/>נפרק איך נוכל להיות מוצלחים בכל אחד מהתחומים.</p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80ef-a570-f8de3a8b8676" class="bulleted-list"><li style="list-style-type:disc">בשביל להצליח במשימות הפיתוח אתם מוזמנים לקרוא את המאמר שלנו על עולם הפיתוח ואיך ללמוד אותו.</li></ul></div><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="35347f9b-8cda-8023-b4a9-ceb0917fb1c2" class="link-to-page"><a href="https://www.notion.so/35347f9b8cda8023b4a9ceb0917fb1c2?pvs=21"><span class="icon">🐿️</span>עולם הפיתוח - למה הוא מרתק? מה הוא מכיל? ואיך להיכנס אליו? </a></figure></div></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-806f-8c23-ea7cf89ef67e" class="bulleted-list"><li style="list-style-type:disc">בשביל להצליח במשימות מחקר אתם מוזמנים לקרוא את המאמר שלנו על עולם המחקר ואיך ללמוד אותו</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f5-b539-fb5fd3ade786" class=""><a href="https://www.notion.so/35447f9b8cda80f4884af2433beea998?pvs=21"><span class="icon">🍸</span>עולם המחקר - מה הוא מכיל?</a> </p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8064-b09d-cc74e86ae928" class="">שלב זה מאוד רחב, ולא מתעסק בתחומים ספציפיים כמו ביום המבחנים. לכן העיקרון של הכרת עולם המחשבים והסייבר מבעוד מועד תופס מאוד כאן!</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8008-8b0a-f56125e8696b" class="">תתעסקו כמה שיותר בתחומי פיתוח ובתחומי מחקר, תשלבו לעצמכם פרוייקטים ארוכי טווח בשני העולמות ככה שתהיו בקיאים בהם.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-805d-95a0-fc0e7ea87eb5" class=""><mark class="highlight-teal"><strong>אנחנו מאוד ממליצים לבצע כמה שיותר פרוייקטים בעולמות שמסקרנים ומעניינים אתכם במחשבים וסייבר. <br/>אם אתם אוהבים לפתח, תצרו לעצמכם תוכנה מתקדמת, מערכת הפעלה, תוכנה רשתית, אפליקציית WEB ויהי מה.<br/></strong></mark><mark class="highlight-teal"><strong>אם אתם אוהבים מחקר, תפתרו אתגרי CTF מתקדמים, תחקרו על איך אפשר לנצל מרכיבים במערכות הפעלה, תחקרו איך אפשר לנצל פגיעויות בWEB ועוד ועוד ועוד!</strong></mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80a2-8d5f-e089856fbab1" class=""><mark class="highlight-yellow"><strong>אך זכרו! שלב זה הוא רק יום אחד ויש בו מבחנים על זמן</strong></mark><mark class="highlight-yellow"><strong> והם יהיו על גבי רשת סגורה!</strong></mark><mark class="highlight-yellow"><strong><br/></strong></mark><strong>לכן תרגלו בעצמכם תרגילים אשר מתאימים לפיתוח תוכנה שלמה תוך שעות בודדות, או פתירת תרגילי מחקר תוך שעות בודדות. </strong><strong><span style="border-bottom:0.05em solid">וזאת מבלי להשתמש בAI או אינטרנט בכלל!</span></strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8095-9a6d-c7b4587e3a32" class="">חשוב להתרכז בפרוייקטים ארוכי טווח לגמרי, אך לקראת שלב הסדנה, <strong>מספר שבועות לפני השלב</strong>, שימו את הפרוייקטים בצד, <mark class="highlight-teal"><strong>ותתחילו לתרגל עם טיימר תרגילי פיתוח ומחקר ככה שתדמו לעצמכם את שלב הסדנה בצורה הכי מתאימה.</strong></mark></p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-801c-ab04-e82266986a0a" class="bulleted-list"><li style="list-style-type:disc">קחו לעצמכם כמה שעות לנסות לבנות תוכנה לניהול סרטונים (כמו youtube)</li></ul></div><div style="display:contents" dir="auto"><ul id="35947f9b-8cda-8083-8591-c33eac6743e5" class="bulleted-list"><li style="list-style-type:disc">קחו לעצמכם כמה שעות לנסות לבנות תוכנה לניהול רשת חברתית</li></ul></div><div style="display:contents" dir="auto"><ul id="35947f9b-8cda-8026-ac49-df07938885b8" class="bulleted-list"><li style="list-style-type:disc">קחו לעצמכם כמה שעות לפתור אתגרי CTF מתקדמים</li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8057-b47d-efba3a6d2343" class="bulleted-list"><li style="list-style-type:disc">קחו לעצמכם כמה שעות לנסות לפתח תוכנת שמדמה firewall</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80d9-b2f1-d39cbeb8afde" class="">ועוד ועוד ועוד…. והכי חשוב בלי שום אינטרנט ובלי שום AI!!!<br/>כן כן! בלי אינטרנט ובלי AI! תצטרכו כמו גדולים לזכור את השיטות עבודה שלכם מבעוד מועד!</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80df-a3ed-f9d6501b2419" class=""><mark class="highlight-teal"><strong>מספר שבועות לקראת הסדנה תתחילו לתרגל את עצמכם בסשנים של מספר שעות, שבהם אתם לא עושים דבר מלבד לפתור את התרגיל שהצבתם לעצמכם!</strong></mark></p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-80b7-a301-fe238f716767"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="35447f9b-8cda-80ef-a54f-dbaf1d31dc37" class="numbered-list" start="4"><li>ראיונות מקצועיים – מועמדים שיעברו בהצלחה את שלב הסדנה המעשית יוזמנו לראיון מקצועי למסלול אליו יימצאו מתאימים על סמך הישגיהם בתהליך המיון. במסגרת הראיון המקצועי יתנסו המועמדים בסוגיות מקצועיות אותן יידרשו לפתור בפועל (מדגם עבודה). חלק מהמועמדים יימצאו מתאימים ליותר ממסלול אחד ולכן יוזמנו לכמה ראיונות שונים, לפעמים באותו יום. כל הראיונות מתקיימים באופן מקוון.</li></ol></div></div></figure></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8019-b09d-c333dbaf3b86" class="">הראיונות המקצועיים הוא השלב המקצועי האחרון שיעמוד בדרככם.<br/>לפי התוצאות שלכם בשלב הסדנה תתחילו לקבל ראיונות לקורסי גאמ”א שונים!<br/>תוכלו לקבל ראיון אחד, שניים חמישה או אפילו עשרה ויותר, הכל תלוי בביצועים שלכם בשלבים הקודמים.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e1-b454-c4755efde1bb" class="">הראיונות המקצועיים שתעברו יהיו בפורמט שזהה מאוד לראיון עבודה בהייטק.</p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8033-be13-cfb6cc8968dc" class="bulleted-list"><li style="list-style-type:disc">תענו על שאלות אישיותיות</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80d6-a27c-c2086266f025" class="">תצטרכו להכין “נאום מעלית” על עצמכם שבו תספרו על עצמכם ב2 דקות. תהיו מוכנים עם נאום מראש ככה שתציגו את עצמכם למרואיין בצורה הטובה ביותר! תהיו מוכנים לשאלות אישיותיות נוספות כגון מה התכונות החיוביות בכם, מה התכונות השליליות בכם ועוד. חפשו באינטרנט על שאלות אישיותיות שיכולים לשאול בראיון הייטק ותכינו לעצמכם תשובות מוכנות ככה שתדעו איך לענות עליהם בראיון שלכם בצורה המיטבית!</p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8024-8045-dfb4b9d08826" class="bulleted-list"><li style="list-style-type:disc">תפתרו שאלות מקצועיות</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8045-8f44-fa8ffaac8814" class="">יבחנו אתכם על הנושאים במחשבים וסייבר שאתם בקיאים בהם ושהתמיינתם בהם!<br/>חפשו באינטרנט שאלות ראיון הייטק אשר קשורות לעולמות תוכן שאתם יודעים, ותתרגלו אותם.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8092-bd91-cc46a854182f" class=""><mark class="highlight-teal">חפשו באינטרנט שאלות על פרוטוקולי רשת, חפשו שאלות על </mark><mark class="highlight-teal">מערכות </mark><mark class="highlight-teal">הפעלה, חפשו שאלות על פיתוח ארכיטקטורה אלגוריתמיקה, חפשו שאלות על WEB ועוד ועוד ועוד… העיקר שאלה יהיו שאלות שניתן לשאול במסגרת ראיון עבודה!</mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-806a-ba4c-ffef9497ff45" class="">בנוסף, כמו שאמרנו בשלב הקודם <strong>מאוד מומלץ להכין פרוייקטים ארוכי טווח </strong>שתוכלו להציג אותם למראיינים. הפרוייקטים יראו את הידע שלכם בנושאים השונים וככל שהפרוייקטים יותר טובים כך תוכלו יותר להרשים את המראיינים!<br/>בנוסף את הידע הפרקטי בשביל פתרון השאלות המקצועיות תשיגו אך ורק מתרגול פרקטי שתבצעו בבית מלפני.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8078-aa64-ff13a2108b47" class=""><mark class="highlight-teal"><strong>אנחנו חוזרים ואומרים, מאוד מומלץ לבצע כמה שיותר פרוייקטים בעולמות שמסקרנים ומעניינים אתכם במחשבים וסייבר. </strong></mark><mark class="highlight-teal"><strong><br/></strong></mark><mark class="highlight-teal"><strong>אם אתם אוהבים לפתח, תצרו לעצמכם תוכנה מתקדמת, מערכת הפעלה, תוכנה רשתית, אפליקציית WEB ויהי מה.<br/>אם אתם אוהבים מחקר, תפתרו אתגרי CTF מתקדמים, תחקרו על איך אפשר לנצל מרכיבים במערכות הפעלה, תחקרו איך אפשר לנצל פגיעויות בWEB ויהי מה.</strong></mark></p></div><div style="display:contents" dir="auto"><p id="35947f9b-8cda-80ae-b0f0-fb0c7f433ec3" class=""><mark class="highlight-blue"><strong>בנוסף אנחנו ממליצים לכם מאוד לבצע את הפרוייקטים שלכם בשיתוף פעולה עם עוד אנשים! <br/>אנחנו ממליצים להקיף את עצמכם בכמה שיותר אנשים שמתמיינים ועוברים את מה שאתם עוברים, ואיתם לבצע כמה שיותר פרוייקטים מגניבים!<br/>איפה תוכלו למצוא אנשים כמוכם? נכון מאוד, אצלנו ב-CyberIsrael!</strong></mark></p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-802c-b475-cb085c9a7910" class="bulleted-list"><li style="list-style-type:disc">תפתרו חידות היגיון</li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8010-b1c8-d6644ff147b1" class="">חלק מהראיונות לפעמים כוללים חידות היגיון בשביל לראות איך המוח שלכם עובד בעת קבלת אתגר חדש שהוא לא ראה מלפני כן. גם כאן העיקרון של תרגול מראש תופס.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-802a-812b-e2fdbb9ba074" class="">תחקרו באינטרנט ותחפשו חידות היגיון ופתרו אותם!</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f4-9ae9-f77dcc5d2959" class=""><mark class="highlight-blue"><strong>אצלנו ב-CyberIsrael בקהילת הוואטספ תוכלו למצוא חידות היגיון שבועיות שאנחנו מעלים כל שבוע כבר למעלה ממספר חודשים! יש לנו מאגר של חידות היגיון, השתמשו בו!</strong></mark></p></div><div style="display:contents" dir="auto"><hr id="35447f9b-8cda-8057-9ea4-e9551b022f30"/></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8004-8a1e-eee230dfd2fd" class="">זהו, עברתם את החלק הקשה ועכשיו אפשר לנשום לרווחה.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-808d-8f87-d1cfa6fb730b" class="">כעת נשאר לכם לעבור אך ורק שני מיונים אשר אין צורך להתכונן אליהם, מכיוון שהם אינם מקצועיים.<br/>אם עברתם את כל השלבים עד כה, תהיו בטוחים שאתם בדרך הנכונה.</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-802b-977f-c33da8cebddd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="35447f9b-8cda-80ed-ba17-c1f5b7be12a5" class="numbered-list" start="5"><li>מיון אישיותי – מועמדים שיעמדו בהצלחה בכל השלבים המקצועיים של תהליך המיון יבצעו מיון אישיותי הכולל מילוי שאלונים אישיים, מבחני אישיות וראיון פסיכולוג. המיון האישיותי מתקיים אף הוא באופן מקוון.</li></ol></div></div></figure></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8007-bd8d-f06be8bc17ac" class="">תהיו מוכנים לסשן של מספר שעות שבו תעשו מבחני פסיכולוגיה ואישיות (שכנראה תעברו אותו בעוד הרבה מקומות בצה”ל).</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80b9-8449-e4393069a795" class="">תשתדלו לא לכתוב דברים שיגרמו לכם להיראות כמו פסיכופטים…😉</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35447f9b-8cda-809a-a7ab-f5b12229e2cb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="35447f9b-8cda-80ce-a125-ffe171061306" class="numbered-list" start="6"><li>תחקיר ביטחוני – נועד לקבוע את התאמת המועמדים להיחשפות למידע מסווג, בהתאם לנוהלי ביטחון המידע באמ&quot;ן.</li></ol></div></div></figure></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8010-8c8c-f9c77055ce16" class="">כאן תגיעו ליום פיזי אשר בו תעברו ראיון שבו ישאלו אתכם שאלות על חייכם בכל פן, בשביל לוודא את התאמתכם לשירות באגף המודיעין.</p></div><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-8052-bd49-fce14e20dfee" class="">אחרית דבר</h3></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80bd-96f5-dc6101ab8e09" class="">גאמ”א הוא מסלול מאוד נחשק, שיכול להוביל אתכם למקומות הטובים ביותר במדינה מבחינה טכנולוגית. להשקיע במיונים, לחיות יום יום את עולם המחשבים והסייבר, ולהיות מחובר לקהילה שמתעסקת בעולמות שאתם מתעסקים בהם זו הדרך להצלחה ולקבלה במסלול.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-801b-9920-c337001f1c7d" class="">אנחנו באמת ממליצים לכם בחום גדול להיכנס לקהילה שלנו, שמאגדת את כל האנשים שמתעסקים בעולם המחשבים והסייבר בישראל ובמיוחד את כלל המתמיינים במדינה. הקשרים, הידע, והחשיפה שתוכלו לקבל בזכות הקהילה יוכל להגדיל פי כמה יותר את הסיכויים שלכם להתקבל למסלול.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ac-9f87-cbf73b7d399a" class="">מוזמנים להצטרף אלינו בכל הפלטפורמות - קישור שהולך לsection של הצטרפו אלינו</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
