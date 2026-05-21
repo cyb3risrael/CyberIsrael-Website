@@ -1,0 +1,764 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RoadMap כללי לעולם הפיתוח</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="33f47f9b-8cda-807e-939c-f5daebb33fbb" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_5.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🕸️</span></div><h1 class="page-title" dir="auto">RoadMap כללי לעולם הפיתוח</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="ltr"><nav id="33f47f9b-8cda-806a-ac61-cb56ec4af14e" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#35a47f9b-8cda-8026-b7b1-e2978e8b9453"><mark class="highlight-teal"><strong>ברוכים הבאים ל-RoadMap לעולם הפיתוח</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#34c47f9b-8cda-80e4-89d5-e41f502deea0"><mark class="highlight-default"><strong><span style="border-bottom:0.05em solid">בואו נלמד איך להיכנס לתחום על אמת בצורה מסודרת לפי רמות:</span></strong></mark><mark class="highlight-default"><strong><br/><br/></strong></mark><em><mark class="highlight-red"><strong>למי שרוצה בסוף יש DUMP מקורות גדול + ספרים וכו להיכנס לתחומים ספציפים יותר בפיתוח. </strong></mark></em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#34c47f9b-8cda-803b-ae9c-d29e48cccde4"><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid"><br/>המפתח המתחיל:</span></strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#35447f9b-8cda-802f-ab59-e4b0af90ba05"><mark class="highlight-pink">איך אני יכול לדעת שסיימתי?</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#34c47f9b-8cda-80e8-af3c-f50288c1c64b"><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">המפתח הממוצע:</span></strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#35a47f9b-8cda-80e7-a406-fa7665cac02c"><mark class="highlight-pink">איך אני יכול לדעת שסיימתי?</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#34c47f9b-8cda-80c1-9678-c3f724f8c994"><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">המפתח המתקדם:</span></strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#35447f9b-8cda-8087-94c5-fb9dc8b989f9"><mark class="highlight-blue">מקורות + ספרים מומלצים שמצאנו (נשתדל לעדכן באופן תדיר) !!</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#35447f9b-8cda-8018-b273-e7a7a2e5d101"><mark class="highlight-pink"><strong>ערוצי ה-Security אהובים:</strong></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#35447f9b-8cda-8078-ad3e-e582ca5aabb8"><mark class="highlight-pink">קישורים לאתרים מעניינים ב- AI/ML/DEEP LEARNING</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#35447f9b-8cda-803d-97c5-e79a54cc2e8e"><em><mark class="highlight-pink"><strong>ספרים</strong></mark></em></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#35447f9b-8cda-80f5-a617-c18ffbf73632"><strong>למקצוענים מכוון ל-Deep learning:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#35447f9b-8cda-80f1-a807-c4c8bbb5d0df"><strong>למתחילים מכוון לסקיוריט</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#35447f9b-8cda-80ac-af33-e180b0a1ca1d"><strong>למקצוענים מכוון לסקיוריטי:</strong></a></div></nav></div><div style="display:contents" dir="auto"><h2 id="35a47f9b-8cda-8026-b7b1-e2978e8b9453" class=""><mark class="highlight-teal"><strong>ברוכים הבאים ל-RoadMap לעולם הפיתוח</strong></mark></h2></div><div style="display:contents" dir="auto"><p id="35a47f9b-8cda-80ad-8737-e2b6fd316cd1" class="">עולם חשוב ועיקרי בהייטק שבעצם הכל מתבסס עליו, סטארטפריסטים, חברות קטנות, חברות גדולות ואפילו מעצמות ה- FAANG, כולם בסוף מסתמכים על ה- “פרודקט” או בעברית המוצר הטכנלוגי.<br/><br/>לא נרחיב מעבר על העולם כי יש לנו מאמר אחר מומלץ ממש לקרוא על העולם:<br/><br/><a href="https://www.notion.so/35347f9b8cda8023b4a9ceb0917fb1c2?pvs=21"><span class="icon">🐿️</span>עולם הפיתוח - למה הוא מרתק? מה הוא מכיל? ואיך להיכנס אליו? </a> <br/><br/><mark class="highlight-purple"><strong>במאמר זה נלמד איך “ללמוד” ולהיכנס לתחום</strong></mark><mark class="highlight-purple"><strong><span style="border-bottom:0.05em solid"> אפילו מאפס ידע!!!</span></strong></mark></p></div><div style="display:contents" dir="auto"><h2 id="34c47f9b-8cda-80e4-89d5-e41f502deea0" class=""><mark class="highlight-default"><strong><span style="border-bottom:0.05em solid">בואו נלמד איך להיכנס לתחום על אמת בצורה מסודרת לפי רמות:</span></strong></mark><mark class="highlight-default"><strong><br/><br/></strong></mark><em><mark class="highlight-red"><strong>למי שרוצה בסוף יש DUMP מקורות גדול + ספרים וכו להיכנס לתחומים ספציפים יותר בפיתוח. </strong></mark></em></h2></div><div style="display:contents" dir="auto"><h3 id="34c47f9b-8cda-803b-ae9c-d29e48cccde4" class=""><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid"><br/>המפתח המתחיל:</span></strong></mark></h3></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-809f-907b-eab27f5935ae" class=""><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid"><br/></span></strong></mark><mark class="highlight-default">אם יש לכם אפס ידע, באתם לכאן התחלתם לקרוא ולא הבנתם חלק מהמילים הקודמות שכתבתי ופשוט הסתקרנתם לאיך אפשר בכלל לתפוס את התחום הענק הזה - הגעתם למקום הנכון.<br/><br/>נתחיל בחיפוש כללי באינטרנט תנסו למצוא תשובות לשאלות שתמיד חשבתם לשאול אבל בסוף לא עשיתם זאת. <br/>הייתי ממש פותח יוטיוב  / גוגל / כל מקום אחר:<br/>ובודק:<br/><br/>מה זה שפת תכנות?<br/>מה זה IDE?<br/>איך האינטרנט עובד? (מה אשכרה קורה שאני נכנס במחשב חדש ל google.com?)<br/>מה זאת מערכת הפעלה? / איזה סוגים יש?</mark></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8054-ba54-d88fd0ae9dae" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">מקורות טובים להתחלה: (תחפשו עוד!!)</span></strong></mark></p></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80e3-acab-de7351235221" class="column-list"><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80d3-a284-c145f02f037e" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-809c-965b-d246fe218cea" class=""><mark class="highlight-default"><br/></mark><a href="https://youtu.be/3gXy1MnJXv0?si=7EWO9dc3TYXeMcCI">https://youtu.be/3gXy1MnJXv0?si=7EWO9dc3TYXeMcCI</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8004-bc2d-dead1d7c6a72" style="width:37.5%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80d7-91ca-d4098f5ec99a" class=""><a href="https://www.geeksforgeeks.org/computer-science-fundamentals/introduction-to-programming-languages/">https://www.geeksforgeeks.org/computer-science-fundamentals/introduction-to-programming-languages/</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8053-91b8-f5139bf2b833" style="width:15.625%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8083-8871-dd377798b478" class=""><mark class="highlight-default"><br/></mark><a href="https://en.wikipedia.org/wiki/Operating_system">https://en.wikipedia.org/wiki/Operating_system</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80f1-98cf-ee23b1a46638" style="width:21.875000000000004%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-801c-a169-fc6559afd164" class=""><a href="https://youtu.be/7_LPdttKXPc?si=1o0zzaqXKoprOUra">https://youtu.be/7_LPdttKXPc?si=1o0zzaqXKoprOUra</a><mark class="highlight-default"><br/><br/></mark></p></div><div style="display:contents" dir="auto"><p id="35347f9b-8cda-80d2-8d77-fb7d853a7200" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80a3-8b62-cc89c32cb2a7" class=""><mark class="highlight-default"><br/>זאת תהיה נקודה טובה יחסית להתחלה, היא גם מספיק מצומצת בשביל לא לשרוף יותר מידי זמן וגם מספיק רחבה בשביל שתוכלו להכיר את התחומים ולהבין מה מעניין אתכם להעמיק בו אחר כך שתהיו מנוסים יותר?<br/><br/></mark><mark class="highlight-pink"><strong>לאחר מכן</strong></mark><mark class="highlight-pink"><strong> זה הזמן שלכם ממש לנסות להיכנס לתחום וזה אומר ללמוד לתכנת (והרבה)!</strong></mark><mark class="highlight-pink"> </mark></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80dd-aee4-e3b7cb20af25" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">ממליץ</span></strong></mark><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid"> מאוד להתחיל ספציפית עם השפות Java או C#</span></strong></mark><div class="indented"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-808d-b8b7-d0c4a2c24892" class=""><em><mark class="highlight-default"><strong>הסיבה היא שהן שפות לא קשות מידי להתחלה אבל לא קלות מידי להמשך</strong></mark></em><em><mark class="highlight-default"> </mark></em><mark class="highlight-default">(מה הכוונה אתם שואלים? well יש שפות שמטפלות לכם בהמון דברים לבד ואז אחרכך קשה להיכנס ללמוד שפה יותר low level-ית ויש שפות שבדיוק הפוף).<br/></mark><mark class="highlight-default"><strong>בנוסף אלו שפות ששמות דגש על עקרונות חשובים מאוד שתצטרכו בהמשך כמו OOP.</strong></mark></p></div></div></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80ef-be7a-e6b96a4a3503" class=""><mark class="highlight-default">במאמר זה לא ניכנס יותר מידי לאיך ללמוד את השפות (כי זה סתם יאריך אותו והמטרה שלנו היא להתרכז ב- Big Goals)</mark><mark class="highlight-default"><strong> </strong></mark><mark class="highlight-default"><strong><span style="border-bottom:0.05em solid">אבל</span></strong></mark><mark class="highlight-default"><strong> כן ניתן פה רשימה של קישורים + נושאים שימושים שתצטרכו ללמוד כדי לעבור לרמה הבאה:<br/></strong></mark></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-806c-9609-f8c915caf759" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">נושאים:</span></strong></mark></p></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80bc-8a78-d57de674beb4" class="bulleted-list"><li style="list-style-type:disc">משתנים - variables</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-807b-b953-f94ecf51ae76" class="bulleted-list"><li style="list-style-type:disc">קלט / פלט - input/output</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80bf-acc6-dcecd068accb" class="bulleted-list"><li style="list-style-type:disc">בקרת זרימה - control flow … if else …</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-805d-af8b-e79ba8f8d7c2" class="bulleted-list"><li style="list-style-type:disc">לולאות - loops, while, do while, for..</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80a5-b582-e83ed23db070" class="bulleted-list"><li style="list-style-type:disc">מערכים - arrays</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80b8-901b-ffb2447f7b5c" class="bulleted-list"><li style="list-style-type:disc">מחלקות - classes</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8025-92a0-cd9a845071f1" class="bulleted-list"><li style="list-style-type:disc">תכנות מונחה עצמים, ירושה - OOP inheritance … </li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80bc-a2cb-dc639cc2da61" class="bulleted-list"><li style="list-style-type:disc">…</li></ul></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-803e-819a-cac3a4d436b0" class="column-list"><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8022-b9c6-db01fb9991e1" style="width:50%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-801e-8c40-cd20fda89ead" class=""><mark class="highlight-default"><strong><span style="border-bottom:0.05em solid">Java:</span></strong></mark><mark class="highlight-default"><strong><br/></strong></mark><a href="https://youtube.com/playlist?list=PLZPZq0r_RZOOj_NOZYq_R2PECIMglLemc&amp;si=jkb1Cjnvq7LKeknp">https://youtube.com/playlist?list=PLZPZq0r_RZOOj_NOZYq_R2PECIMglLemc&amp;si=jkb1Cjnvq7LKeknp</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-806f-8b4f-de6b5234cee1" class=""><a href="http://www.youtube.com/@CodingWithJohn">http://www.youtube.com/@CodingWithJohn</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-808d-a2e3-e64a16e9143e" class=""><a href="https://medium.com/javarevisited/top-5-books-to-learn-core-java-programming-from-scratch-in-2025-36a8105b7a12">https://medium.com/javarevisited/top-5-books-to-learn-core-java-programming-from-scratch-in-2025-36a8105b7a12</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-800c-9239-e12330a6621f" class=""><a href="https://hyperskill.org/courses">https://hyperskill.org/courses</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80cb-a295-f017b7d5ef70" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-808b-b564-c436ffa78a0d" style="width:50%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80b6-8090-d61a34c3f5eb" class=""><strong><span style="border-bottom:0.05em solid">C#:</span></strong><br/><a href="https://youtube.com/playlist?list=PLZPZq0r_RZOPNy28FDBys3GVP2LiaIyP_&amp;si=-SBnDHVGLYj_Jo2b">https://youtube.com/playlist?list=PLZPZq0r_RZOPNy28FDBys3GVP2LiaIyP_&amp;si=-SBnDHVGLYj_Jo2b</a><br/><mark class="highlight-default"><br/></mark><a href="https://learn.microsoft.com/en-us/dotnet/csharp/">https://learn.microsoft.com/en-us/dotnet/csharp/</a><br/><br/><a href="https://blog.elmah.io/top-10-books-every-net-c-developer-should-read/">https://blog.elmah.io/top-10-books-every-net-c-developer-should-read/</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-804d-a3b7-ec1e1aa55456" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80b2-bf75-da2fa78008e6" class="column-list"><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80ba-b308-cf0efc2b294e" style="width:16.666666666666668%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80c8-b28c-ec1708d445e8" class=""><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-800b-b389-eedfdaaafe10" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80fa-a249-da257ba7b750" style="width:16.666666666666664%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8098-b975-d2eeadf68f11" class=""><a href="https://app.datacamp.com/learn/courses">https://app.datacamp.com/learn/courses</a><br/></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80c5-b753-f4f1343137a1" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80b6-9aaa-d417a3840002" style="width:16.66666666666667%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8006-96a4-ec5868f8be08" class=""><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80e4-9657-e2c0300c65d7" style="width:16.666666666666668%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-809d-99ae-c97e7f0e3d42" class=""><a href="https://medium.com/">https://medium.com/</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80ea-b462-fb330d56226e" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80f4-bf52-fbd5e1176c50" style="width:18.75%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8099-a8e5-c33c04679c7a" class=""><a href="https://github.com/practical-tutorials/project-based-learning">https://github.com/practical-tutorials/project-based-learning</a></p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80a5-ba96-c78dfbfaea28" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-80c4-a7c8-ce5dd3fc05d2" style="width:14.583333333333334%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-804a-a492-da123f7bc962" class=""><a href="https://www.khanacademy.org/computing/computer-programming">https://www.khanacademy.org/computing/computer-programming</a></p></div></div></div></div></div><div style="display:contents" dir="ltr"><figure id="34c47f9b-8cda-801c-b077-f0823f1b93cb"><a href="https://www.google.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google</div><div class="bookmark-description">Search the world&#x27;s information, including webpages, images, videos and more. Google has many special features to help you find exactly what you&#x27;re looking for.</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://www.google.com/</div></div></a></figure></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-802e-8a97-dc9c21f36d23" class=""><mark class="highlight-default">כן. גם גוגל.<br/><br/></mark><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">טיפים: </span></strong></mark><mark class="highlight-default"><br/>עבור Java - להשתמש ב Intellij Idea community edition ide.<br/>עבור C# - להשתמש ב visual studios ide.</mark></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ac-99ac-fcc959f28dcd" class="">
+</p></div><div style="display:contents" dir="auto"><h4 id="35447f9b-8cda-802f-ab59-e4b0af90ba05" class=""><mark class="highlight-pink">איך אני יכול לדעת שסיימתי?</mark></h4></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80ad-8ad9-ff6627f893ab" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">עברתי על הנושאים שכתובים למעלה ונכנסתי לקישורים (וכמובן שבהמשך גם אחזור אליהם עוד)</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80aa-bc4a-c16cb622a6f2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">תרגלתי את הנושאים, פתרתי תרגילים שונים בעצמי והרחבתי באתרים שנתנו לי.</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80af-8d39-f5accd3cc22b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-blue"><strong>התנסתי והכנתי לפחות אחד שניים</strong></mark><mark class="highlight-blue"> </mark>מהפרוייקטים הבאים (בעדיפות כמה שיותר):</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><p id="35a47f9b-8cda-807d-8d93-dbcde3aa6a87" class=""><br/><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">פרוייקטים לעשות כדי לדעת שאני מוכן להתקדם לשלב הבא:</span></strong></mark></p></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8093-ac19-d1489f7f805b" class="bulleted-list"><li style="list-style-type:disc">מחשבון חכם אינטרקטיבי ממשק Command line / UI</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8004-9680-d887216e6aa6" class="bulleted-list"><li style="list-style-type:disc">משחק Game of life (מגניב רצח)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80ed-b88f-d541d9a2f886" class="bulleted-list"><li style="list-style-type:disc">משחק Snake</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-808a-8ae0-c74568aae373" class="bulleted-list"><li style="list-style-type:disc">שומר סיסמאות (Password manager)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80fd-8a75-f2468f514c24" class="bulleted-list"><li style="list-style-type:disc">ממיר יחידות (מטבע / טמפרטורה)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8070-aee2-ea6d14896028" class="bulleted-list"><li style="list-style-type:disc">משחק “אבן נייר ומספריים”</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8021-8edd-e7cfd977a8c8" class="bulleted-list"><li style="list-style-type:disc">משחק איש תלוי (Hangman)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8082-bb9e-cd0f5a7f0ad3" class="bulleted-list"><li style="list-style-type:disc">משחק טריוויה קטן</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-808f-8fad-cdbd91986b67" class="bulleted-list"><li style="list-style-type:disc">To-Do List</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80ae-b81b-c26d4b960d67" class="bulleted-list"><li style="list-style-type:disc">משחק הזיכרון</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80c8-92e2-d6e5586dd4e5" class="bulleted-list"><li style="list-style-type:disc">משחק איקס-עיגול (Tic Tac Toe)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80b7-8b0b-e0a04b0ef190" class="bulleted-list"><li style="list-style-type:disc">מערכת הזמנות למסעדה</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8086-a03d-f4e4c885d550" class="bulleted-list"><li style="list-style-type:disc">אתר אישי (portfolio) עם HTML/CSS/JS</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80e4-abfb-f04e5530cc6a" class="bulleted-list"><li style="list-style-type:disc">…….. כל דבר אחר בערך</li></ul></div><div style="display:contents" dir="auto"><h3 id="34c47f9b-8cda-80e8-af3c-f50288c1c64b" class=""><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">המפתח הממוצע:</span></strong></mark></h3></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8039-8bdb-c208f4dad232" class="">בשלב הזה אמור להיות לכם כבר ידע דיי נחמד בתכנות וכבר אתם מרגישים בנוח לכתוב קוד וליצור דברים חדשים…<br/><br/><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">עכשיו הגיע הזמן לשאול שאלות יותר עמוקות ולהתעניין!</span></strong></mark></p></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8026-aacf-f2be6a00b7fe" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">מה קורה שאני מריץ את הקוד שלי ? איך זה בכלל עובד?</mark></li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80dc-b9d5-f64d86f74a1c" class="bulleted-list"><li style="list-style-type:disc">מה מעניין אותי? </li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8007-9fdb-dcae65e0bc2d" class="bulleted-list"><li style="list-style-type:disc">מה אני רוצה לפתח? </li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8020-be52-fba88166155b" class="bulleted-list"><li style="list-style-type:disc">ומה המטרה שלי בלמידה?</li></ul></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80af-b9a2-d56e65fd85fd" class="">
+</p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-802c-ac6f-fea2e6da918e" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">והגיע הזמן להעמיק בדברים שכבר שמעתם עליהם (או עוד לא) אבל לא נכנסתם מספיק לעומק:</span></strong></mark></p></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80e9-852d-f06af903d43e" class="bulleted-list"><li style="list-style-type:disc">ללמוד להשתמש ב- <strong>Debugger</strong>…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80ea-b410-e02ee015a80a" class="bulleted-list"><li style="list-style-type:disc"><strong>מבני נתונים ואלגוריתמים…</strong> Queue, Stack, trees, binary tress, heaps | Sorting algorithms…. </li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8092-a20c-dbf27b884009" class="bulleted-list"><li style="list-style-type:disc">Big O notaion | Time and space complexity …</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-803f-8f39-ef1a59c3c81b" class="bulleted-list"><li style="list-style-type:disc"><strong>שימוש</strong> <strong>בספריות</strong> נפוצות וחשובות כמו Threads, Tasks…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8008-8a39-e7b279652f22" class="bulleted-list"><li style="list-style-type:disc"><strong>שפות חדשות - High level vs Low level languages</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-809c-b2cf-f56a34fa5d0d" class="bulleted-list"><li style="list-style-type:disc"><strong>Logging </strong>- Log4Net / Log4J, NLog …</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80d5-8d8d-f59b6cae7248" class="bulleted-list"><li style="list-style-type:disc"><strong>Enums and Interfaces </strong></li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8076-9962-d5248c54479d" class="bulleted-list"><li style="list-style-type:disc"><strong>העמקה בירושה ופולימורפיזם </strong>(Inheritance and Polymorphism) + Generics…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-801c-ab81-ca0f48f75734" class="bulleted-list"><li style="list-style-type:disc"><strong>SOLID PRINCIPLES, Design Patterns</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80d4-8339-fe9f511540e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Version control and Git</strong></li></ul></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80b0-80b0-ddfba19933ea" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">קיצור תחקרו הרבה ותפתחו המון!!!</span></strong></mark><strong><span style="border-bottom:0.05em solid"><br/></span></strong>קצת קישורים אבל לא הרבה כדי שתתנסו לבד וגם לא בהכרח מהדברים שכתבתי למעלה כדי לחשוף אתכם ליותר תחומים:</p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8014-aea9-c19a1e76bd51" class=""><a href="https://projecteuler.net/about">https://projecteuler.net/about</a><br/><a href="https://dsa-visualizer-delta.vercel.app/">https://dsa-visualizer-delta.vercel.app/</a><br/><a href="https://refactoring.guru/design-patterns">https://refactoring.guru/design-patterns</a><br/><a href="https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/">https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/</a><br/><a href="https://leetcode.com/">https://leetcode.com/</a></p></div><div style="display:contents" dir="auto"><p id="35a47f9b-8cda-80e8-96ec-e3578009e532" class="">
+</p></div><div style="display:contents" dir="auto"><p id="35a47f9b-8cda-807a-b5ed-c2242ebbbafa" class="">
+</p></div><div style="display:contents" dir="auto"><h4 id="35a47f9b-8cda-80e7-a406-fa7665cac02c" class=""><mark class="highlight-pink">איך אני יכול לדעת שסיימתי?</mark></h4></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-804d-92f3-c1cbe33f4896" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">עברתי על הנושאים שכתובים למעלה ונכנסתי לקישורים (וכמובן שבהמשך גם אחזור אליהם עוד)</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8063-b020-cfc65fbd1c13" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">תרגלתי את הנושאים, פתרתי תרגילים שונים בעצמי והרחבתי באתרים שנתנו לי (גם ממוקדם).</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8093-ad31-c72646f7237b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-blue"><strong>התנסתי והכנתי לפחות אחד שניים</strong></mark><mark class="highlight-blue"> </mark>מהפרוייקטים הבאים (בעדיפות כמה שיותר):</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><p id="35a47f9b-8cda-8084-9cc5-dcb5d0eaae32" class="">
+</p></div><div style="display:contents" dir="auto"><p id="35a47f9b-8cda-8006-ba73-d2d2892f4d6c" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">פרוייקטים לעשות כדי לדעת שאני מוכן להתקדם לשלב הבא:</span></strong></mark></p></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80de-bf02-c655361285b3" class="bulleted-list"><li style="list-style-type:disc">Visualizer למבני נתונים (Stack / Queue / Tree)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8061-b593-ee24b2c4396e" class="bulleted-list"><li style="list-style-type:disc">Visualizer לאלגוריתמי מיון (Bubble, Merge, Quick)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80f2-a054-cead6ed2a970" class="bulleted-list"><li style="list-style-type:disc">Pathfinding Visualizer (DFS / BFS / Dijkstra)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80a1-b4e7-f86a3dd8bd84" class="bulleted-list"><li style="list-style-type:disc">לבנות מערכת עם מלא סרטים ולהכין Search Engine שיכול לחפש בינהם. </li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-805c-858a-e93b7088be39" class="bulleted-list"><li style="list-style-type:disc">מערכת צ’אט מרובת משתמשים</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80ec-9651-e959a705fdca" class="bulleted-list"><li style="list-style-type:disc">Solver לפאזלים (כמו Sudoku Solver)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-808b-ab7a-d9725f8215c6" class="bulleted-list"><li style="list-style-type:disc">Web Sraper מקבילי</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80c3-95b7-efa37ac483ee" class="bulleted-list"><li style="list-style-type:disc">URL Shortener</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-807f-b40e-e2f5fc879ab8" class="bulleted-list"><li style="list-style-type:disc">מערכת העלאת קבצים דומה לדרייב עם הצפנות והכל (יכולים להשתמש בחומרים של שלב הבא)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-806a-9d43-cffc3b8b069d" class="bulleted-list"><li style="list-style-type:disc">Task Scheduler עם Threads</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-801e-ab2f-de90692359af" class="bulleted-list"><li style="list-style-type:disc">Thread Pool implementation</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80a7-a109-e522f7944793" class="bulleted-list"><li style="list-style-type:disc">מערכת ניהול פרויקטים (mini Jira)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8009-8e9d-d08206c44db2" class="bulleted-list"><li style="list-style-type:disc">מערכת הזמנות (booking system)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8003-ba5d-f88a8cb1ab0a" class="bulleted-list"><li style="list-style-type:disc">מערכת ניהול קורסים</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8046-81c6-de068ce85fd8" class="bulleted-list"><li style="list-style-type:disc">מערכת ניהול לוגים (dashboard)</li></ul></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80c7-85d5-eca65c083d45" class=""><br/>יאללה שלב הבא!</p></div><div style="display:contents" dir="auto"><h3 id="34c47f9b-8cda-80c1-9678-c3f724f8c994" class=""><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">המפתח המתקדם:</span></strong></mark></h3></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8009-a7b6-e92522dc48d5" class="">תכלס כאן זה הזמן שלכם להעמיק בכל הדברים שמצאתם שמעניינים אתכם במהלך המסע הזה… זה אומר Get on ותבנו פרוייקט שמגניב אתכם!!! (לבנות פרוייקטים זאת אחת הדרכים הכי טובות ללמידה)…<br/><br/>רעיונות (בכוונה אני מכוון אתכם לדברים שלא בהכרח נחשפתם אליהם ממקודם):</p></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80b4-b172-f708a8bd05fa" class="bulleted-list"><li style="list-style-type:disc">אתר אינטרנט</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8024-b2d3-e56668a597d0" class="bulleted-list"><li style="list-style-type:disc">אפליקציה לטלפון</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-809a-9d1e-c9b5b721a143" class="bulleted-list"><li style="list-style-type:disc">קומפיילר / אסמבלר </li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80cf-8e1e-dd7ddd18bb64" class="bulleted-list"><li style="list-style-type:disc">אנטי וירוס (אם אנחנו במוד סייבר אז למה לא?)</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-809d-b469-d9d1efcc5310" class="bulleted-list"><li style="list-style-type:disc">אפליקציית שרת לקוח<br/></li></ul></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8014-8e45-f47b8c48436b" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">תחומים מומלצים להרחבה שמכאן אפשר להתקדם אליהם:</span></strong></mark></p></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80a5-ab8d-eb6674351bed" class="bulleted-list"><li style="list-style-type:disc">רשתות תיאוריה + פרקטיקה (wireshark, websockets ספריות שונות כמו Scapy, Socket)… </li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80aa-a29f-cfa7a09539b4" class="bulleted-list"><li style="list-style-type:disc">מערכות הפעלה, להרחיב על לינוקס… כלים כמו powershell, cmd, task manager…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-80e2-a7db-c973aa3644e2" class="bulleted-list"><li style="list-style-type:disc">איך המחשב עובד, זיכרון, מעבד…. ללמוד על Low level Languges…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8032-90e4-cbd84c044bc1" class="bulleted-list"><li style="list-style-type:disc">פיתוח FullStack העמקה בטכנלוגיות של התעשייה כמו טכנלוגיות front כגון React / Angular והן בטכנלוגיות back כמו Mongo DB, FireBase, PostgreSQL… | Kafka, Rabbit MQ פיתוח APIים וכו…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8081-9458-d3b3b54d2530" class="bulleted-list"><li style="list-style-type:disc">טכנלוגיות דבאופס ועמיתיהם, Virtual Machines, Docker, Kubernetes וכו…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8085-8f70-f543ff919c90" class="bulleted-list"><li style="list-style-type:disc">אבטחת מידע, הצפנות שונות, פונקציות גיבוב (hashing), פרוטוקולי תקשורת ומוסכמות אבטחה…</li></ul></div><div style="display:contents" dir="auto"><ul id="34c47f9b-8cda-8007-829d-d5254aa4e799" class="bulleted-list"><li style="list-style-type:disc">בינה מלאכותית ו- AI תיאוריה + פרקטיקה… מודלי ML שונים…</li></ul></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-807c-b700-f3976b46ecd4" class="">
+</p></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80c8-9a84-ca063637dc13" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">קישורים:</span></strong></mark></p></div><div style="display:contents" dir="ltr"><figure id="34c47f9b-8cda-809a-adfc-f5eef33f0d64"><a href="https://roadmap.sh/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Developer Roadmaps - roadmap.sh</div><div class="bookmark-description">Community driven roadmaps, articles and guides for developers to grow in their career.</div></div><div class="bookmark-href"><img src="https://roadmap.sh/manifest/apple-touch-icon.png" class="icon bookmark-icon"/>https://roadmap.sh/</div></div><img src="https://roadmap.sh/img/og-img.png" class="bookmark-image"/></a></figure></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-808b-835d-ebd4af3cdd9c" class="column-list"><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8018-93d3-d9fc54048fef" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8064-b317-d4161ae6a113" class=""><a href="https://www.digitalwhisper.co.il/">https://www.digitalwhisper.co.il/</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-805e-93c1-ff53fc23b15f" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8045-ab5f-cc89175d803c" class=""><a href="https://developers.google.com/machine-learning/crash-course?hl=he">https://developers.google.com/machine-learning/crash-course?hl=he</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-800c-86d7-ead28c2cf300" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8019-a798-e5a3393743e6" class=""><a href="https://www.kaggle.com/competitions">https://www.kaggle.com/competitions</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8061-9144-f52720d188ea" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80c2-bb39-fbb91d6eda3e" class=""><a href="https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.64850&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.64850&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false</a></p></div></div></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-809c-857f-dca9d8b2945a" class="column-list"><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8066-9ecf-d93fede1576e" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8026-b73a-df97e061e377" class=""><a href="https://github.com/Idan-Alter/OU-22961-Deep-Learning">https://github.com/Idan-Alter/OU-22961-Deep-Learning</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8000-afce-f2b158c42a62" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80b5-8c23-ed5706e1d525" class=""><a href="https://www.nvidia.com/en-us/training/">https://www.nvidia.com/en-us/training/</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8034-91b2-e2d32100359c" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80f9-a88a-c1bd7ff3cd0c" class=""><a href="https://www.netacad.com/launch?tab=curriculum&amp;id=dc0847b7-d6fc-4597-bc31-38ddd6b07a2f&amp;view=85ac3a97-7f9d-547f-8ca6-a7161c819b4b">https://www.netacad.com/launch?tab=curriculum&amp;id=dc0847b7-d6fc-4597-bc31-38ddd6b07a2f&amp;view=85ac3a97-7f9d-547f-8ca6-a7161c819b4b</a></p></div></div></div><div style="display:contents" dir="auto"><div id="34c47f9b-8cda-8088-bfd7-c0208e6e8cbf" style="width:25%" class="column"><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-8030-9acd-d1b47f78be4a" class=""><a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a></p></div></div></div></div></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80ce-b637-c95b2822539f" class=""><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid"><br/></span></strong></mark><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">קיצור תרחיבו על עוד דברים ולא רק מה שכתבתי עליו (באמא שלכם) זה הולך להיות אחד המסעות המעניינים ביותר שתעברו!!!</span></strong></mark></p></div><div style="display:contents" dir="ltr"><figure id="34c47f9b-8cda-80f6-a6db-fbe371cf391d" class="image"><a href="https://i.imgflip.com/2ir5rr.jpg"><img src="https://i.imgflip.com/2ir5rr.jpg"/></a></figure></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-802e-8b48-d891e61bc5e0" class=""><mark class="highlight-blue"><strong><br/></strong></mark><mark class="highlight-pink"><strong>נסיים את ה- Section הזה עם המשפט המפוצץ</strong></mark></p></div><div style="display:contents" dir="auto"><blockquote id="34c47f9b-8cda-8017-8a99-e14b14891e22" class=""><mark class="highlight-teal"><strong>At some point you touched a computer and the computer did what you wanted.<br/>You made it DO what you wanted it to DO, and you realized that you were a god <br/>~ </strong></mark><mark class="highlight-teal"><strong><span style="border-bottom:0.05em solid">Uncle Bob</span></strong></mark></blockquote></div><div style="display:contents" dir="auto"><p id="34c47f9b-8cda-80b0-a79f-e3fb8577288a" class="">
+</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80c5-8375-d998d29d209b" class=""><mark class="highlight-pink"><strong><span style="border-bottom:0.05em solid">רשימה ענקית של פרוייקטים טובים לעשות כדי להשתפר ולהתמקד למקום אחד ולמצוא מה שמעניין אתכם בפיתוח:<br/></span></strong></mark><mark class="highlight-purple"><strong>למי שרוצה עוד פרוייקטים של AI תזכרו Kaggle מלמעלה ^^^</strong></mark></p></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-800e-9f4a-dec1ebaf3c22" class="bulleted-list"><li style="list-style-type:disc">כתיבת Mini Operating System</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80ed-a8b1-fbc751d5b240" class="bulleted-list"><li style="list-style-type:disc">כתיבת Memory Allocator (malloc/free)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8075-907b-c5b3c41f1d93" class="bulleted-list"><li style="list-style-type:disc">סימולציית Virtual Memory + Paging</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8038-a32d-f417a0b0b79c" class="bulleted-list"><li style="list-style-type:disc">בניית File System בסיסי</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-803b-bbc8-c921884ba9ce" class="bulleted-list"><li style="list-style-type:disc">כתיבת Debugger פשוט</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80e9-b06f-ec4e40aedd55" class="bulleted-list"><li style="list-style-type:disc">כתיבת Compiler / Interpreter לשפה קטנה</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80f0-bccf-c3e35c88d8c2" class="bulleted-list"><li style="list-style-type:disc">בניית Process Scheduler</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-802b-aee5-d0184113ad22" class="bulleted-list"><li style="list-style-type:disc">כתיבת כלי ל-System Monitoring (כמו top קטן)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-806c-b7ff-cbaeb00fc8a7" class="bulleted-list"><li style="list-style-type:disc">כתיבת TCP/HTTP Server מאפס (ללא frameworks)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8079-94ca-ed9d18088286" class="bulleted-list"><li style="list-style-type:disc">בניית Packet Sniffer (עם Wireshark / Scapy)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8033-a0f9-f13caf8b6a74" class="bulleted-list"><li style="list-style-type:disc">מערכת IDS/IPS בסיסית</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80bf-b305-f4e698fb6f09" class="bulleted-list"><li style="list-style-type:disc">בניית VPN בסיסי</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-809e-84ad-d7ff8df25ee6" class="bulleted-list"><li style="list-style-type:disc">כתיבת Port Scanner (כמו nmap)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-806e-87bc-fcbefe465c34" class="bulleted-list"><li style="list-style-type:disc">מערכת Secure Chat מוצפנת (end-to-end)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80ee-b064-edfa50d8d577" class="bulleted-list"><li style="list-style-type:disc">כתיבת Proxy Server</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8071-ba3b-c56aad1e298d" class="bulleted-list"><li style="list-style-type:disc">כתיבת WebSocket Server</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8000-808d-f133c38301aa" class="bulleted-list"><li style="list-style-type:disc">מערכת Message Queue (בסגנון Apache Kafka / RabbitMQ)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80de-840b-ff6b10ea3b4c" class="bulleted-list"><li style="list-style-type:disc">מערכת המלצות למשהו שמשלבת AI</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-801f-89fd-df1c772fac9c" class="bulleted-list"><li style="list-style-type:disc">מערכת Computer Vision (זיהוי אובייקטים)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80b6-8b68-e60db80550b8" class="bulleted-list"><li style="list-style-type:disc">מערכת Reinforcement Learning למשחק שאתם אוהבים</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-805b-af61-c75fc3e062c8" class="bulleted-list"><li style="list-style-type:disc">בניית Neural Network מאפס</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8095-a725-f0513cb1fa73" class="bulleted-list"><li style="list-style-type:disc">מערכת Anomaly Detection ברשת</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80d9-93af-dd19370f4ac1" class="bulleted-list"><li style="list-style-type:disc">מערכת סיווג תמונות</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80ce-b87f-c548e46d8057" class="bulleted-list"><li style="list-style-type:disc">מערכת זיהוי הונאות במייל (fraud detection)</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-80bb-beb9-c02c1b3abdb5" class="bulleted-list"><li style="list-style-type:disc">בניית Browser בסיסי</li></ul></div><div style="display:contents" dir="auto"><ul id="35a47f9b-8cda-8068-852e-c9afa107e97d" class="bulleted-list"><li style="list-style-type:disc">Version control system like git<br/><br/><em><mark class="highlight-red"><strong>קיצור תהנו יכול להיות נדיר!!!</strong></mark></em></li></ul></div><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-8087-94c5-fb9dc8b989f9" class=""><mark class="highlight-blue">מקורות + ספרים מומלצים שמצאנו (נשתדל לעדכן באופן תדיר) !!</mark></h3></div><div style="display:contents" dir="auto"><h4 id="35447f9b-8cda-8018-b273-e7a7a2e5d101" class=""><mark class="highlight-pink"><strong>ערוצי ה-Security אהובים:</strong></mark></h4></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ed-9478-f22a331fd218" class=""><a href="https://www.youtube.com/@LowLevelTV">https://www.youtube.com/@LowLevelTV</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-807b-81c8-e9fd61f06734" class=""><em><strong>Low level previously known as Low level learning</strong></em></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8074-aa19-f0554569dd22" class="">Security Researcher במקצועו, אחד הערוצים הטובים ביותר שהוא מנהל ומלמד מרמה של אפס ידע את הצופים על אירועים בעולם הסייבר, חולשות, low level כמובן וכו…</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8074-90db-c2355f11c3af" class=""><a href="https://www.youtube.com/@_JohnHammond">https://www.youtube.com/@_JohnHammond</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ac-878c-dcdcb7c0c32a" class="">אחלה בחור שמלמד במילים שלו:</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-805f-953e-dc2ca1104ce4" class="">Free Cybersecurity Education and Ethical Hacking</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80b5-a94e-d5c2d27fd366" class="">הוא הכיר לי את העולם של PicoCTF וכו…</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80a8-b2b4-cef1fe11a837" class=""><a href="https://www.youtube.com/@NetworkChuck">https://www.youtube.com/@NetworkChuck</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-805c-a7f6-cdede8ee38e9" class="">מעולה לכל תחום הרשתות / לינוקס - סיפרתי עליו כבר למעלה.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8000-a4eb-ca8e8c7880de" class=""><a href="https://www.youtube.com/@BarakGonen">https://www.youtube.com/@BarakGonen</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8036-8ece-cde10415bf0f" class="">ברק גונן, בוגר תלפיות וקצין במיל&#x27; 8200, יוצר תוכן למלש&quot;בים שרוצים להתמיין לקורסי הדגל הטכנולוגיים של מודיעין וללומדי תואר ראשון במדעי המחשב.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8046-938d-e34ea0c9b065" class="">פייתון, רשתות, אסמבלי, רברסינג, מערכות הפעלה. אלו נושאים שהצבא היה שמח שמי שמתגייסים לשירות טכנולוגי זו תהיה נקודת הפתיחה שלהם.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80df-b58b-fc044b86bd81" class="">ידע של החומרים בערוץ לא מבטיח שתתקבלו למודיעין אבל הוא נקודת פתיחה טובה וגם מעניינת. מכאן הכל תלוי בכם ובמוטיבציה שלכם, וגם שלכן בנות- תחום הסייבר נותן הזדמנות שווה, כולי תקוה לראות בו 50% נשים.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f5-8e92-cb7bd06eb3fc" class="">החומר לא מסווג והוא מוגש חינם כדי לחזק את החינוך הטכנולוגי. כל ספרי הלימוד ניתנים להורדה חינם מאתר המרכז לחינוך סייבר.</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80fd-a5bd-f5578ddaa384" class=""><a href="https://www.youtube.com/@Computerphile">https://www.youtube.com/@Computerphile</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80eb-a1d3-ee0e6c1fb997" class=""> ערוץ חזק שמתקשר בין היתר לרשתות אבל מתפצל לתחום רחב יותר של דברים במדעי המחשב (…Data analysis,AI, Cryptography) - <strong>מעולה ללימוד הצפנות</strong> / <strong>אלגוריתמי גיבוב</strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e4-bc90-d2bd588281ba" class=""><a href="https://www.youtube.com/@dr-Jonas-Birch">https://www.youtube.com/@dr-Jonas-Birch</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8038-b457-c01da64c18b9" class=""><strong>בחור שמלמד איך לעשות פרוייקטים מאוד מסובכים פרקטית!!!</strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e7-a3a1-d8017078d53c" class="">מהבחור הזה תלמדו לבנות Torlizer ובעזרתו להתחבר לDark web (במחשבה שנייה אל תתחברו לDARKNET לא!!! אבל תבנו פרוייקט מגניב כזה), או לבנות מכונה וירטואלית מאפס, לבנות את הAnti Virus הבא ועוד המון המון Low level stuff, עם פרוייקטים שיתנו לכם רעיונות מדהימים!</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-809c-b6b3-db34276ebf51" class=""><a href="https://www.youtube.com/@CodeBullet">https://www.youtube.com/@CodeBullet</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8079-bdd7-e6d9c724a389" class=""><strong>בחור מצחיק ומגניב</strong>, שילמד אתכם איך הוא עשה כל מיני פרויקטים בתחומי</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8049-bcf0-d870498559a9" class="">High level (AI, Game dev etc…)</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8026-ba37-cbeaaf97e436" class="">במילותיו:</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80c0-8e8f-fa17c5b0aaad" class=""><em>“.</em><em><strong>Just an idiot with a computer science degree trying his best</strong></em><em>”</em></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80b7-b8e4-eb42691740c4" class=""><strong>קישורים למקורות לרעיונות לפרויקטים (כולל מדריכים לאיך להכין אותם ולשפר אותם):</strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80e1-abd8-ec96999daeff" class=""><a href="https://github.com/practical-tutorials/project-based-learning">https://github.com/practical-tutorials/project-based-learning</a></p></div><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-8078-ad3e-e582ca5aabb8" class=""><mark class="highlight-pink">קישורים לאתרים מעניינים ב- AI/ML/DEEP LEARNING</mark></h3></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ea-8dfe-e63718ced6ae" class="">(המטרה היא שהאתרים יעזרו לכם לבנות פרוייקטים / לחקור שתוכלו ללמוד בשביל עצמכם)</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-805a-9ccf-d4d34ac664db" class=""><strong>מומלץ ידע חזק במתמטיקה לפני (אלגברה לינארית, אינפי וכו… למי שאין אני מצרף ספר אפשר לקרוא)</strong>:</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8023-aeac-da169ec575b1" class="">לפני שנכנסים לאתרים מומלץ מאוד להיכנס לפלייליסט הבא ולראות את השנים שלושה פרקים הראשונים:</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80d5-821f-d17a25d1ed51" class=""><a href="https://youtu.be/aircAruvnKk?si=KiwZuHVkVjDoKR71">https://youtu.be/aircAruvnKk?si=KiwZuHVkVjDoKR71</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-808c-9fa0-ca5a1df037b4" class=""><a href="https://mml-book.github.io/book/mml-book.pdf">https://mml-book.github.io/book/mml-book.pdf</a></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-808d-9b66-ce943fb50b48" class=""><strong>ניתן לקרוא את הספר למי שקשה לו עם המתמטיקה ^^^</strong></p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80e4-b53b-ce99dfa42c78" class="bulleted-list"><li style="list-style-type:disc"><a href="https://jalammar.github.io/feedforward-neural-networks-visual-interactive/">https://jalammar.github.io/feedforward-neural-networks-visual-interactive/</a><strong> -</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8024-a4f7-c7a50bcbdb97" class="bulleted-list"><li style="list-style-type:disc"><strong>הסבר ויזואלי למי שמעדיף לקרוא במקום לראות סרטון (בלי לחסוך ביותר מידי מתמטיקה חשובה)</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80b5-8a84-cc5c56c5434f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.64850&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.64850&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false</a></li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ae-843e-e7f9decbce02" class=""><strong>- אתר שיעזור לכם להבין רשתות נוירונים ויזואלית (אתם תבחרו הכל, כמה שכבות, כמה נוירונים בכל שכבה, פונקציות</strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8068-a48a-f9e084141fed" class="">אקטיבציה וכו…)</p></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8054-b44c-dc9f13187869" class="bulleted-list"><li style="list-style-type:disc"><a href="https://developers.google.com/machine-learning/crash-course?hl=he">https://developers.google.com/machine-learning/crash-course?hl=he</a></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-80e0-bda2-e59a4e58b261" class="bulleted-list"><li style="list-style-type:disc"><strong>Crash course של גוגל ^^^</strong></li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8097-ac7a-ccd917970794" class=""><a href="https://www.kaggle.com/competitions">https://www.kaggle.com/competitions</a><strong>-</strong></p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f9-aa55-dba211cf6939" class="">תחרויות לפתח מודלי AI למלא צרכים שונים, אנשים</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8043-a936-f1b88445e023" class="">
+</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80fa-bec0-dd5eea4be516" class="">מפרסמים את הקוד שלהם גם אז כדאי להיכנס לראות ^^^</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-8067-a154-d05b0c90acb8" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="35447f9b-8cda-803d-97c5-e79a54cc2e8e" class=""><em><mark class="highlight-pink"><strong>ספרים</strong></mark></em></h3></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80b9-ae81-e93329d24137" class="">
+</p></div><div style="display:contents" dir="auto"><h4 id="35447f9b-8cda-80f5-a617-c18ffbf73632" class=""><strong>למקצוענים מכוון ל-Deep learning:</strong></h4></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8008-8504-e652cc4c77e6" class="bulleted-list"><li style="list-style-type:disc"><a href="https://d2l.ai/">https://d2l.ai/</a>-</li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8038-a559-d51295b8c960" class="bulleted-list"><li style="list-style-type:disc">ספר zero to hero <strong>מאוד מתקדם</strong></li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f7-85be-e1a737054f06" class="">
+</p></div><div style="display:contents" dir="auto"><h4 id="35447f9b-8cda-80f1-a807-c4c8bbb5d0df" class=""><strong>למתחילים מכוון לסקיוריט</strong></h4></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8084-9b5c-e6789fb6efc0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://data.cyber.org.il/os/os_book.pdf">מערכות הפעלה Operating Systems / Barak Gonen</a></li></ul></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-8079-859f-c59f2318bd11" class="bulleted-list"><li style="list-style-type:disc"><a href="https://data.cyber.org.il/networks/networks.pdf">רשתות מחשבים</a></li></ul></div><div style="display:contents" dir="auto"><h4 id="35447f9b-8cda-80ac-af33-e180b0a1ca1d" class=""><strong>למקצוענים מכוון לסקיוריטי:</strong></h4></div><div style="display:contents" dir="auto"><ul id="35447f9b-8cda-802a-b23d-fa0add987e40" class="bulleted-list"><li style="list-style-type:disc"><a href="https://techiefood4u.wordpress.com/wp-content/uploads/2020/02/operating_systems_three_easy_pieces.pdf">OPERATING SYSTEMS</a></li></ul></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80ae-962f-c816cd16797b" class="">
+</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80f1-8896-d4c937df73a0" class="">
+</p></div><div style="display:contents" dir="auto"><p id="35447f9b-8cda-80d9-9b64-db8c05be8097" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
