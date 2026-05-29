@@ -73,8 +73,8 @@ const AboutSection: React.FC = () => {
   const stats = [
     { value: 2000, label: t('about.stat_members'), icon: <FaUsers size={22} />, color: '#00FF88', delay: 0 },
     { value: 50, label: t('about.stat_ctfs'), icon: <FaTrophy size={22} />, color: '#00D4FF', delay: 0.1 },
-    { value: 30, label: t('about.stat_events'), icon: <FaCalendarCheck size={22} />, color: '#8B5CF6', delay: 0.2 },
-    { value: 3, label: t('about.stat_years'), suffix: '', icon: <FaStar size={22} />, color: '#FFD700', delay: 0.3 },
+    { value: 10, label: t('about.stat_events'), icon: <FaCalendarCheck size={22} />, color: '#8B5CF6', delay: 0.2 },
+    { value: 2, label: t('about.stat_years'), suffix: '', icon: <FaStar size={22} />, color: '#FFD700', delay: 0.3 },
   ]
 
   return (

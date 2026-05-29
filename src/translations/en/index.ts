@@ -92,6 +92,7 @@ const en = {
     email: 'Email',
     join_discord: 'Join our Discord',
     join_whatsapp: 'Join WhatsApp',
+    drive: 'Community Drive With Resources for you!',
   },
   join: {
     title: 'Join CyberIsrael',
@@ -102,7 +103,7 @@ const en = {
     feature1: 'Access community events and activities',
     feature2: 'Meet people from across the industry',
     feature3: 'Learn through shared knowledge and projects',
-    feature4: 'Be part of Israel’s growing cyber community',
+    feature4: 'Be part of Israel\'s growing cyber community',
   },
   articles: {
     title: 'Articles',
@@ -136,7 +137,7 @@ const en = {
   },
   collaborate: {
     title: 'Collaborate With Us',
-    subtitle: 'Let’s build the future of cyber together',
+    subtitle: 'Let\'s build the future of cyber together',
     description: 'CyberIsrael collaborates with universities, communities, organizations, companies, and individuals who share our vision of strengthening cyber education, accessibility, and innovation in Israel.',
     form_title: 'Get in Touch',
     form_subtitle: 'Fill out the form below and we\'ll be in touch.',

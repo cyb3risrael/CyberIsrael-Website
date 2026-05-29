@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { FaDiscord, FaWhatsapp, FaInstagram, FaTiktok, FaEnvelope } from 'react-icons/fa'
+import { FaDiscord, FaWhatsapp, FaInstagram, FaTiktok, FaEnvelope, FaGoogleDrive } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 
 const socialData = [
@@ -11,9 +11,9 @@ const socialData = [
     handle: '@CyberIsrael',
     href: 'https://discord.com/invite/VumvzWFZs',
     color: '#5865F2',
-    bg: 'rgba(88,101,242,0.1)',
-    border: 'rgba(88,101,242,0.3)',
-    glow: 'rgba(88,101,242,0.4)',
+    bg: 'rgba(168,85,247,0.10)',
+    border: 'rgba(168,85,247,0.28)',
+    glow: 'rgba(168,85,247,0.5)',
     desc: 'Join our growing Discord server',
   },
   {
@@ -28,25 +28,36 @@ const socialData = [
     desc: 'Real-time discussions and alerts',
   },
   {
+    icon: FaGoogleDrive,
+    label: 'Drive',
+    handle: '@cyb3r.israel',
+    href: 'https://drive.google.com/drive/folders/1FpbtSTb0ztKClrIKZT1HdlGbLENTj_hj?usp=sharing',
+    color: '#4285F4',
+    bg: 'rgba(66,133,244,0.10)',
+    border: 'rgba(66,133,244,0.28)',
+    glow: 'rgba(66,133,244,0.35)',
+    desc: 'Community Drive With Resources for you!',
+  },
+  {
     icon: FaInstagram,
     label: 'Instagram',
     handle: '@cyb3r.israel',
     href: 'https://www.instagram.com/cyb3r.israel?igsh=Mjh0aGZqOHhoOXFi',
-    color: '#E1306C',
-    bg: 'rgba(225,48,108,0.1)',
-    border: 'rgba(225,48,108,0.3)',
-    glow: 'rgba(225,48,108,0.4)',
-    desc: 'Behind the scenes & highlights',
+    color: '#C13584',
+    bg: 'rgba(193,53,132,0.10)',
+    border: 'rgba(193,53,132,0.28)',
+    glow: 'rgba(193,53,132,0.35)',
+    desc: 'Behind the scenes, highlights & educational content',
   },
   {
     icon: FaTiktok,
     label: 'TikTok',
     handle: '@cyb3r.israel',
     href: 'https://www.tiktok.com/@cyb3r.israel',
-    color: '#FF0050',
-    bg: 'rgba(255,0,80,0.1)',
-    border: 'rgba(255,0,80,0.3)',
-    glow: 'rgba(255,0,80,0.4)',
+    color: '#00F5D4',
+    bg: 'rgba(0,245,212,0.10)',
+    border: 'rgba(0,245,212,0.28)',
+    glow: 'rgba(0,245,212,0.35)',
     desc: 'Short-form cyber content',
   },
   {
@@ -68,11 +79,10 @@ const SocialSection: React.FC = () => {
 
   return (
     <section id="social" className="py-24 relative z-10">
-      <div className={`absolute inset-0 ${
-        theme === 'dark'
-          ? 'bg-gradient-to-b from-transparent via-cyber-dark/30 to-transparent'
-          : 'bg-gradient-to-b from-transparent via-blue-50/50 to-transparent'
-      }`} />
+      <div className={`absolute inset-0 ${theme === 'dark'
+        ? 'bg-gradient-to-b from-transparent via-cyber-dark/30 to-transparent'
+        : 'bg-gradient-to-b from-transparent via-blue-50/50 to-transparent'
+        }`} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <motion.div
@@ -82,9 +92,8 @@ const SocialSection: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className={`font-display text-xs tracking-widest uppercase ${
-            theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
-          }`}>
+          <span className={`font-display text-xs tracking-widest uppercase ${theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
+            }`}>
             {t('social.subtitle')}
           </span>
           <h2 className="section-title mt-2">
@@ -107,11 +116,10 @@ const SocialSection: React.FC = () => {
               transition={{ delay: i * 0.08, duration: 0.6 }}
               whileHover={{ y: -6, scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className={`group relative p-6 rounded-2xl border transition-all duration-300 overflow-hidden ${
-                theme === 'dark'
-                  ? 'bg-cyber-card border-cyber-border/40'
-                  : 'bg-white border-light-border shadow-sm'
-              }`}
+              className={`group relative p-6 rounded-2xl border transition-all duration-300 overflow-hidden ${theme === 'dark'
+                ? 'bg-cyber-card border-cyber-border/40'
+                : 'bg-white border-light-border shadow-sm'
+                }`}
               style={{
                 ['--social-color' as string]: s.color,
               }}
@@ -140,14 +148,12 @@ const SocialSection: React.FC = () => {
                   <div className="font-display font-bold text-sm mb-0.5" style={{ color: s.color }}>
                     {s.label}
                   </div>
-                  <div className={`text-xs font-display mb-2 ${
-                    theme === 'dark' ? 'text-slate-300' : 'text-light-text'
-                  }`}>
+                  <div className={`text-xs font-display mb-2 ${theme === 'dark' ? 'text-slate-300' : 'text-light-text'
+                    }`}>
                     {s.handle}
                   </div>
-                  <div className={`text-xs ${
-                    theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-                  }`}>
+                  <div className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
+                    }`}>
                     {s.desc}
                   </div>
                 </div>
