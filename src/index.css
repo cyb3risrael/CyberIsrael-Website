@@ -31,7 +31,7 @@
   }
 
   html[dir="rtl"] {
-    font-family: 'Rubik', 'Exo 2', sans-serif;
+    font-family: 'Assistant', sans-serif;
   }
 
   body {
@@ -75,17 +75,17 @@
 
   .neon-text-green {
     color: #00FF88;
-    text-shadow: 0 0 10px rgba(0,255,136,0.7), 0 0 20px rgba(0,255,136,0.4);
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 0 0 20px rgba(0, 255, 136, 0.4);
   }
 
   .neon-text-teal {
     color: #00D4FF;
-    text-shadow: 0 0 10px rgba(0,212,255,0.7), 0 0 20px rgba(0,212,255,0.4);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.7), 0 0 20px rgba(0, 212, 255, 0.4);
   }
 
   .neon-text-purple {
     color: #8B5CF6;
-    text-shadow: 0 0 10px rgba(139,92,246,0.7), 0 0 20px rgba(139,92,246,0.4);
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.7), 0 0 20px rgba(139, 92, 246, 0.4);
   }
 
   .gradient-text {
@@ -103,14 +103,14 @@
   }
 
   .cyber-grid-bg {
-    background-image: linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(0, 255, 136, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.04) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
   .light .cyber-grid-bg {
-    background-image: linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
@@ -123,7 +123,7 @@
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0,255,136,0.4), 0 0 60px rgba(0,212,255,0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
   }
 
   .light .btn-primary {
@@ -132,31 +132,31 @@
   }
 
   .light .btn-primary:hover {
-    box-shadow: 0 0 30px rgba(37,99,235,0.4);
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
   }
 
   .btn-secondary {
     @apply px-8 py-3 rounded-lg font-display text-sm tracking-widest uppercase transition-all duration-300;
-    border: 1px solid rgba(0,255,136,0.4);
+    border: 1px solid rgba(0, 255, 136, 0.4);
     color: #00FF88;
     background: transparent;
   }
 
   .btn-secondary:hover {
-    background: rgba(0,255,136,0.1);
-    border-color: rgba(0,255,136,0.8);
-    box-shadow: 0 0 20px rgba(0,255,136,0.2);
+    background: rgba(0, 255, 136, 0.1);
+    border-color: rgba(0, 255, 136, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
   }
 
   .light .btn-secondary {
-    border-color: rgba(37,99,235,0.4);
+    border-color: rgba(37, 99, 235, 0.4);
     color: #2563EB;
   }
 
   .light .btn-secondary:hover {
-    background: rgba(37,99,235,0.08);
-    border-color: rgba(37,99,235,0.8);
-    box-shadow: 0 0 20px rgba(37,99,235,0.2);
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(37, 99, 235, 0.8);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
   }
 
   .section-title {
@@ -171,19 +171,19 @@
 
   .card-cyber:hover {
     border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 0 30px rgba(0,212,255,0.1);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
     transform: translateY(-4px);
   }
 
   .light .card-cyber {
     background: rgba(255, 255, 255, 0.9);
     border-color: rgba(203, 213, 232, 0.8);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   }
 
   .light .card-cyber:hover {
-    border-color: rgba(37,99,235,0.3);
-    box-shadow: 0 8px 30px rgba(37,99,235,0.1);
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.1);
   }
 }
 
@@ -214,13 +214,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 255, 136, 0.01) 2px,
-    rgba(0, 255, 136, 0.01) 4px
-  );
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 136, 0.01) 2px,
+      rgba(0, 255, 136, 0.01) 4px);
   pointer-events: none;
   z-index: 1000;
 }

@@ -56,9 +56,8 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix = '+', label, icon, c
       <div className="font-display text-4xl font-black mb-1" style={{ color }}>
         {count}{suffix}
       </div>
-      <div className={`text-sm font-display tracking-widest uppercase ${
-        theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-      }`}>
+      <div className={`text-sm font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+        }`}>
         {label}
       </div>
     </motion.div>
@@ -78,14 +77,8 @@ const AboutSection: React.FC = () => {
     { value: 3, label: t('about.stat_years'), suffix: '', icon: <FaStar size={22} />, color: '#FFD700', delay: 0.3 },
   ]
 
-  const cards = [
-    { title: t('about.card1_title'), desc: t('about.card1_desc'), icon: '🏆', color: '#00FF88' },
-    { title: t('about.card2_title'), desc: t('about.card2_desc'), icon: '🔧', color: '#00D4FF' },
-    { title: t('about.card3_title'), desc: t('about.card3_desc'), icon: '🎤', color: '#8B5CF6' },
-  ]
-
   return (
-    <section id="about" className="py-24 relative z-10" ref={ref}>
+    <section id="about" className="pt-10 relative z-10" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.div
@@ -95,9 +88,8 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className={`font-display text-xs tracking-widest uppercase ${
-            theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
-          }`}>
+          <span className={`font-display text-xs tracking-widest uppercase ${theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
+            }`}>
             {t('about.subtitle')}
           </span>
           <h2 className="section-title mt-2">
@@ -105,9 +97,8 @@ const AboutSection: React.FC = () => {
               {t('about.title')}
             </span>
           </h2>
-          <p className={`max-w-2xl mx-auto text-lg leading-relaxed ${
-            theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-          }`}>
+          <p className={`max-w-2xl mx-auto text-lg leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+            }`}>
             {t('about.description')}
           </p>
         </motion.div>
@@ -116,40 +107,6 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {stats.map((stat, i) => (
             <StatCard key={i} {...stat} started={inView} />
-          ))}
-        </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cards.map((card, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="card-cyber group relative overflow-hidden"
-            >
-              {/* Glow accent */}
-              <div
-                className="absolute top-0 left-0 w-full h-0.5 transition-all duration-300"
-                style={{
-                  background: `linear-gradient(90deg, transparent, ${card.color}, transparent)`,
-                  opacity: 0.6,
-                }}
-              />
-              <div className="text-4xl mb-4">{card.icon}</div>
-              <h3 className={`font-display text-lg font-bold mb-2 ${
-                theme === 'dark' ? 'text-white' : 'text-light-text'
-              }`} style={{ color: card.color }}>
-                {card.title}
-              </h3>
-              <p className={`text-sm leading-relaxed ${
-                theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-              }`}>
-                {card.desc}
-              </p>
-            </motion.div>
           ))}
         </div>
       </div>

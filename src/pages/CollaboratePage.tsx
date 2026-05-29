@@ -1,33 +1,17 @@
-import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { FaUniversity, FaBuilding, FaHandshake, FaGlobe, FaCheckCircle } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
+import Logo from '@/components/ui/Logo'
 
-const partnerTypes = [
-  { key: 'type1', icon: FaUniversity, color: '#00FF88' },
-  { key: 'type2', icon: FaBuilding, color: '#00D4FF' },
-  { key: 'type3', icon: FaHandshake, color: '#8B5CF6' },
-  { key: 'type4', icon: FaGlobe, color: '#FFD700' },
-]
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+}
 
 const CollaboratePage: React.FC = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const [formState, setFormState] = useState({ name: '', org: '', email: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = (e: React.MouseEvent) => {
-    e.preventDefault()
-    // Future: POST to backend API
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
-    setFormState({ name: '', org: '', email: '', message: '' })
-  }
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -50,66 +34,13 @@ const CollaboratePage: React.FC = () => {
             {t('collaborate.description')}
           </p>
         </motion.div>
-
-        {/* Partnership types */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-20"
-        >
-          <h2 className={`font-display text-xl font-bold text-center mb-10 ${theme === 'dark' ? 'text-white' : 'text-light-text'
-            }`}>
-            {t('collaborate.types_title')}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {partnerTypes.map(({ key, icon: Icon, color }, i) => (
-              <motion.div
-                key={key}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{ y: -6 }}
-                className={`relative p-6 rounded-2xl border text-center group overflow-hidden transition-all duration-300 ${theme === 'dark'
-                  ? 'bg-cyber-card border-cyber-border/40 hover:border-opacity-60'
-                  : 'bg-white border-light-border shadow-sm hover:shadow-md'
-                  }`}
-                style={{ ['--card-color' as string]: color }}
-                onMouseEnter={e => {
-                  const el = e.currentTarget
-                  el.style.borderColor = `${color}40`
-                  el.style.boxShadow = `0 0 30px ${color}20`
-                }}
-                onMouseLeave={e => {
-                  const el = e.currentTarget
-                  el.style.borderColor = ''
-                  el.style.boxShadow = ''
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 right-0 h-1 transition-all duration-300"
-                  style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)`, opacity: 0.7 }}
-                />
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 400 }}
-                  className="inline-flex p-4 rounded-2xl mb-4"
-                  style={{ background: `${color}15`, color }}
-                >
-                  <Icon size={28} />
-                </motion.div>
-                <h3 className={`font-display font-bold text-sm mb-3 ${theme === 'dark' ? 'text-white' : 'text-light-text'
-                  }`}>
-                  {t(`collaborate.${key}_title`)}
-                </h3>
-                <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-                  }`}>
-                  {t(`collaborate.${key}_desc`)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+        <motion.div variants={itemVariants} className="flex justify-center mb-6">
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Logo size={100} showText={true} />
+          </motion.div>
         </motion.div>
 
         {/* Two-column layout: form + embed */}

@@ -139,7 +139,7 @@ const HeroSection: React.FC = () => {
           ].map((hex, i) => (
             <motion.polygon
               key={i}
-              points={`${hex.size/2},0 ${hex.size},${hex.size*0.25} ${hex.size},${hex.size*0.75} ${hex.size/2},${hex.size} 0,${hex.size*0.75} 0,${hex.size*0.25}`}
+              points={`${hex.size / 2},0 ${hex.size},${hex.size * 0.25} ${hex.size},${hex.size * 0.75} ${hex.size / 2},${hex.size} 0,${hex.size * 0.75} 0,${hex.size * 0.25}`}
               fill="none"
               stroke={i % 2 === 0
                 ? (theme === 'dark' ? '#00FF88' : '#2563EB')
@@ -168,11 +168,10 @@ const HeroSection: React.FC = () => {
       >
         {/* Status badge */}
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-display tracking-widest ${
-            theme === 'dark'
-              ? 'border-cyber-green/30 bg-cyber-green/5 text-cyber-green'
-              : 'border-light-blue/30 bg-light-blue/5 text-light-blue'
-          }`}>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-display tracking-widest ${theme === 'dark'
+            ? 'border-cyber-green/30 bg-cyber-green/5 text-cyber-green'
+            : 'border-light-blue/30 bg-light-blue/5 text-light-blue'
+            }`}>
             <motion.span
               animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -205,9 +204,8 @@ const HeroSection: React.FC = () => {
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className={`text-xl md:text-2xl font-light mb-3 ${
-            theme === 'dark' ? 'text-slate-300' : 'text-light-text/80'
-          }`}
+          className={`text-xl md:text-2xl font-light mb-3 ${theme === 'dark' ? 'text-slate-300' : 'text-light-text/80'
+            }`}
         >
           {t('hero.subtitle')}
         </motion.p>
@@ -215,9 +213,8 @@ const HeroSection: React.FC = () => {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className={`text-sm md:text-base font-display tracking-widest uppercase mb-8 ${
-            theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-          }`}
+          className={`text-sm md:text-base font-display tracking-widest uppercase mb-8 ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
+            }`}
         >
           {t('hero.tagline')}
         </motion.p>
@@ -225,11 +222,10 @@ const HeroSection: React.FC = () => {
         {/* Terminal text */}
         <motion.div
           variants={itemVariants}
-          className={`inline-block mb-10 px-4 py-2 rounded-lg font-display text-sm ${
-            theme === 'dark'
-              ? 'bg-black/60 border border-cyber-green/20 text-cyber-green'
-              : 'bg-white/80 border border-light-blue/20 text-light-blue'
-          }`}
+          className={`inline-block mb-10 px-4 py-2 rounded-lg font-display text-sm ${theme === 'dark'
+            ? 'bg-black/60 border border-cyber-green/20 text-cyber-green'
+            : 'bg-white/80 border border-light-blue/20 text-light-blue'
+            }`}
         >
           <span ref={terminalRef}></span>
           <motion.span
@@ -265,26 +261,6 @@ const HeroSection: React.FC = () => {
           >
             {t('hero.cta_explore')}
           </motion.a>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className={`text-xs font-display tracking-widest uppercase ${
-          theme === 'dark' ? 'text-slate-600' : 'text-light-muted/60'
-        }`}>
-          {t('hero.scroll')}
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <FaChevronDown className={theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'} />
         </motion.div>
       </motion.div>
     </section>
