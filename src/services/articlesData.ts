@@ -45,7 +45,7 @@ export const articles: Article[] = [
     id: '3',
     title: 'What is Cybersecurity? Why Study It and How to Get Started',
     languge: 'Hebrew/עברית',
-    excerpt: 'An introductory article explaining the fundamentals of cybersecurity, its importance in today’s digital world, and practical steps for beginners to start learning and building a career in cybersecurity.',
+    excerpt: 'An introductory article explaining the fundamentals of cybersecurity, its importance in todays digital world, and practical steps for beginners to start learning and building a career in cybersecurity.',
     category: 'cybersecurity',
     author: 'Ido Gutman',
     date: '2026-05-21',
