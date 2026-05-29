@@ -3,6 +3,8 @@ import { motion, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaTrophy, FaMicrophone, FaTools, FaUsers, FaStar } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
+import AboutStats from '@/components/sections/subSections/AboutStats'
+
 
 const timelineEvents = [
   { year: '2022', title: 'Community Founded', desc: 'CyberIsrael was established by a group of passionate hackers and security researchers.', icon: '🚀', color: '#00FF88' },
@@ -13,15 +15,6 @@ const timelineEvents = [
   { year: '2024', title: '1000 Members', desc: 'Doubled our community to over 1,000 active members across Israel.', icon: '🎯', color: '#00FF88' },
   { year: '2025', title: 'National Recognition', desc: 'Partnered with leading Israeli cybersecurity organizations and universities.', icon: '🌟', color: '#00D4FF' },
   { year: '2025', title: '2000+ Members', desc: 'Growing stronger every day. The future of Israeli cyber is here.', icon: '💎', color: '#8B5CF6' },
-]
-
-const ctfResults = [
-  { name: 'CTFtime Ranking', result: 'Top 50', details: 'National ranking 2024', color: '#FFD700' },
-  { name: 'HackTheBox University CTF', result: 'Top 15%', details: 'International competition', color: '#00D4FF' },
-  { name: 'PicoCTF 2024', result: '2nd Israel', details: 'National leaderboard', color: '#00FF88' },
-  { name: 'CSAW CTF', result: 'Finals', details: 'Qualified for finals', color: '#8B5CF6' },
-  { name: 'DCTF Nationals', result: '1st Place', details: 'Israeli national CTF', color: '#FF0080' },
-  { name: 'IDF Cyber Challenge', result: 'Finalists', details: 'Defense challenge', color: '#FFD700' },
 ]
 
 const galleryImages = [
@@ -43,9 +36,8 @@ const StatBlock: React.FC<{ value: string; label: string; icon: React.ReactNode;
         </div>
       </div>
       <div className="font-display text-3xl font-black mb-1" style={{ color }}>{value}</div>
-      <div className={`text-xs font-display tracking-widest uppercase ${
-        theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-      }`}>{label}</div>
+      <div className={`text-xs font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+        }`}>{label}</div>
     </div>
   )
 }
@@ -75,69 +67,7 @@ const ImpactPage: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-          <StatBlock value="2000+" label="Members" icon={<FaUsers size={20} />} color="#00FF88" />
-          <StatBlock value="50+" label="CTFs" icon={<FaTrophy size={20} />} color="#FFD700" />
-          <StatBlock value="15+" label="Conferences" icon={<FaMicrophone size={20} />} color="#00D4FF" />
-          <StatBlock value="30+" label="Workshops" icon={<FaTools size={20} />} color="#8B5CF6" />
-        </div>
-
-        {/* CTF Results */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <h2 className={`font-display text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-light-text'}`}>
-            {t('impact.ctf_section')}
-          </h2>
-          <p className={`text-sm mb-8 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'}`}>
-            {t('impact.ctf_desc')}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {ctfResults.map((ctf, i) => (
-              <motion.div
-                key={ctf.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ scale: 1.03 }}
-                className={`p-5 rounded-xl border group transition-all duration-300 ${
-                  theme === 'dark'
-                    ? 'bg-cyber-card border-cyber-border/40'
-                    : 'bg-white border-light-border shadow-sm'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className={`font-display text-sm font-bold ${
-                      theme === 'dark' ? 'text-white' : 'text-light-text'
-                    }`}>{ctf.name}</div>
-                    <div className={`text-xs mt-1 ${
-                      theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-                    }`}>{ctf.details}</div>
-                  </div>
-                  <div className="font-display text-2xl font-black" style={{ color: ctf.color }}>
-                    {ctf.result}
-                  </div>
-                </div>
-                <div className="h-0.5 mt-4 rounded-full" style={{ background: `${ctf.color}40` }}>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '70%' }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + i * 0.05, duration: 0.8 }}
-                    className="h-full rounded-full"
-                    style={{ background: ctf.color }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <AboutStats started={true} />
 
         {/* Photo Gallery */}
         <motion.div
@@ -171,11 +101,10 @@ const ImpactPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                   <span className="text-white text-xs font-display">{img.caption}</span>
                 </div>
-                <div className={`absolute top-2 left-2 px-2 py-0.5 rounded-full text-xs font-display tracking-widest uppercase ${
-                  theme === 'dark'
-                    ? 'bg-cyber-card/80 text-cyber-teal border border-cyber-teal/30'
-                    : 'bg-white/80 text-light-teal border border-light-teal/30'
-                }`}>
+                <div className={`absolute top-2 left-2 px-2 py-0.5 rounded-full text-xs font-display tracking-widest uppercase ${theme === 'dark'
+                  ? 'bg-cyber-card/80 text-cyber-teal border border-cyber-teal/30'
+                  : 'bg-white/80 text-light-teal border border-light-teal/30'
+                  }`}>
                   {img.type}
                 </div>
               </motion.div>
@@ -195,9 +124,8 @@ const ImpactPage: React.FC = () => {
           </h2>
           <div className="relative mt-10">
             {/* Center line */}
-            <div className={`absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 ${
-              theme === 'dark' ? 'bg-cyber-border/50' : 'bg-light-border'
-            }`} />
+            <div className={`absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 ${theme === 'dark' ? 'bg-cyber-border/50' : 'bg-light-border'
+              }`} />
 
             <div className="space-y-10">
               {timelineEvents.map((event, i) => (
@@ -214,14 +142,12 @@ const ImpactPage: React.FC = () => {
                     <div className="font-display text-xs tracking-widest" style={{ color: event.color }}>
                       {event.year}
                     </div>
-                    <div className={`font-display font-bold text-sm mt-1 ${
-                      theme === 'dark' ? 'text-white' : 'text-light-text'
-                    }`}>
+                    <div className={`font-display font-bold text-sm mt-1 ${theme === 'dark' ? 'text-white' : 'text-light-text'
+                      }`}>
                       {event.title}
                     </div>
-                    <div className={`text-xs mt-1 ${
-                      theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-                    }`}>
+                    <div className={`text-xs mt-1 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+                      }`}>
                       {event.desc}
                     </div>
                   </div>
@@ -257,19 +183,17 @@ const ImpactPage: React.FC = () => {
           <h2 className={`font-display text-2xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-light-text'}`}>
             {t('impact.growth_section')}
           </h2>
-          <div className={`p-8 rounded-2xl border ${
-            theme === 'dark'
-              ? 'bg-cyber-card border-cyber-green/20'
-              : 'bg-white border-light-blue/20 shadow-sm'
-          }`}>
+          <div className={`p-8 rounded-2xl border ${theme === 'dark'
+            ? 'bg-cyber-card border-cyber-green/20'
+            : 'bg-white border-light-blue/20 shadow-sm'
+            }`}>
             <div className="flex items-center justify-center gap-2 mb-2">
               <FaStar className="text-yellow-400" />
               <span className="font-display text-5xl font-black gradient-text">2,000+</span>
               <FaStar className="text-yellow-400" />
             </div>
-            <p className={`text-sm font-display tracking-widest uppercase ${
-              theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-            }`}>
+            <p className={`text-sm font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+              }`}>
               Active Community Members & Growing
             </p>
           </div>
