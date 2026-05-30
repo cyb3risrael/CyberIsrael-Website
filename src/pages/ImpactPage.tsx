@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { FaTrophy, FaMicrophone, FaTools, FaUsers, FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import AboutStats from '@/components/sections/subSections/AboutStats'
+/*import InstagramEmbed from '@/components/ui/instagram/InstagramEmbedProps'*/
 
 
 const timelineEvents = [
@@ -68,6 +69,10 @@ const ImpactPage: React.FC = () => {
         </motion.div>
 
         <AboutStats started={true} />
+
+        { /* Instagram Posts */}
+        { /* <InstagramEmbed url="https://www.instagram.com/p/DXuiFBEiLtQ/" */}
+
 
         {/* Photo Gallery */}
         <motion.div
