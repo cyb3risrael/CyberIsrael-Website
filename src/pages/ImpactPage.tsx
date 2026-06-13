@@ -19,29 +19,13 @@ const timelineEvents = [
 ]
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-  { src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80', caption: 'Team Workshop Session', type: 'workshop' },
-  { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80', caption: 'CTF Competition', type: 'ctf' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', caption: 'Hacking Lab Session', type: 'workshop' },
-  { src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80', caption: 'Community Meetup', type: 'community' },
-  { src: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&q=80', caption: 'Technical Talk', type: 'conference' },
+  { src: '/media/images/image1.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image2.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image3.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image4.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image5.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image6.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
 ]
-
-const StatBlock: React.FC<{ value: string; label: string; icon: React.ReactNode; color: string }> = ({ value, label, icon, color }) => {
-  const { theme } = useTheme()
-  return (
-    <div className={`card-cyber text-center group`}>
-      <div className="flex justify-center mb-3">
-        <div className="p-3 rounded-xl" style={{ background: `${color}15`, color }}>
-          {icon}
-        </div>
-      </div>
-      <div className="font-display text-3xl font-black mb-1" style={{ color }}>{value}</div>
-      <div className={`text-xs font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-        }`}>{label}</div>
-    </div>
-  )
-}
 
 const ImpactPage: React.FC = () => {
   const { t } = useTranslation()
@@ -72,7 +56,6 @@ const ImpactPage: React.FC = () => {
 
         { /* Instagram Posts */}
         { /* <InstagramEmbed url="https://www.instagram.com/p/DXuiFBEiLtQ/" */}
-
 
         {/* Photo Gallery */}
         <motion.div
@@ -114,6 +97,47 @@ const ImpactPage: React.FC = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Featured Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div
+            className={`relative rounded-3xl overflow-hidden border ${theme === 'dark'
+              ? 'bg-cyber-card border-cyber-green/30'
+              : 'bg-white border-light-blue/20 shadow-sm'
+              }`}
+          >
+            <div className="aspect-video w-full">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/shorts/1t7jHD319DE"
+                title={t('impact.video_title')}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="p-6">
+              <h3
+                className={`font-display text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-light-text'
+                  }`}
+              >
+                {t('impact.video_title')}
+              </h3>
+
+              <p
+                className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+                  }`}
+              >
+                {t('impact.video_desc')}
+              </p>
+            </div>
           </div>
         </motion.div>
 

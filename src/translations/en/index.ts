@@ -134,6 +134,8 @@ const en = {
     growth_section: 'Community Growth',
     growth_desc: 'More than 1,700 members and growing every day.',
     timeline_title: 'Our Journey',
+    video_title: 'Online CTF competition',
+    video_desc: 'CTF competition highlights and community moments.',
   },
   collaborate: {
     title: 'Collaborate With Us',

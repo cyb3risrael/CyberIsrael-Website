@@ -132,6 +132,8 @@ const he = {
     growth_section: 'צמיחת הקהילה',
     growth_desc: 'למעלה מ-1,700 חברים וגדלים בכל יום.',
     timeline_title: 'המסע שלנו',
+    video_title: 'תחרות CTF מקוונת',
+    video_desc: 'רגעים מתחרות ה CTF האחרונה'
   },
   collaborate: {
     title: 'שתפו איתנו פעולה',
