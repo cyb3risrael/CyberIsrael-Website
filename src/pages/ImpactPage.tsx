@@ -19,12 +19,12 @@ const timelineEvents = [
 ]
 
 const galleryImages = [
-  { src: '/media/images/image1.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-  { src: '/media/images/image2.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-  { src: '/media/images/image3.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-  { src: '/media/images/image4.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-  { src: '/media/images/image5.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-  { src: '/media/images/image6.jpg', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image1.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image2.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image3.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image4.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image9.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
+  { src: '/media/images/image6.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
 ]
 
 const ImpactPage: React.FC = () => {
@@ -32,6 +32,7 @@ const ImpactPage: React.FC = () => {
   const { theme } = useTheme()
   const timelineRef = useRef<HTMLDivElement>(null)
   const timelineInView = useInView(timelineRef, { once: true })
+
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -74,16 +75,13 @@ const ImpactPage: React.FC = () => {
             {galleryImages.map((img, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.03 }}
                 className="relative group overflow-hidden rounded-xl aspect-video"
               >
                 <img
                   src={img.src}
                   alt={img.caption}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
@@ -102,21 +100,19 @@ const ImpactPage: React.FC = () => {
 
         {/* Featured Video */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20"
+          whileHover={{ scale: 1.03 }}
+          className="relative group overflow-hidden rounded-xl aspect-video flex justify-center items-center"
         >
           <div
-            className={`relative rounded-3xl overflow-hidden border ${theme === 'dark'
+            className={`relative w-fit rounded-3xl overflow-hidden border ${theme === 'dark'
               ? 'bg-cyber-card border-cyber-green/30'
               : 'bg-white border-light-blue/20 shadow-sm'
               }`}
           >
-            <div className="aspect-video w-full">
+            <div className="aspect-video w-[800px] max-w-full">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/shorts/1t7jHD319DE"
+                src="https://www.youtube.com/embed/1t7jHD319DE"
                 title={t('impact.video_title')}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
