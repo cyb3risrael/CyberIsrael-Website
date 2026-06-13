@@ -79,8 +79,8 @@ const StatCard: React.FC<StatCardProps> = ({
 
             <div
                 className={`text-sm font-display tracking-widest uppercase ${theme === 'dark'
-                        ? 'text-slate-400'
-                        : 'text-light-muted'
+                    ? 'text-slate-400'
+                    : 'text-light-muted'
                     }`}
             >
                 {label}
@@ -119,7 +119,7 @@ const AboutStats: React.FC<AboutStatsProps> = ({ started }) => {
             delay: 0.2
         },
         {
-            value: 2,
+            value: 3,
             label: t('about.stat_years'),
             suffix: '',
             icon: <FaStar size={22} />,

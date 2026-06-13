@@ -1,22 +1,115 @@
-import React, { useRef } from 'react'
+import React, { useRef, memo } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaStar } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import AboutStats from '@/components/sections/subSections/AboutStats'
-/*import InstagramEmbed from '@/components/ui/instagram/InstagramEmbedProps'*/
+// import InstagramSection from '@/components/sections/subSections/InstagramSection'
 
+/* ---------------- STATIC DATA (MODULE SCOPE) ---------------- */
 
 const timelineEvents = [
-  { year: '2022', title: 'Community Founded', desc: 'CyberIsrael was established by a group of passionate hackers and security researchers.', icon: '🚀', color: '#00FF88' },
-  { year: '2022', title: 'First CTF Team', desc: 'Assembled our first competitive CTF team, competing in PicoCTF and national competitions.', icon: '🏁', color: '#00D4FF' },
-  { year: '2023', title: '500 Members', desc: 'Reached our first major community milestone with 500 active members.', icon: '👥', color: '#8B5CF6' },
-  { year: '2023', title: 'First Workshop Series', desc: 'Launched our recurring workshop program covering web exploitation, pwn, and reversing.', icon: '🔧', color: '#FFD700' },
-  { year: '2024', title: 'Physical Conference', desc: 'Hosted our first in-person community conference with 200+ attendees.', icon: '🎤', color: '#FF0080' },
-  { year: '2024', title: '1000 Members', desc: 'Doubled our community to over 1,000 active members across Israel.', icon: '🎯', color: '#00FF88' },
-  { year: '2025', title: 'National Recognition', desc: 'Partnered with leading Israeli cybersecurity organizations and universities.', icon: '🌟', color: '#00D4FF' },
-  { year: '2025', title: '2000+ Members', desc: 'Growing stronger every day. The future of Israeli cyber is here.', icon: '💎', color: '#8B5CF6' },
-]
+  {
+    year: '2024',
+    title: 'Community Launch',
+    desc: 'A WhatsApp group founded by Omer to help students prepare for technological military roles (Gama Cyber), built around shared learning and guidance.',
+    icon: '🚀',
+    color: '#00FF88'
+  },
+  {
+    year: '2024',
+    title: 'Early Growth (100+ Members)',
+    desc: 'The community quickly grew as students joined to study cybersecurity and programming together.',
+    icon: '👥',
+    color: '#00D4FF'
+  },
+  {
+    year: '2024',
+    title: 'School Outreach Begins',
+    desc: 'Omer and Gal which joined to help Omer, started giving short lectures in schools, helping students prepare for advanced tech and military tracks.',
+    icon: '🎤',
+    color: '#FF0080'
+  },
+  {
+    year: '2024',
+    title: 'Zero-to-Hero Roadmap',
+    desc: 'Ido joined and created a structured cybersecurity roadmap with weekly challenges, resources, and learning paths.',
+    icon: '🔧',
+    color: '#FFD700'
+  },
+  {
+    year: '2024',
+    title: '500 Members',
+    desc: 'The community surpassed 500 members and continued growing rapidly across Israel.',
+    icon: '🎯',
+    color: '#8B5CF6'
+  },
+
+  {
+    year: '2025',
+    title: 'CyberIsrael Rebrand',
+    desc: 'The community evolved into CyberIsrael, expanding into structured groups for research, development, challenges, and career support.',
+    icon: '🌟',
+    color: '#00FF88'
+  },
+  {
+    year: '2025',
+    title: 'Community Leadership Expansion',
+    desc: 'Amichai and Noam joined as managers, helping run beginner groups and support new learners.',
+    icon: '👥',
+    color: '#00D4FF'
+  },
+  {
+    year: '2025',
+    title: 'Bar-Ilan Conference',
+    desc: 'Hosted the first CyberIsrael conference at Bar-Ilan University with 100+ attendees in partnership with the university\'s cyber club.',
+    icon: '🎤',
+    color: '#FF0080'
+  },
+  {
+    year: '2025',
+    title: '1000 Members',
+    desc: 'The community surpassed 1,000 members across Israel.',
+    icon: '🎯',
+    color: '#8B5CF6'
+  },
+
+  {
+    year: '2026',
+    title: 'Leadership & Scaling',
+    desc: 'Adam joined as CEO alongside Omer and Ido to help scale and structure the growing community.',
+    icon: '🚀',
+    color: '#00FF88'
+  },
+  {
+    year: '2026',
+    title: 'Content Platforms Launch',
+    desc: 'CyberIsrael launched Instagram and TikTok, posting weekly cybersecurity content on malware, cryptography, and more.',
+    icon: '📱',
+    color: '#00D4FF'
+  },
+  {
+    year: '2026',
+    title: 'First Discord CTF',
+    desc: 'Hosted a Discord-based cybersecurity CTF competition with over 50 participants.',
+    icon: '🏁',
+    color: '#FFD700'
+  },
+  {
+    year: '2026',
+    title: '1500+ Members',
+    desc: 'The community grew beyond 1,500 members and continues expanding rapidly.',
+    icon: '💎',
+    color: '#8B5CF6'
+  },
+  {
+    year: '2026',
+    title: 'Online Lecture Series',
+    desc: 'Launched structured online lectures covering cybersecurity topics and career guidance, including AI Malware by Chen Shiri.',
+    icon: '🌟',
+    color: '#FF0080'
+  }
+] as const
 
 const galleryImages = [
   { src: '/media/images/image1.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
@@ -25,207 +118,324 @@ const galleryImages = [
   { src: '/media/images/image4.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
   { src: '/media/images/image9.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
   { src: '/media/images/image6.webp', caption: 'CyberIsrael Conference 2024', type: 'conference' },
-]
+] as const
+
+type TimelineEventType = typeof timelineEvents[number]
+
+/* ---------------- SKELETON ---------------- */
+
+const ImageSkeleton = memo(() => (
+  <div className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800" />
+))
+
+/* ---------------- LAZY IMAGE (STABLE) ---------------- */
+
+const LazyImage = memo(function LazyImage({
+  src,
+  alt,
+  className,
+  width,
+  height
+}: {
+  src: string
+  alt: string
+  className?: string
+  width?: number
+  height?: number
+}) {
+  const imgRef = React.useRef<HTMLImageElement | null>(null)
+  const [loaded, setLoaded] = React.useState(false)
+
+  React.useEffect(() => {
+    // Reset for the incoming src.
+    setLoaded(false)
+
+    // Race-condition guard: if the browser already finished loading the image
+    // (e.g. it was served from cache and `load` fired synchronously during
+    // React's commit phase — before this effect ran), `img.complete` will
+    // already be `true` and the `onLoad` event will never fire again.
+    // Recover immediately so the skeleton doesn't get permanently stuck.
+    if (imgRef.current?.complete) {
+      setLoaded(true)
+    }
+  }, [src])
+
+  return (
+    <div className="relative aspect-video w-full overflow-hidden">
+      {!loaded && <ImageSkeleton />}
+
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
+        className={`${className} absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'
+          }`}
+      />
+    </div>
+  )
+})
+
+/* ---------------- 🔥 FULLY ISOLATED GALLERY (CRITICAL FIX) ---------------- */
+
+const GallerySection = memo(function GallerySection({
+  theme
+}: {
+  theme: string
+}) {
+  const badgeClass =
+    theme === 'dark'
+      ? 'bg-cyber-card/80 text-cyber-teal border border-cyber-teal/30'
+      : 'bg-white/80 text-light-teal border border-light-teal/30'
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {galleryImages.map((img) => (
+        <div key={img.src} className="relative group overflow-hidden rounded-xl aspect-video">
+          <LazyImage
+            src={img.src}
+            alt={img.caption}
+            width={640}
+            height={360}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+            <span className="text-white text-xs font-display">{img.caption}</span>
+          </div>
+
+          <div className={`absolute top-2 left-2 px-2 py-0.5 rounded-full text-xs font-display uppercase ${badgeClass}`}>
+            {img.type}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+})
+
+
+
+
+
+
+/* ---------------- TIMELINE ITEM ---------------- */
+
+const TimelineItem = memo(function TimelineItem({
+  event,
+  index
+}: {
+  event: TimelineEventType
+  index: number
+}) {
+  const isEven = (index & 1) === 0
+
+  const motionDelay = index > 6 ? 0.3 : index * 0.05
+  const iconDelay = index > 6 ? 0.4 : index * 0.05 + 0.1
+
+  const textAlign = isEven ? 'text-right pr-8' : 'text-left pl-8'
+  const rowDir = isEven ? 'flex-row' : 'flex-row-reverse'
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: isEven ? -20 : 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ delay: motionDelay, duration: 0.35 }}
+      className={`relative flex items-center ${rowDir}`}
+      style={{ willChange: 'transform, opacity' }}
+    >
+      <div className={`w-5/12 ${textAlign}`}>
+        <div className="font-display text-xs tracking-widest" style={{ color: event.color }}>
+          {event.year}
+        </div>
+        <div className="font-display font-bold text-sm mt-1 text-white">
+          {event.title}
+        </div>
+        <div className="text-xs mt-1 text-slate-400">
+          {event.desc}
+        </div>
+      </div>
+
+      <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ delay: iconDelay, duration: 0.25 }}
+          className="w-10 h-10 rounded-full flex items-center justify-center text-lg z-10"
+          style={{
+            background: `${event.color}20`,
+            border: `2px solid ${event.color}60`
+          }}
+        >
+          {event.icon}
+        </motion.div>
+      </div>
+
+      <div className="w-5/12" />
+    </motion.div>
+  )
+})
+
+/* ---------------- PAGE ---------------- */
 
 const ImpactPage: React.FC = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const timelineRef = useRef<HTMLDivElement>(null)
-  const timelineInView = useInView(timelineRef, { once: true })
 
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const timelineInView = useInView(timelineRef, { once: true, margin: '-100px' })
+
+  const isDark = theme === 'dark'
+
+  const text = {
+    title: t('impact.title'),
+    subtitle: t('impact.subtitle'),
+    conferences_section: t('impact.conferences_section'),
+    conferences_desc: t('impact.conferences_desc'),
+    video_title: t('impact.video_title'),
+    video_desc: t('impact.video_desc'),
+    timeline_title: t('impact.timeline_title'),
+    growth_section: t('impact.growth_section')
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* Hero */}
+        {/* HERO */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
           <h1 className="section-title">
-            <span className={theme === 'dark' ? 'text-white' : 'text-light-text'}>{t('impact.title')}</span>
+            <span className={isDark ? 'text-white' : 'text-light-text'}>
+              {text.title}
+            </span>
           </h1>
-          <p className={`text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'}`}>
-            {t('impact.subtitle')}
+
+          <p className={`text-lg ${isDark ? 'text-slate-400' : 'text-light-muted'}`}>
+            {text.subtitle}
           </p>
         </motion.div>
 
         <AboutStats started={true} />
 
-        { /* Instagram Posts */}
-        { /* <InstagramEmbed url="https://www.instagram.com/p/DXuiFBEiLtQ/" */}
-
-        {/* Photo Gallery */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <h2 className={`font-display text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-light-text'}`}>
-            {t('impact.conferences_section')}
+        {/* 🔥 ISOLATED GALLERY (NO i18n RE-RENDER IMPACT) */}
+        <div className="mb-20">
+          <h2 className={`font-display text-2xl font-bold mb-2 ${isDark ? 'text-white' : 'text-light-text'}`}>
+            {text.conferences_section}
           </h2>
-          <p className={`text-sm mb-8 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'}`}>
-            {t('impact.conferences_desc')}
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                className="relative group overflow-hidden rounded-xl aspect-video"
-              >
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                  <span className="text-white text-xs font-display">{img.caption}</span>
-                </div>
-                <div className={`absolute top-2 left-2 px-2 py-0.5 rounded-full text-xs font-display tracking-widest uppercase ${theme === 'dark'
-                  ? 'bg-cyber-card/80 text-cyber-teal border border-cyber-teal/30'
-                  : 'bg-white/80 text-light-teal border border-light-teal/30'
-                  }`}>
-                  {img.type}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Featured Video */}
-        <motion.div
-          whileHover={{ scale: 1.03 }}
-          className="relative group overflow-hidden rounded-xl aspect-video flex justify-center items-center"
-        >
-          <div
-            className={`relative w-fit rounded-3xl overflow-hidden border ${theme === 'dark'
-              ? 'bg-cyber-card border-cyber-green/30'
-              : 'bg-white border-light-blue/20 shadow-sm'
-              }`}
-          >
-            <div className="aspect-video w-[800px] max-w-full">
+          <p className={`text-sm mb-8 ${isDark ? 'text-slate-400' : 'text-light-muted'}`}>
+            {text.conferences_desc}
+          </p>
+
+          <GallerySection theme={theme} />
+        </div>
+
+        {/* VIDEO */}
+        <div className="relative flex justify-center items-center">
+          <div className={`relative w-fit rounded-3xl overflow-hidden border ${isDark ? 'bg-cyber-card border-cyber-green/30' : 'bg-white border-light-blue/20 shadow-sm'
+            }`}>
+            <div className="aspect-video w-[800px] max-w-full bg-black/10">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/1t7jHD319DE"
-                title={t('impact.video_title')}
+                title={text.video_title}
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
 
             <div className="p-6">
-              <h3
-                className={`font-display text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-light-text'
-                  }`}
-              >
-                {t('impact.video_title')}
+              <h3 className={`font-display text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-light-text'}`}>
+                {text.video_title}
               </h3>
-
-              <p
-                className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-                  }`}
-              >
-                {t('impact.video_desc')}
+              <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-light-muted'}`}>
+                {text.video_desc}
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Timeline */}
-        <motion.div
-          ref={timelineRef}
-          initial={{ opacity: 0 }}
-          animate={timelineInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className={`font-display text-2xl font-bold mb-2 text-center ${theme === 'dark' ? 'text-white' : 'text-light-text'}`}>
-            {t('impact.timeline_title')}
+        {/* INSTAGRAM */}
+
+        {/*
+        <InstagramSection
+          title="CyberIsrael on Instagram"
+          subtitle="Real posts from our community"
+          columns={3}
+          posts={[
+            {
+              id: '1',
+              url: 'https://www.instagram.com/p/DYQCDEDiIRi/?utm_source=ig_embed&amp'
+            },
+            {
+              id: '2',
+              url: 'https://www.instagram.com/p/DYQCDEDiIRi/?utm_source=ig_embed&amp'
+            },
+            {
+              id: '3',
+              url: 'https://www.instagram.com/p/DYQCDEDiIRi/?utm_source=ig_embed&amp'
+            }
+          ]}
+        />
+        */}
+
+        {/* TIMELINE */}
+        <div ref={timelineRef} className="mt-20">
+          <h2 className={`font-display text-2xl font-bold mb-2 text-center ${isDark ? 'text-white' : 'text-light-text'}`}>
+            {text.timeline_title}
           </h2>
+
           <div className="relative mt-10">
-            {/* Center line */}
-            <div className={`absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 ${theme === 'dark' ? 'bg-cyber-border/50' : 'bg-light-border'
+            <div className={`absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 ${isDark ? 'bg-cyber-border/50' : 'bg-light-border'
               }`} />
 
             <div className="space-y-10">
-              {timelineEvents.map((event, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6 }}
-                  className={`relative flex items-center ${i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-0`}
-                >
-                  {/* Content */}
-                  <div className={`w-5/12 ${i % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="font-display text-xs tracking-widest" style={{ color: event.color }}>
-                      {event.year}
-                    </div>
-                    <div className={`font-display font-bold text-sm mt-1 ${theme === 'dark' ? 'text-white' : 'text-light-text'
-                      }`}>
-                      {event.title}
-                    </div>
-                    <div className={`text-xs mt-1 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-                      }`}>
-                      {event.desc}
-                    </div>
-                  </div>
-
-                  {/* Center dot */}
-                  <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 + 0.2 }}
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-lg z-10"
-                      style={{ background: `${event.color}20`, border: `2px solid ${event.color}60` }}
-                    >
-                      {event.icon}
-                    </motion.div>
-                  </div>
-
-                  <div className="w-5/12" />
-                </motion.div>
-              ))}
+              {timelineInView &&
+                timelineEvents.map((event, i) => (
+                  <TimelineItem key={`${event.year}-${i}`} event={event} index={i} />
+                ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Growth Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <h2 className={`font-display text-2xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-light-text'}`}>
-            {t('impact.growth_section')}
+        {/* GROWTH */}
+        <div className="mt-20 text-center">
+          <h2 className={`font-display text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-light-text'}`}>
+            {text.growth_section}
           </h2>
-          <div className={`p-8 rounded-2xl border ${theme === 'dark'
-            ? 'bg-cyber-card border-cyber-green/20'
-            : 'bg-white border-light-blue/20 shadow-sm'
+
+          <div className={`p-8 rounded-2xl border ${isDark ? 'bg-cyber-card border-cyber-green/20' : 'bg-white border-light-blue/20 shadow-sm'
             }`}>
             <div className="flex items-center justify-center gap-2 mb-2">
               <FaStar className="text-yellow-400" />
-              <span className="font-display text-5xl font-black gradient-text">2,000+</span>
+              <span className="font-display text-5xl font-black gradient-text">
+                2,000+
+              </span>
               <FaStar className="text-yellow-400" />
             </div>
-            <p className={`text-sm font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+
+            <p className={`text-sm font-display tracking-widest uppercase ${isDark ? 'text-slate-400' : 'text-light-muted'
               }`}>
               Active Community Members & Growing
             </p>
           </div>
-        </motion.div>
+        </div>
+
       </div>
     </div>
   )
 }
 
-export default ImpactPage
+export default memo(ImpactPage)
