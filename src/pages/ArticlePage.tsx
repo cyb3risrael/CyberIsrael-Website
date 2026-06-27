@@ -1,8 +1,38 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { getArticleBySlug } from '@/services/articlesData'
 import ArticleSidebar from '@/components/layout/ArticleSidebar'
+import remarkGfm from "remark-gfm";
+import { visit } from "unist-util-visit";
+
+function remarkGithubAlerts() {
+    return (tree: any) => {
+        visit(tree, "blockquote", (node) => {
+            const firstChild = node.children?.[0];
+
+            if (firstChild?.type === "paragraph") {
+                const text = firstChild.children?.[0]?.value;
+
+                if (!text) return;
+
+                const match = text.match(/^\[\!(TIP|IMPORTANT|WARNING|NOTE)\]\s*/);
+
+                if (match) {
+                    const type = match[1].toLowerCase();
+
+                    firstChild.children[0].value = text.replace(match[0], "");
+
+                    node.data = {
+                        hProperties: {
+                            className: `callout callout-${type}`,
+                        },
+                    };
+                }
+            }
+        });
+    };
+}
 
 type ArticleType = 'md' | null
 
@@ -14,15 +44,15 @@ const ArticlePage: React.FC = () => {
     const [loading, setLoading] = useState(true)
 
     const article = slug ? getArticleBySlug(slug) : undefined
+    const imageBase = slug ? `/articles/${slug}/` : '' // Folder that contains the current article's images
 
     useEffect(() => {
         if (!slug) return
-
         const load = async () => {
             setLoading(true)
 
             try {
-                const mdPath = `/articles/${slug}.md`
+                const mdPath = `/articles/${slug}/${slug}.md`
                 const res = await fetch(mdPath)
 
                 if (!res.ok) throw new Error('MD not found')
@@ -82,7 +112,36 @@ const ArticlePage: React.FC = () => {
                                 prose-strong:text-purple-100
                                 prose-li:text-purple-50/90
                             ">
-                                <ReactMarkdown>
+                                <ReactMarkdown remarkPlugins={[remarkGfm, remarkGithubAlerts]}
+                                    components={{
+                                        img: ({ src = '', alt = '', ...props }) => (
+                                            <img
+                                                src={
+                                                    src.startsWith('http') || src.startsWith('/')
+                                                        ? src
+                                                        : imageBase + src
+                                                }
+                                                alt={alt}
+                                                className="rounded-xl my-6 mx-auto"
+                                                {...props}
+                                            />
+                                        ),
+
+                                        a: ({ href = '', children }) => {
+                                            // internal link → use React Router
+                                            if (href.startsWith('/')) {
+                                                return <Link to={href}>{children}</Link>
+                                            }
+
+                                            // external link → normal anchor
+                                            return (
+                                                <a href={href} target="_blank" rel="noopener noreferrer">
+                                                    {children}
+                                                </a>
+                                            )
+                                        },
+                                    }}
+                                >
                                     {markdown}
                                 </ReactMarkdown>
                             </article>

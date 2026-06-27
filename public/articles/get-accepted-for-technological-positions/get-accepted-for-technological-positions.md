@@ -75,13 +75,13 @@
 
 ****נפרט על כל מסלול בהרחבה במאמרים הבאים:
 
-[איך להתכונן למיוני גאמ”א סייבר?](https://app.notion.com/p/35447f9b8cda8011b18bd4e1a794a5ee?pvs=21)
+[איך להתכונן למיוני גאמ”א סייבר?](/coming-soon)
 
-[מה זה שחקים?](https://app.notion.com/p/35447f9b8cda80128204e8fa8aec7a62?pvs=21)
+[מה זה שחקים?](/coming-soon)
 
-[מה זה כלל חמ”ן?](https://app.notion.com/p/35947f9b8cda80dda418de628b121edc?pvs=21)
+[מה זה כלל חמ”ן?](/coming-soon)
 
-[מה זה מיוני אשכול מקצועות המחשב?](https://app.notion.com/p/35947f9b8cda80a6a7f7eb398a7718ad?pvs=21)
+[מה זה מיוני אשכול מקצועות המחשב?](/coming-soon)
 
 # אקדמיה
 
@@ -90,28 +90,28 @@
 
 נפרט על כל מסלול בהרחבה במאמרים הבאים:
 
-[מה זה עתודה אקדמית?](https://app.notion.com/p/35947f9b8cda80c3a8ece1ea03042fa3?pvs=21)
+[מה זה עתודה אקדמית?](/coming-soon)
 
-[מה זה תלפיות, חבצלות וארזים?](https://app.notion.com/p/35947f9b8cda80a5bae2e9a7e596f19f?pvs=21)
+[מה זה תלפיות, חבצלות וארזים?](/coming-soon)
 
-[מה זה אקדמיזציה?](https://app.notion.com/p/38547f9b8cda80fd8444c6308b21b2c1?pvs=21)
+[מה זה אקדמיזציה?](/coming-soon)
 
-[מה זה י”ג וי”ד?](https://app.notion.com/p/38547f9b8cda80d38449c3e03858bd4f?pvs=21)
+[מה זה י”ג וי”ד?](/coming-soon/:grades13-14)
 
 ………………………..
 
-![image.png](image%201.png)
+![image.png](image1.png)
 
-![image.png](image%202.png)
+![image.png](image2.png)
 
 אז לסיכום מה הם האופציות?
 
-![image.png](image%203.png)
+![image.png](image3.png)
 
 מה אפשר לעשות?
 
-![image.png](image%204.png)
+![image.png](image4.png)
 
 וואלה באמת דגשים חשובים
 
-![image.png](image%205.png)
+![image.png](image5.png)

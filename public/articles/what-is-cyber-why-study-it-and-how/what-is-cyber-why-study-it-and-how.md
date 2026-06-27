@@ -132,7 +132,7 @@ https://en.wikipedia.org/wiki/Stuxnet
 
 אנחנו יצרנו 2 מהם שאנחנו ממליצים לכם לקרוא ולעקוב אחריהם; אחת לעולם הפיתוח, ואחת לעולם המחקר כי כמו שאמרנו התחום כולל בתוכו את 2 עולמות התוכן האלו. 
 
-[RoadMap כללי לעולם הפיתוח](https://app.notion.com/p/RoadMap-33f47f9b8cda807e939cf5daebb33fbb?pvs=21) 
+[RoadMap כללי לעולם הפיתוח](/articles/software-development-roadmap) 
 
 [RoadMap כללי לעולם המחקר](https://app.notion.com/p/RoadMap-35447f9b8cda804bae65f3448a99e7a4?pvs=21) 
 

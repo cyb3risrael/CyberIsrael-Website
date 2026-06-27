@@ -1,12 +1,12 @@
 # RoadMap כללי לעולם הפיתוח
-
 ## **ברוכים הבאים ל-RoadMap לעולם הפיתוח**
 
-עולם חשוב ועיקרי בהייטק שבעצם הכל מתבסס עליו, סטארטפריסטים, חברות קטנות, חברות גדולות ואפילו מעצמות ה- FAANG, כולם בסוף מסתמכים על ה- “פרודקט” או בעברית המוצר הטכנלוגי.
-
-לא נרחיב מעבר על העולם כי יש לנו מאמר אחר מומלץ ממש לקרוא על העולם:
-
-[עולם הפיתוח - למה הוא מרתק? מה הוא מכיל? ואיך להיכנס אליו? ](https://app.notion.com/p/35347f9b8cda8023b4a9ceb0917fb1c2?pvs=21) 
+> [!NOTE]
+> עולם חשוב ועיקרי בהייטק שבעצם הכל מתבסס עליו, סטארטפריסטים, חברות קטנות, חברות גדולות ואפילו מעצמות ה- FAANG, כולם בסוף מסתמכים על ה- “פרודקט” או בעברית המוצר הטכנלוגי.
+>
+> לא נרחיב מעבר על העולם כי יש לנו מאמר אחר מומלץ ממש לקרוא על העולם:
+>
+> [עולם הפיתוח - למה הוא מרתק? מה הוא מכיל? ואיך להיכנס אליו? ](/coming-soon) 
 
 **במאמר זה נלמד איך “ללמוד” ולהיכנס לתחום אפילו מאפס ידע!!!**
 
@@ -14,9 +14,14 @@
 
 *למי שרוצה בסוף יש DUMP מקורות גדול + ספרים וכו להיכנס לתחומים ספציפים יותר בפיתוח.***
 
+---
+
 ### **המפתח המתחיל:**
 
 ****אם יש לכם אפס ידע, באתם לכאן התחלתם לקרוא ולא הבנתם חלק מהמילים הקודמות שכתבתי ופשוט הסתקרנתם לאיך אפשר בכלל לתפוס את התחום הענק הזה - הגעתם למקום הנכון.
+
+> [!IMPORTANT]
+> אל תנסו להבין הכל לעומק כבר עכשיו - המטרה כאן היא חשיפה והבנה כללית של התחום.
 
 נתחיל בחיפוש כללי באינטרנט תנסו למצוא תשובות לשאלות שתמיד חשבתם לשאול אבל בסוף לא עשיתם זאת. 
 הייתי ממש פותח יוטיוב  / גוגל / כל מקום אחר:
@@ -29,19 +34,23 @@
 
 **מקורות טובים להתחלה: (תחפשו עוד!!)**
 
-https://youtu.be/3gXy1MnJXv0?si=7EWO9dc3TYXeMcCI
+[You go to google.com on a new computer. What happens next](https://youtu.be/3gXy1MnJXv0?si=7EWO9dc3TYXeMcCI)
 
-https://www.geeksforgeeks.org/computer-science-fundamentals/introduction-to-programming-languages/
+[Introduction to Programming Languages - GeeksforGeeks](https://www.geeksforgeeks.org/computer-science-fundamentals/introduction-to-programming-languages/)
 
-https://en.wikipedia.org/wiki/Operating_system
+[Operating System - Wikipedia](https://en.wikipedia.org/wiki/Operating_system)
 
-https://youtu.be/7_LPdttKXPc?si=1o0zzaqXKoprOUra
+
+[How the Internet Works in 5 Minutes](https://youtu.be/7_LPdttKXPc?si=1o0zzaqXKoprOUra)
 
 זאת תהיה נקודה טובה יחסית להתחלה, היא גם מספיק מצומצת בשביל לא לשרוף יותר מידי זמן וגם מספיק רחבה בשביל שתוכלו להכיר את התחומים ולהבין מה מעניין אתכם להעמיק בו אחר כך שתהיו מנוסים יותר?
 
 **לאחר מכן זה הזמן שלכם ממש לנסות להיכנס לתחום וזה אומר ללמוד לתכנת (והרבה)!** 
 
 **ממליץ מאוד להתחיל ספציפית עם השפות Java או C#**
+> [!TIP]
+> עדיף לבחור שפה אחת בלבד ולהישאר איתה עד שאתם מרגישים נוח לכתוב פרויקטים שלמים לבד.
+
 
 ***הסיבה היא שהן שפות לא קשות מידי להתחלה אבל לא קלות מידי להמשך*** (מה הכוונה אתם שואלים? well יש שפות שמטפלות לכם בהמון דברים לבד ואז אחרכך קשה להיכנס ללמוד שפה יותר low level-ית ויש שפות שבדיוק הפוף).
 **בנוסף אלו שפות ששמות דגש על עקרונות חשובים מאוד שתצטרכו בהמשך כמו OOP.**
@@ -60,32 +69,35 @@ https://youtu.be/7_LPdttKXPc?si=1o0zzaqXKoprOUra
 - …
 
 **Java:**
-https://youtube.com/playlist?list=PLZPZq0r_RZOOj_NOZYq_R2PECIMglLemc&si=jkb1Cjnvq7LKeknp
 
-http://www.youtube.com/@CodingWithJohn
+[Java Complete Course Playlist](https://youtube.com/playlist?list=PLZPZq0r_RZOOj_NOZYq_R2PECIMglLemc&si=jkb1Cjnvq7LKeknp)
 
-https://medium.com/javarevisited/top-5-books-to-learn-core-java-programming-from-scratch-in-2025-36a8105b7a12
+[Coding With John](http://www.youtube.com/@CodingWithJohn)
 
-https://hyperskill.org/courses
+[Top 5 Books to Learn Core Java Programming](https://medium.com/javarevisited/top-5-books-to-learn-core-java-programming-from-scratch-in-2025-36a8105b7a12)
+
+[Hyperskill Programming Courses](https://hyperskill.org/courses)
 
 **C#:**
-https://youtube.com/playlist?list=PLZPZq0r_RZOPNy28FDBys3GVP2LiaIyP_&si=-SBnDHVGLYj_Jo2b
 
-https://learn.microsoft.com/en-us/dotnet/csharp/
+[C# Programming Full Playlist](https://youtube.com/playlist?list=PLZPZq0r_RZOPNy28FDBys3GVP2LiaIyP_&si=-SBnDHVGLYj_Jo2b)
 
-https://blog.elmah.io/top-10-books-every-net-c-developer-should-read/
+[Microsoft Learn - C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/)
 
-https://www.geeksforgeeks.org/
+[Top 10 Books Every .NET C# Developer Should Read](https://blog.elmah.io/top-10-books-every-net-c-developer-should-read/)
 
-https://app.datacamp.com/learn/courses
+[GeeksforGeeks Computer Science Portal](https://www.geeksforgeeks.org/)
 
-https://www.w3schools.com/
+[DataCamp - Learn Courses](https://app.datacamp.com/learn/courses)
 
-https://medium.com/
+[W3Schools](https://www.w3schools.com/)
 
-https://github.com/practical-tutorials/project-based-learning
+[Medium - Tech Articles](https://medium.com/)
 
-https://www.khanacademy.org/computing/computer-programming
+[Project Based Learning Github](https://github.com/practical-tutorials/project-based-learning)
+
+[Khan Academy - Computer Programming]
+(https://www.khanacademy.org/computing/computer-programming)
 
 [Google](https://www.google.com/)
 
@@ -102,6 +114,9 @@ https://www.khanacademy.org/computing/computer-programming
 - [ ]  **התנסתי והכנתי לפחות אחד שניים** מהפרוייקטים הבאים (בעדיפות כמה שיותר):
 
 **פרוייקטים לעשות כדי לדעת שאני מוכן להתקדם לשלב הבא:**
+> [!IMPORTANT]
+> פרוייקטים הם החלק הכי חשוב בשלב הזה, בלי לבנות אחד אין הבנה ובסיס אמיתי להמשך!
+
 
 - מחשבון חכם אינטרקטיבי ממשק Command line / UI
 - משחק Game of life (מגניב רצח)
@@ -117,6 +132,8 @@ https://www.khanacademy.org/computing/computer-programming
 - מערכת הזמנות למסעדה
 - אתר אישי (portfolio) עם HTML/CSS/JS
 - …….. כל דבר אחר בערך
+
+---
 
 ### **המפתח הממוצע:**
 
@@ -145,11 +162,11 @@ https://www.khanacademy.org/computing/computer-programming
 **קיצור תחקרו הרבה ותפתחו המון!!!**
 קצת קישורים אבל לא הרבה כדי שתתנסו לבד וגם לא בהכרח מהדברים שכתבתי למעלה כדי לחשוף אתכם ליותר תחומים:
 
-https://projecteuler.net/about
-https://dsa-visualizer-delta.vercel.app/
-https://refactoring.guru/design-patterns
-https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/
-https://leetcode.com/
+[About - Project Euler](https://projecteuler.net/about)
+[DSA Visualizer](https://dsa-visualizer-delta.vercel.app/)
+[Design Patterns - Refactoring.Guru](https://refactoring.guru/design-patterns)
+[SOLID Principles in Programming (GeeksforGeeks)](https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/)
+[LeetCode](https://leetcode.com/)
 
 #### איך אני יכול לדעת שסיימתי?
 
@@ -175,11 +192,19 @@ https://leetcode.com/
 - מערכת ניהול קורסים
 - מערכת ניהול לוגים (dashboard)
 
+> [!TIP]
+> תשתדלו להתמקד בשניים שלושה נושאים מקס אחרי חשיפה כללית של התחום שעשינו בשלבים קודמים, כדי באמת לאפשר לכם להבין מה מעניין אתכם
+
+
 יאללה שלב הבא!
+
+---
 
 ### **המפתח המתקדם:**
 
-תכלס כאן זה הזמן שלכם להעמיק בכל הדברים שמצאתם שמעניינים אתכם במהלך המסע הזה… זה אומר Get on ותבנו פרוייקט שמגניב אתכם!!! (לבנות פרוייקטים זאת אחת הדרכים הכי טובות ללמידה)…
+> [!IMPORTANT]
+> תכלס כאן זה הזמן שלכם להעמיק בכל הדברים שמצאתם שמעניינים אתכם במהלך המסע הזה… זה אומר Get on ותבנו פרוייקט שמגניב אתכם!!! (לבנות פרוייקטים זאת אחת הדרכים הכי טובות ללמידה)…
+
 
 רעיונות (בכוונה אני מכוון אתכם לדברים שלא בהכרח נחשפתם אליהם ממקודם):
 
@@ -203,21 +228,15 @@ https://leetcode.com/
 
 [Developer Roadmaps - roadmap.sh](https://roadmap.sh/)
 
-https://www.digitalwhisper.co.il/
+[Digital Whisper](https://www.digitalwhisper.co.il/)
+[Machine Learning Crash Course - Google Developers](https://developers.google.com/machine-learning/crash-course?hl=he)
+[Kaggle Competitions](https://www.kaggle.com/competitions)
+[TensorFlow Playground - Neural Network Visualization](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.64850&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
+[OU-22961 Deep Learning GitHub Repository](https://github.com/Idan-Alter/OU-22961-Deep-Learning)
+[NVIDIA Training](https://www.nvidia.com/en-us/training/)
+[Cisco Networking Academy - Curriculum](https://www.netacad.com/launch?tab=curriculum&id=dc0847b7-d6fc-4597-bc31-38ddd6b07a2f&view=85ac3a97-7f9d-547f-8ca6-a7161c819b4b)
+[Bioconductor](https://www.bioconductor.org/)
 
-https://developers.google.com/machine-learning/crash-course?hl=he
-
-https://www.kaggle.com/competitions
-
-https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.64850&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
-
-https://github.com/Idan-Alter/OU-22961-Deep-Learning
-
-https://www.nvidia.com/en-us/training/
-
-https://www.netacad.com/launch?tab=curriculum&id=dc0847b7-d6fc-4597-bc31-38ddd6b07a2f&view=85ac3a97-7f9d-547f-8ca6-a7161c819b4b
-
-https://www.bioconductor.org/
 
 **קיצור תרחיבו על עוד דברים ולא רק מה שכתבתי עליו (באמא שלכם) זה הולך להיות אחד המסעות המעניינים ביותר שתעברו!!!**
 
@@ -229,6 +248,8 @@ https://www.bioconductor.org/
 You made it DO what you wanted it to DO, and you realized that you were a god 
 ~ Uncle Bob**
 > 
+
+---
 
 **רשימה ענקית של פרוייקטים טובים לעשות כדי להשתפר ולהתמקד למקום אחד ולמצוא מה שמעניין אתכם בפיתוח:
 למי שרוצה עוד פרוייקטים של AI תזכרו Kaggle מלמעלה ^^^**
@@ -266,13 +287,13 @@ You made it DO what you wanted it to DO, and you realized that you were a god
 
 #### **ערוצי ה-Security אהובים:**
 
-https://www.youtube.com/@LowLevelTV
+[LowLevel TV](https://www.youtube.com/@LowLevelTV)
 
 ***Low level previously known as Low level learning***
 
 Security Researcher במקצועו, אחד הערוצים הטובים ביותר שהוא מנהל ומלמד מרמה של אפס ידע את הצופים על אירועים בעולם הסייבר, חולשות, low level כמובן וכו…
 
-https://www.youtube.com/@_JohnHammond
+[_JohnHammond](https://www.youtube.com/@_JohnHammond)
 
 אחלה בחור שמלמד במילים שלו:
 
@@ -280,11 +301,11 @@ Free Cybersecurity Education and Ethical Hacking
 
 הוא הכיר לי את העולם של PicoCTF וכו…
 
-https://www.youtube.com/@NetworkChuck
+[NetworkChuck](https://www.youtube.com/@NetworkChuck)
 
 מעולה לכל תחום הרשתות / לינוקס - סיפרתי עליו כבר למעלה.
 
-https://www.youtube.com/@BarakGonen
+[BarakGonen / Cyberheart](https://www.youtube.com/@BarakGonen)
 
 ברק גונן, בוגר תלפיות וקצין במיל' 8200, יוצר תוכן למלש"בים שרוצים להתמיין לקורסי הדגל הטכנולוגיים של מודיעין וללומדי תואר ראשון במדעי המחשב.
 
@@ -294,17 +315,17 @@ https://www.youtube.com/@BarakGonen
 
 החומר לא מסווג והוא מוגש חינם כדי לחזק את החינוך הטכנולוגי. כל ספרי הלימוד ניתנים להורדה חינם מאתר המרכז לחינוך סייבר.
 
-https://www.youtube.com/@Computerphile
+[Computerphile](https://www.youtube.com/@Computerphile)
 
  ערוץ חזק שמתקשר בין היתר לרשתות אבל מתפצל לתחום רחב יותר של דברים במדעי המחשב (…Data analysis,AI, Cryptography) - **מעולה ללימוד הצפנות** / **אלגוריתמי גיבוב**
 
-https://www.youtube.com/@dr-Jonas-Birch
+[dr-Jonas-Birch](https://www.youtube.com/@dr-Jonas-Birch)
 
 **בחור שמלמד איך לעשות פרוייקטים מאוד מסובכים פרקטית!!!**
 
 מהבחור הזה תלמדו לבנות Torlizer ובעזרתו להתחבר לDark web (במחשבה שנייה אל תתחברו לDARKNET לא!!! אבל תבנו פרוייקט מגניב כזה), או לבנות מכונה וירטואלית מאפס, לבנות את הAnti Virus הבא ועוד המון המון Low level stuff, עם פרוייקטים שיתנו לכם רעיונות מדהימים!
 
-https://www.youtube.com/@CodeBullet
+[CodeBullet](https://www.youtube.com/@CodeBullet)
 
 **בחור מצחיק ומגניב**, שילמד אתכם איך הוא עשה כל מיני פרויקטים בתחומי
 
@@ -316,7 +337,7 @@ High level (AI, Game dev etc…)
 
 **קישורים למקורות לרעיונות לפרויקטים (כולל מדריכים לאיך להכין אותם ולשפר אותם):**
 
-https://github.com/practical-tutorials/project-based-learning
+[Github Project-Based-Learning](https://github.com/practical-tutorials/project-based-learning)
 
 ### קישורים לאתרים מעניינים ב- AI/ML/DEEP LEARNING
 
@@ -326,24 +347,22 @@ https://github.com/practical-tutorials/project-based-learning
 
 לפני שנכנסים לאתרים מומלץ מאוד להיכנס לפלייליסט הבא ולראות את השנים שלושה פרקים הראשונים:
 
-https://youtu.be/aircAruvnKk?si=KiwZuHVkVjDoKR71
-
-https://mml-book.github.io/book/mml-book.pdf
+[3Blue1Brown - Neural Networks](https://youtu.be/aircAruvnKk?si=KiwZuHVkVjDoKR71)
+[Mathematics for Machine Learning Book](https://mml-book.github.io/book/mml-book.pdf)
 
 **ניתן לקרוא את הספר למי שקשה לו עם המתמטיקה ^^^**
 
-- https://jalammar.github.io/feedforward-neural-networks-visual-interactive/ **-**
+- [Feedforward Neural Networks – Visual and Interactive Guide (Jay Alammar)](https://jalammar.github.io/feedforward-neural-networks-visual-interactive/) **-**
 - **הסבר ויזואלי למי שמעדיף לקרוא במקום לראות סרטון (בלי לחסוך ביותר מידי מתמטיקה חשובה)**
-- https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.64850&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
-
+- [TensorFlow Neural Network Playground](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.64850&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 **- אתר שיעזור לכם להבין רשתות נוירונים ויזואלית (אתם תבחרו הכל, כמה שכבות, כמה נוירונים בכל שכבה, פונקציות**
 
 אקטיבציה וכו…)
 
-- https://developers.google.com/machine-learning/crash-course?hl=he
+- [Machine Learning Crash Course - Google Developers](https://developers.google.com/machine-learning/crash-course?hl=he)
 - **Crash course של גוגל ^^^**
 
-https://www.kaggle.com/competitions**-**
+[Kaggle Competitions](https://www.kaggle.com/competitions)**-**
 
 תחרויות לפתח מודלי AI למלא צרכים שונים, אנשים
 
@@ -353,7 +372,7 @@ https://www.kaggle.com/competitions**-**
 
 #### **למקצוענים מכוון ל-Deep learning:**
 
-- https://d2l.ai/-
+- [Dive into Deep Learning](https://d2l.ai/-)
 - ספר zero to hero **מאוד מתקדם**
 
 #### **למתחילים מכוון לסקיוריטי:**

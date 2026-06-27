@@ -6,7 +6,7 @@ import { useTheme } from '@/context/ThemeContext'
 import { articles, categoryColors, type Article } from '@/services/articlesData'
 import { useNavigate } from "react-router-dom"
 
-const categories = ['all', 'web', 'pwn', 'crypto', 'forensics', 'malware', 'osint', 'ctf']
+// const categories = ['all', 'web', 'pwn', 'crypto', 'forensics', 'malware', 'osint', 'ctf']
 
 const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, index }) => {
   const { theme } = useTheme()
@@ -157,7 +157,8 @@ const ArticlesPage: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Category filters */}
+        {/* Category filters TODO ADD IN THE FUTURE!!! */}
+        {/*
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -183,6 +184,7 @@ const ArticlesPage: React.FC = () => {
             </motion.button>
           ))}
         </motion.div>
+         */}
       </div>
 
       {/* Articles grid */}

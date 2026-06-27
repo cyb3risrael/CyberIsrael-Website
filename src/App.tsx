@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { LangProvider } from '@/context/LangContext'
 import RootLayout from '@/components/layout/RootLayout'
+import ComingSoonPage from './pages/ComingSoonPage'
 
 // Lazy load pages for code splitting
 const HomePage = lazy(() => import('@/pages/HomePage'))
@@ -32,6 +33,8 @@ const App: React.FC = () => {
                 <Route index element={<HomePage />} />
                 <Route path="articles" element={<ArticlesPage />} />
                 <Route path="articles/:slug" element={<ArticlePage />} />
+                <Route path="/coming-soon" element={<ComingSoonPage />} />
+                <Route path="/coming-soon/:name" element={<ComingSoonPage />} />
                 <Route path="impact" element={<ImpactPage />} />
                 <Route path="collaborate" element={<CollaboratePage />} />
                 <Route path="*" element={<NotFoundPage />} />

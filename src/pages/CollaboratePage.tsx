@@ -34,6 +34,8 @@ const CollaboratePage: React.FC = () => {
             {t('collaborate.description')}
           </p>
         </motion.div>
+
+        { /* Decorative animated logo */}
         <motion.div variants={itemVariants} className="flex justify-center mb-6">
           <motion.div
             animate={{ y: [0, -12, 0] }}
