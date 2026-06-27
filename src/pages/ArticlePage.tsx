@@ -1,118 +1,100 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import { getArticleBySlug } from '@/services/articlesData'
+import ArticleSidebar from '@/components/layout/ArticleSidebar'
 
-type ArticleType = 'html' | 'md' | 'pdf' | null
+type ArticleType = 'md' | null
 
 const ArticlePage: React.FC = () => {
     const { slug } = useParams()
 
-    const [type, setType] = useState<ArticleType>(null)
+    const [type] = useState<ArticleType>('md')
     const [markdown, setMarkdown] = useState('')
     const [loading, setLoading] = useState(true)
+
+    const article = slug ? getArticleBySlug(slug) : undefined
 
     useEffect(() => {
         if (!slug) return
 
-        const checkFiles = async () => {
+        const load = async () => {
             setLoading(true)
 
-            const htmlPath = `/articles/${slug}/index.html`
-            const mdPath = `/articles/${slug}/index.md`
-            const pdfPath = `/articles/${slug}.pdf`
-
-            console.log(`slug is ${slug}`)
-
             try {
-                // ---- CHECK MARKDOWN FIRST ----
-                const mdRes = await fetch(mdPath)
+                const mdPath = `/articles/${slug}.md`
+                const res = await fetch(mdPath)
 
-                const mdType = mdRes.headers.get('content-type') || ''
+                if (!res.ok) throw new Error('MD not found')
 
-                if (
-                    mdRes.ok &&
-                    (
-                        mdType.includes('text/markdown') ||
-                        mdType.includes('text/plain')
-                    )
-                ) {
-                    const mdContent = await mdRes.text()
-
-                    setMarkdown(mdContent)
-                    setType('md')
-                    return
-                }
-
-                // ---- HTML ----
-                const htmlRes = await fetch(htmlPath, { method: 'HEAD' })
-
-                const htmlType = htmlRes.headers.get('content-type') || ''
-
-                if (htmlRes.ok && htmlType.includes('text/html')) {
-                    setType('html')
-                    return
-                }
-
-                // ---- PDF ----
-                const pdfRes = await fetch(pdfPath, { method: 'HEAD' })
-
-                const pdfType = pdfRes.headers.get('content-type') || ''
-
-                if (pdfRes.ok && pdfType.includes('pdf')) {
-                    setType('pdf')
-                    return
-                }
-
-                setType(null)
-
+                const text = await res.text()
+                setMarkdown(text)
             } catch (err) {
-                console.error(err)
-                setType(null)
+                setMarkdown('')
             } finally {
                 setLoading(false)
             }
         }
 
-        checkFiles()
+        load()
     }, [slug])
 
     return (
-        <div className="min-h-screen pt-24 pb-20">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="min-h-screen pt-24 pb-20 bg-gradient-to-b from-[#090510] via-[#12081e] to-[#090510]">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex gap-8 items-start">
 
-                {loading && (
-                    <div className="text-center text-white text-xl">
-                        Loading...
-                    </div>
-                )}
+                {/* SIDEBAR */}
+                <div className="w-72 shrink-0">
+                    <ArticleSidebar currentSlug={slug || ''} />
+                </div>
 
-                {!loading && type === 'html' && (
-                    <iframe
-                        src={`/articles/${slug}/index.html`}
-                        className="w-full h-[calc(100vh-160px)] border-0 rounded-xl"
-                    />
-                )}
+                {/* MAIN ARTICLE */}
+                <div className="flex-1 min-w-0 max-w-4xl mx-auto">
+                    {loading && (
+                        <div className="text-center text-purple-200 text-lg">
+                            Loading article...
+                        </div>
+                    )}
 
-                {!loading && type === 'pdf' && (
-                    <iframe
-                        src={`/articles/${slug}.pdf`}
-                        className="w-full h-[calc(100vh-160px)] border-0 rounded-xl"
-                    />
-                )}
+                    {!loading && type === 'md' && article && (
+                        <div className="w-full rounded-3xl border border-purple-500/20 bg-purple-950/20 backdrop-blur-md shadow-2xl shadow-purple-900/30 p-6 md:p-10">
 
-                {!loading && type === 'md' && (
-                    <article className="prose prose-invert max-w-none">
-                        <ReactMarkdown>
-                            {markdown}
-                        </ReactMarkdown>
-                    </article>
-                )}
+                            <h1 className="text-3xl md:text-4xl font-bold text-purple-100 mb-6">
+                                {article.title}
+                            </h1>
 
-                {!loading && type === null && (
-                    <div className="text-center text-white text-xl">
-                        Article not found
-                    </div>
-                )}
+                            <div className="text-purple-300 text-sm mb-8 flex gap-4 flex-wrap">
+                                <span>{article.author}</span>
+                                <span>•</span>
+                                <span>{article.date}</span>
+                                <span>•</span>
+                                <span>{article.readTime} min read</span>
+                            </div>
+
+                            <article className="prose prose-invert max-w-none w-full
+                                
+                                prose-headings:text-purple-100
+                                prose-p:text-purple-50/90
+                                prose-a:text-violet-300 hover:prose-a:text-violet-200
+                                prose-code:text-violet-200
+                                prose-pre:bg-purple-950
+                                prose-blockquote:border-purple-500
+                                prose-strong:text-purple-100
+                                prose-li:text-purple-50/90
+                            ">
+                                <ReactMarkdown>
+                                    {markdown}
+                                </ReactMarkdown>
+                            </article>
+                        </div>
+                    )}
+
+                    {!loading && !article && (
+                        <div className="text-center text-red-300 text-xl">
+                            Article not found
+                        </div>
+                    )}
+                </div>
 
             </div>
         </div>
@@ -120,4 +102,3 @@ const ArticlePage: React.FC = () => {
 }
 
 export default ArticlePage
-

@@ -68,11 +68,5 @@ export const categoryColors: Record<string, { bg: string; text: string; border: 
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {
-  return articles.find((article) => {
-    const lastPart = article.href.split('/').pop() // "roadmap.html"
-    if (!lastPart) return false
-
-    const articleSlug = lastPart.replace('.html', '')
-    return articleSlug === slug
-  })
+  return articles.find(a => a.href === slug)
 }
