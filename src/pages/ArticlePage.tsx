@@ -79,7 +79,7 @@ const ArticlePage: React.FC = () => {
                 </div>
 
                 {/* MAIN ARTICLE */}
-                <div className="flex-1 min-w-0 max-w-4xl mx-auto">
+                <div className="flex-1 min-w-0 w-full max-w-none md:max-w-4xl mx-auto">
                     {loading && (
                         <div className="text-center text-purple-200 text-lg">
                             Loading article...
