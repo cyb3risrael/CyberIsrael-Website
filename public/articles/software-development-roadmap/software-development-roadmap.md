@@ -96,8 +96,7 @@
 
 [Project Based Learning Github](https://github.com/practical-tutorials/project-based-learning)
 
-[Khan Academy - Computer Programming]
-(https://www.khanacademy.org/computing/computer-programming)
+[Khan Academy - Computer Programming](https://www.khanacademy.org/computing/computer-programming)
 
 [Google](https://www.google.com/)
 
