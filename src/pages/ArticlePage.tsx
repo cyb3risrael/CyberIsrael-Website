@@ -71,7 +71,7 @@ const ArticlePage: React.FC = () => {
 
     return (
         <div className="min-h-screen pt-24 pb-20 bg-gradient-to-b from-[#090510] via-[#12081e] to-[#090510]">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex gap-8 items-start">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-8 items-start">
 
                 {/* SIDEBAR */}
                 <div className="w-72 shrink-0">
