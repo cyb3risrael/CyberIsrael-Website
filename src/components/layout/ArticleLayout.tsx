@@ -38,36 +38,24 @@ interface ArticleLayoutProps {
   children: React.ReactNode
 }
 
-// ── Avatar ────────────────────────────────────────────────────────────────────
-const Avatar: React.FC<{ initials: string; color?: string }> = ({ initials, color = '#00D4FF' }) => (
-  <div
-    className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-display font-bold flex-shrink-0"
-    style={{ background: `${color}20`, color, border: `1.5px solid ${color}40` }}
-  >
-    {initials}
-  </div>
-)
-
 // ── Share bar ─────────────────────────────────────────────────────────────────
 const ShareBar: React.FC<{ title: string }> = ({ title }) => {
   const { theme } = useTheme()
   const url = typeof window !== 'undefined' ? window.location.href : ''
 
   const copyLink = () => {
-    navigator.clipboard.writeText(url).catch(() => {})
+    navigator.clipboard.writeText(url).catch(() => { })
   }
 
-  const btnCls = `p-2.5 rounded-lg border transition-all duration-200 ${
-    theme === 'dark'
-      ? 'border-cyber-border/50 text-slate-400 hover:text-cyber-teal hover:border-cyber-teal/40 hover:bg-cyber-teal/5'
-      : 'border-light-border text-light-muted hover:text-light-blue hover:border-light-blue/40 hover:bg-light-blue/5'
-  }`
+  const btnCls = `p-2.5 rounded-lg border transition-all duration-200 ${theme === 'dark'
+    ? 'border-cyber-border/50 text-slate-400 hover:text-cyber-teal hover:border-cyber-teal/40 hover:bg-cyber-teal/5'
+    : 'border-light-border text-light-muted hover:text-light-blue hover:border-light-blue/40 hover:bg-light-blue/5'
+    }`
 
   return (
     <div className="flex items-center gap-2">
-      <span className={`text-xs font-display tracking-widest uppercase mr-1 ${
-        theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-      }`}>
+      <span className={`text-xs font-display tracking-widest uppercase mr-1 ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
+        }`}>
         <FaShare size={11} className="inline mr-1.5" />Share
       </span>
       <a
@@ -106,9 +94,8 @@ const RelatedArticles: React.FC<{ current: Article }> = ({ current }) => {
 
   return (
     <aside className="mt-12">
-      <h3 className={`font-display text-xs tracking-widest uppercase mb-5 ${
-        theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
-      }`}>
+      <h3 className={`font-display text-xs tracking-widest uppercase mb-5 ${theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
+        }`}>
         Related Articles
       </h3>
       <div className="space-y-3">
@@ -117,12 +104,11 @@ const RelatedArticles: React.FC<{ current: Article }> = ({ current }) => {
           return (
             <Link
               key={a.id}
-              to={`/articles/${a.slug}`}
-              className={`group flex gap-3 p-3 rounded-xl border transition-all duration-200 ${
-                theme === 'dark'
-                  ? 'border-cyber-border/40 hover:border-cyber-teal/30 bg-cyber-card/60'
-                  : 'border-light-border hover:border-light-teal/40 bg-white'
-              }`}
+              to={`/articles/${a.href}`}
+              className={`group flex gap-3 p-3 rounded-xl border transition-all duration-200 ${theme === 'dark'
+                ? 'border-cyber-border/40 hover:border-cyber-teal/30 bg-cyber-card/60'
+                : 'border-light-border hover:border-light-teal/40 bg-white'
+                }`}
             >
               <img
                 src={a.image}
@@ -136,11 +122,10 @@ const RelatedArticles: React.FC<{ current: Article }> = ({ current }) => {
                 >
                   {a.category}
                 </span>
-                <p className={`text-xs font-display font-semibold leading-snug mt-0.5 line-clamp-2 transition-colors ${
-                  theme === 'dark'
-                    ? 'text-slate-300 group-hover:text-cyber-teal'
-                    : 'text-light-text group-hover:text-light-teal'
-                }`}>
+                <p className={`text-xs font-display font-semibold leading-snug mt-0.5 line-clamp-2 transition-colors ${theme === 'dark'
+                  ? 'text-slate-300 group-hover:text-cyber-teal'
+                  : 'text-light-text group-hover:text-light-teal'
+                  }`}>
                   {a.title}
                 </p>
               </div>
@@ -207,11 +192,10 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Dark overlay gradient */}
-        <div className={`absolute inset-0 ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-cyber-black/70 via-cyber-black/50 to-cyber-black'
-            : 'bg-gradient-to-b from-white/30 via-white/20 to-light-bg'
-        }`} />
+        <div className={`absolute inset-0 ${theme === 'dark'
+          ? 'bg-gradient-to-b from-cyber-black/70 via-cyber-black/50 to-cyber-black'
+          : 'bg-gradient-to-b from-white/30 via-white/20 to-light-bg'
+          }`} />
         {/* Subtle grid over image */}
         <div className="absolute inset-0 cyber-grid-bg opacity-20" />
       </div>
@@ -232,11 +216,10 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
             >
               <Link
                 to="/articles"
-                className={`flex items-center gap-1.5 transition-colors duration-200 ${
-                  theme === 'dark'
-                    ? 'text-slate-500 hover:text-cyber-green'
-                    : 'text-light-muted hover:text-light-blue'
-                }`}
+                className={`flex items-center gap-1.5 transition-colors duration-200 ${theme === 'dark'
+                  ? 'text-slate-500 hover:text-cyber-green'
+                  : 'text-light-muted hover:text-light-blue'
+                  }`}
               >
                 <FaArrowLeft size={10} />
                 {t('nav.articles')}
@@ -255,11 +238,10 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className={`rounded-2xl border p-6 md:p-8 mb-8 ${
-                theme === 'dark'
-                  ? 'bg-cyber-card/90 border-cyber-border/50 shadow-glass'
-                  : 'bg-white/95 border-light-border shadow-glass-light'
-              }`}
+              className={`rounded-2xl border p-6 md:p-8 mb-8 ${theme === 'dark'
+                ? 'bg-cyber-card/90 border-cyber-border/50 shadow-glass'
+                : 'bg-white/95 border-light-border shadow-glass-light'
+                }`}
               style={{ backdropFilter: 'blur(16px)' }}
             >
               {/* Category badge */}
@@ -273,35 +255,29 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
               </div>
 
               {/* Title */}
-              <h1 className={`font-display text-2xl md:text-4xl font-bold leading-tight mb-5 ${
-                theme === 'dark' ? 'text-white' : 'text-light-text'
-              }`}>
+              <h1 className={`font-display text-2xl md:text-4xl font-bold leading-tight mb-5 ${theme === 'dark' ? 'text-white' : 'text-light-text'
+                }`}>
                 {article.title}
               </h1>
 
               {/* Excerpt */}
-              <p className={`text-base leading-relaxed mb-6 ${
-                theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-              }`}>
+              <p className={`text-base leading-relaxed mb-6 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+                }`}>
                 {article.excerpt}
               </p>
 
               {/* Meta row */}
-              <div className={`flex flex-wrap items-center gap-x-6 gap-y-3 pt-5 border-t ${
-                theme === 'dark' ? 'border-cyber-border/40' : 'border-light-border'
-              }`}>
+              <div className={`flex flex-wrap items-center gap-x-6 gap-y-3 pt-5 border-t ${theme === 'dark' ? 'border-cyber-border/40' : 'border-light-border'
+                }`}>
                 {/* Author */}
                 <div className="flex items-center gap-2">
-                  <Avatar initials={article.authorAvatar} color={cat.text} />
                   <div>
-                    <p className={`text-xs font-display font-semibold ${
-                      theme === 'dark' ? 'text-slate-300' : 'text-light-text'
-                    }`}>
+                    <p className={`text-xs font-display font-semibold ${theme === 'dark' ? 'text-slate-300' : 'text-light-text'
+                      }`}>
                       {article.author}
                     </p>
-                    <p className={`text-[10px] font-display tracking-widest uppercase ${
-                      theme === 'dark' ? 'text-slate-600' : 'text-slate-400'
-                    }`}>
+                    <p className={`text-[10px] font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-600' : 'text-slate-400'
+                      }`}>
                       Author
                     </p>
                   </div>
@@ -310,9 +286,8 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
                 {/* Date */}
                 <div className="flex items-center gap-1.5">
                   <FaUser size={11} className={theme === 'dark' ? 'text-slate-600' : 'text-slate-400'} />
-                  <span className={`text-xs font-display ${
-                    theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-                  }`}>
+                  <span className={`text-xs font-display ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
+                    }`}>
                     {formattedDate}
                   </span>
                 </div>
@@ -320,9 +295,8 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
                 {/* Reading time */}
                 <div className="flex items-center gap-1.5">
                   <FaClock size={11} className={theme === 'dark' ? 'text-slate-600' : 'text-slate-400'} />
-                  <span className={`text-xs font-display ${
-                    theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-                  }`}>
+                  <span className={`text-xs font-display ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
+                    }`}>
                     {article.readTime} {t('articles.min_read')}
                   </span>
                 </div>
@@ -338,11 +312,10 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
                 {article.tags.map(tag => (
                   <span
                     key={tag}
-                    className={`flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-display ${
-                      theme === 'dark'
-                        ? 'bg-slate-800/80 text-slate-400 border border-slate-700/80'
-                        : 'bg-slate-100 text-light-muted border border-slate-200'
-                    }`}
+                    className={`flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-display ${theme === 'dark'
+                      ? 'bg-slate-800/80 text-slate-400 border border-slate-700/80'
+                      : 'bg-slate-100 text-light-muted border border-slate-200'
+                      }`}
                   >
                     <FaTag size={9} />
                     {tag}
@@ -369,11 +342,10 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
             >
               <button
                 onClick={() => navigate('/articles')}
-                className={`flex items-center gap-2 text-sm font-display tracking-widest uppercase transition-all duration-200 group ${
-                  theme === 'dark'
-                    ? 'text-slate-500 hover:text-cyber-green'
-                    : 'text-light-muted hover:text-light-blue'
-                }`}
+                className={`flex items-center gap-2 text-sm font-display tracking-widest uppercase transition-all duration-200 group ${theme === 'dark'
+                  ? 'text-slate-500 hover:text-cyber-green'
+                  : 'text-light-muted hover:text-light-blue'
+                  }`}
               >
                 <FaArrowLeft
                   size={12}
@@ -392,23 +364,19 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className={`rounded-2xl border p-5 mb-6 ${
-                theme === 'dark'
-                  ? 'bg-cyber-card/80 border-cyber-border/50'
-                  : 'bg-white border-light-border shadow-sm'
-              }`}
+              className={`rounded-2xl border p-5 mb-6 ${theme === 'dark'
+                ? 'bg-cyber-card/80 border-cyber-border/50'
+                : 'bg-white border-light-border shadow-sm'
+                }`}
             >
-              <p className={`font-display text-xs tracking-widest uppercase mb-4 ${
-                theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
-              }`}>
+              <p className={`font-display text-xs tracking-widest uppercase mb-4 ${theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
+                }`}>
                 Author
               </p>
               <div className="flex items-center gap-3 mb-3">
-                <Avatar initials={article.authorAvatar} color={cat.text} />
                 <div>
-                  <p className={`font-display font-bold text-sm ${
-                    theme === 'dark' ? 'text-white' : 'text-light-text'
-                  }`}>
+                  <p className={`font-display font-bold text-sm ${theme === 'dark' ? 'text-white' : 'text-light-text'
+                    }`}>
                     {article.author}
                   </p>
                   <p className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'}`}>
@@ -423,15 +391,13 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.25, duration: 0.6 }}
-              className={`rounded-2xl border p-5 mb-6 space-y-3 ${
-                theme === 'dark'
-                  ? 'bg-cyber-card/80 border-cyber-border/50'
-                  : 'bg-white border-light-border shadow-sm'
-              }`}
+              className={`rounded-2xl border p-5 mb-6 space-y-3 ${theme === 'dark'
+                ? 'bg-cyber-card/80 border-cyber-border/50'
+                : 'bg-white border-light-border shadow-sm'
+                }`}
             >
-              <p className={`font-display text-xs tracking-widest uppercase ${
-                theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
-              }`}>
+              <p className={`font-display text-xs tracking-widest uppercase ${theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
+                }`}>
                 Article Info
               </p>
               {[
@@ -443,9 +409,8 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
                   <span className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'}`}>
                     {label}
                   </span>
-                  <span className={`text-xs font-display font-semibold ${
-                    theme === 'dark' ? 'text-slate-300' : 'text-light-text'
-                  }`}>
+                  <span className={`text-xs font-display font-semibold ${theme === 'dark' ? 'text-slate-300' : 'text-light-text'
+                    }`}>
                     {value}
                   </span>
                 </div>

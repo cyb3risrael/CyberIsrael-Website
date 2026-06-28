@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { FaDiscord, FaChevronDown } from 'react-icons/fa'
+import { FaDiscord } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import Logo from '@/components/ui/Logo'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { FaTrophy, FaTools, FaMicrophone, FaVideo, FaArrowRight } from 'react-icons/fa'
+import { FaTrophy, FaTools, FaMicrophone, FaVideo } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 
 const eventTypes = {

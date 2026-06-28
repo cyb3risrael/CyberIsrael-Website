@@ -126,7 +126,8 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
 const ArticlesPage: React.FC = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const [activeCategory, setActiveCategory] = useState('all')
+  // const [activeCategory, setActiveCategory] = useState('all')
+  const [activeCategory] = useState('all')
 
   const filtered = activeCategory === 'all'
     ? articles
