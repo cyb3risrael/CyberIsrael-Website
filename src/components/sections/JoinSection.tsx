@@ -19,11 +19,10 @@ const JoinSection: React.FC = () => {
     <section id="join" className="py-28 relative z-10 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className={`absolute inset-0 ${
-          theme === 'dark'
+        <div className={`absolute inset-0 ${theme === 'dark'
             ? 'bg-gradient-to-br from-cyber-dark via-cyber-black to-cyber-dark'
             : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
-        }`} />
+          }`} />
         {/* Animated orbs */}
         <motion.div
           animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
@@ -54,17 +53,15 @@ const JoinSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className={`font-display text-xs tracking-widest uppercase ${
-            theme === 'dark' ? 'text-cyber-green' : 'text-light-blue'
-          }`}>
+          <span className={`font-display text-xs tracking-widest uppercase ${theme === 'dark' ? 'text-cyber-green' : 'text-light-blue'
+            }`}>
             {t('join.subtitle')}
           </span>
           <h2 className="section-title mt-3 gradient-text">
             {t('join.title')}
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto mb-10 leading-relaxed ${
-            theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
-          }`}>
+          <p className={`text-lg max-w-2xl mx-auto mb-10 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
+            }`}>
             {t('join.description')}
           </p>
 
@@ -77,15 +74,13 @@ const JoinSection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-left ${
-                  theme === 'dark'
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-left ${theme === 'dark'
                     ? 'bg-cyber-card border border-cyber-border/40'
                     : 'bg-white border border-light-border shadow-sm'
-                }`}
+                  }`}
               >
-                <div className={`p-1 rounded-full ${
-                  theme === 'dark' ? 'bg-cyber-green/20' : 'bg-light-blue/10'
-                }`}>
+                <div className={`p-1 rounded-full ${theme === 'dark' ? 'bg-cyber-green/20' : 'bg-light-blue/10'
+                  }`}>
                   <FaCheck size={10} className={theme === 'dark' ? 'text-cyber-green' : 'text-light-blue'} />
                 </div>
                 <span className={theme === 'dark' ? 'text-slate-300' : 'text-light-text'}>
@@ -100,7 +95,7 @@ const JoinSection: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(0,255,136,0.4)' }}
               whileTap={{ scale: 0.96 }}
-              href="https://discord.com/invite/VumvzWFZs"
+              href="https://discord.gg/Xz8gsvpBp"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2 text-base px-10 py-4"
@@ -111,7 +106,7 @@ const JoinSection: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              href="https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?mode=ems_wa_t"
+              href="https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?s=cl&p=a&ilr=2"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-base px-10 py-4"

@@ -7,7 +7,7 @@ import { useTheme } from '@/context/ThemeContext'
 
 const socialLinks = [
   { icon: FaDiscord, href: 'https://discord.gg/Xz8gsvpBp', label: 'Discord', color: '#5865F2' },
-  { icon: FaWhatsapp, href: 'https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?mode=ems_wa_t', label: 'WhatsApp', color: '#25D366' },
+  { icon: FaWhatsapp, href: 'https://chat.whatsapp.com/EdGa1iawSFj2b6RMFdp4Jk?s=cl&p=a&ilr=2', label: 'WhatsApp', color: '#25D366' },
   { icon: FaGoogleDrive, href: 'https://drive.google.com/drive/folders/1FpbtSTb0ztKClrIKZT1HdlGbLENTj_hj?usp=sharing', label: 'Drive', color: '#A855F7' },
   { icon: FaInstagram, href: 'https://www.instagram.com/cyb3r.israel?igsh=Mjh0aGZqOHhoOXFi', label: 'Instagram', color: '#E1306C' },
   { icon: FaTiktok, href: 'https://www.tiktok.com/@cyb3r.israel', label: 'TikTok', color: '#FF0050' },
