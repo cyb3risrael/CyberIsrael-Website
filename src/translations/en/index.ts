@@ -56,6 +56,8 @@ const en = {
       conference: "Conference",
       ctf: "CTF Competition",
       workshop: "Workshop",
+      meetup: "Meetup",
+      online_lecture: "Online Community Learning Sessions / Lectures",
     },
 
     upcoming_list: [
@@ -65,20 +67,38 @@ const en = {
         desc: "Online exposure sessions to the Cyber and Development world",
         date: "Very soon!!!",
       },
+      {
+        type: "conference",
+        title: "CyberIsrael Conference",
+        desc: "Professional cyber conference featuring expert lectures across multiple topics and skill levels.",
+        date: "Very soon!!!",
+      },
+      {
+        type: "meetup",
+        title: "CyberIsrael Meetup",
+        desc: "Regular meetups for community members to network and share knowledge.",
+        date: "Very soon!!!",
+      },
     ],
 
     past_list: [
       {
         type: "conference",
-        title: "CyberIsrael Conference",
+        title: "NOV2025 CyberIsrael Conference",
         desc: "Professional cyber conference hosted at Bar-Ilan University featuring expert lectures across multiple topics and skill levels.",
-        date: "Mar 2025",
+        date: "NOV 2025",
       },
       {
         type: "ctf",
         title: "CyberIsrael x BIU Cyber Club CTF",
         desc: "Large-scale online Capture The Flag competition held in collaboration with the Bar-Ilan University Cyber Club.",
         date: "Jan 2025",
+      },
+      {
+        type: "online_lecture",
+        title: "AI MALWARE LECTURE with Chen Shiri (Global Researcher & Hacker)",
+        desc: "Chen Shiri is a cybersecurity researcher and hacker known for research on low-level security and isolation mechanisms. His research has revealed significant flaws in widely used systems – affecting millions of people daily and shaping security best practices across the industry. This includes uncovering uncovering weaknesses in Google Colab, Google Cloud Shell, container isolation environments, and a multi-stage attack chain in AWS Kubernetes (EKS).",
+        date: "Very soon!!!",
       },
     ],
   },

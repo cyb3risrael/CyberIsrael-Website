@@ -5,6 +5,14 @@ import { FaDiscord } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import Logo from '@/components/ui/Logo'
 
+const hexPositions = [
+  { x: 80, y: 20, size: 60, delay: 0 },
+  { x: 850, y: 15, size: 40, delay: 0.5 },
+  { x: 50, y: 750, size: 50, delay: 1 },
+  { x: 840, y: 800, size: 70, delay: 1.5 },
+  { x: 470, y: 50, size: 30, delay: 0.8 },
+]
+
 const HeroSection: React.FC = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
@@ -71,6 +79,7 @@ const HeroSection: React.FC = () => {
           className="absolute inset-0 w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid slice"
+          viewBox="0 0 1000 1000"
         >
           <defs>
             <radialGradient id="heroGrad1" cx="50%" cy="50%" r="80%">
@@ -119,7 +128,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 3, ease: 'easeInOut', delay: 0.5 }}
           />
           <motion.path
-            d="M 100% 200 L calc(100% - 150px) 200 L calc(100% - 200px) 250 L calc(100% - 400px) 250"
+            d="M 1000 200 L 850 200 L 800 250 L 600 250"
             stroke={theme === 'dark' ? '#00D4FF' : '#0891B2'}
             strokeWidth="1"
             strokeOpacity="0.15"
@@ -130,13 +139,7 @@ const HeroSection: React.FC = () => {
           />
 
           {/* Floating hexagons */}
-          {[
-            { x: '15%', y: '20%', size: 60, delay: 0 },
-            { x: '85%', y: '15%', size: 40, delay: 0.5 },
-            { x: '10%', y: '75%', size: 50, delay: 1 },
-            { x: '88%', y: '80%', size: 70, delay: 1.5 },
-            { x: '50%', y: '5%', size: 30, delay: 0.8 },
-          ].map((hex, i) => (
+          {hexPositions.map((hex, i) => (
             <motion.polygon
               key={i}
               points={`${hex.size / 2},0 ${hex.size},${hex.size * 0.25} ${hex.size},${hex.size * 0.75} ${hex.size / 2},${hex.size} 0,${hex.size * 0.75} 0,${hex.size * 0.25}`}
@@ -146,7 +149,8 @@ const HeroSection: React.FC = () => {
                 : (theme === 'dark' ? '#8B5CF6' : '#7C3AED')}
               strokeWidth="1"
               strokeOpacity="0.12"
-              transform={`translate(${hex.x === '15%' ? '8%' : hex.x === '85%' ? '82%' : hex.x === '10%' ? '5%' : hex.x === '88%' ? '84%' : '47%'}, ${hex.y})`}
+              transform={`translate(${hexPositions[i].x - hex.size / 2}, ${hexPositions[i].y - hex.size / 2})`}
+              // ⬅️ FIX: center hex instead of top-left alignment
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1, rotate: [0, 360] }}
               transition={{
