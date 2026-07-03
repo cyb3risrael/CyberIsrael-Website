@@ -20,8 +20,8 @@ const JoinSection: React.FC = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <div className={`absolute inset-0 ${theme === 'dark'
-            ? 'bg-gradient-to-br from-cyber-dark via-cyber-black to-cyber-dark'
-            : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
+          ? 'bg-gradient-to-br from-cyber-dark via-cyber-black to-cyber-dark'
+          : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
           }`} />
         {/* Animated orbs */}
         <motion.div
@@ -75,8 +75,8 @@ const JoinSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-left ${theme === 'dark'
-                    ? 'bg-cyber-card border border-cyber-border/40'
-                    : 'bg-white border border-light-border shadow-sm'
+                  ? 'bg-cyber-card border border-cyber-border/40'
+                  : 'bg-white border border-light-border shadow-sm'
                   }`}
               >
                 <div className={`p-1 rounded-full ${theme === 'dark' ? 'bg-cyber-green/20' : 'bg-light-blue/10'

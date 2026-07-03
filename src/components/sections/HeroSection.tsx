@@ -249,7 +249,7 @@ const HeroSection: React.FC = () => {
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            href="https://discord.com/invite/VumvzWFZs"
+            href="https://discord.gg/Xz8gsvpBp"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary flex items-center gap-2"
