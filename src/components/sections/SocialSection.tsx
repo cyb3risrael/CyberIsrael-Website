@@ -20,7 +20,7 @@ const socialData = [
     icon: FaWhatsapp,
     label: 'WhatsApp',
     handle: 'CyberIsrael Group',
-    href: 'https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?mode=ems_wa_t',
+    href: 'https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?s=cl&p=a&ilr=2',
     color: '#25D366',
     bg: 'rgba(37,211,102,0.1)',
     border: 'rgba(37,211,102,0.3)',
