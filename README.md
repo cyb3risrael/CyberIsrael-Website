@@ -230,7 +230,7 @@ VITE_API_URL=http://localhost:4000
 ## 📞 Contact
 
 - Email: cyb3risrael@gmail.com
-- Discord: https://discord.com/invite/VumvzWFZs
+- Discord: https://discord.gg/Xz8gsvpBp
 - Instagram: https://www.instagram.com/cyb3r.israel
 - TikTok: https://www.tiktok.com/@cyb3r.israel
 

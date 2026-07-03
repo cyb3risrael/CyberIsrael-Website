@@ -173,9 +173,6 @@ const en = {
     tagline: 'Building Israel\'s cyber future, one hacker at a time.',
     links: 'Quick Links',
     community: 'Community',
-    legal: 'Legal',
-    privacy: 'Privacy Policy',
-    terms: 'Terms of Use',
     copyright: '© 2026 CyberIsrael. All rights reserved.',
   },
   theme: {

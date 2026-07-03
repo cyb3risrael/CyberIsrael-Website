@@ -9,7 +9,7 @@ const socialData = [
     icon: FaDiscord,
     label: 'Discord',
     handle: '@CyberIsrael',
-    href: 'https://discord.com/invite/VumvzWFZs',
+    href: 'https://discord.gg/Xz8gsvpBp',
     color: '#5865F2',
     bg: 'rgba(168,85,247,0.10)',
     border: 'rgba(168,85,247,0.28)',

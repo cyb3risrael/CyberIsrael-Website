@@ -6,7 +6,7 @@ import Logo from '@/components/ui/Logo'
 import { useTheme } from '@/context/ThemeContext'
 
 const socialLinks = [
-  { icon: FaDiscord, href: 'https://discord.com/invite/VumvzWFZs', label: 'Discord', color: '#5865F2' },
+  { icon: FaDiscord, href: 'https://discord.gg/Xz8gsvpBp', label: 'Discord', color: '#5865F2' },
   { icon: FaWhatsapp, href: 'https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?mode=ems_wa_t', label: 'WhatsApp', color: '#25D366' },
   { icon: FaGoogleDrive, href: 'https://drive.google.com/drive/folders/1FpbtSTb0ztKClrIKZT1HdlGbLENTj_hj?usp=sharing', label: 'Drive', color: '#A855F7' },
   { icon: FaInstagram, href: 'https://www.instagram.com/cyb3r.israel?igsh=Mjh0aGZqOHhoOXFi', label: 'Instagram', color: '#E1306C' },
