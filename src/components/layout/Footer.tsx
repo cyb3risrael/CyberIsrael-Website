@@ -120,25 +120,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className={`mt-10 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 ${theme === 'dark' ? 'border-cyber-border/40' : 'border-light-border'
-          }`}>
-          <p className={`text-xs font-display tracking-wide ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
-            }`}>
-            {t('footer.copyright')}
-          </p>
-          <div className="flex items-center gap-4">
-            <a href="#" className={`text-xs transition-colors duration-200 ${theme === 'dark' ? 'text-slate-500 hover:text-cyber-teal' : 'text-light-muted hover:text-light-blue'
-              }`}>
-              {t('footer.privacy')}
-            </a>
-            <a href="#" className={`text-xs transition-colors duration-200 ${theme === 'dark' ? 'text-slate-500 hover:text-cyber-teal' : 'text-light-muted hover:text-light-blue'
-              }`}>
-              {t('footer.terms')}
-            </a>
-          </div>
-        </div>
       </div>
     </footer>
   )
