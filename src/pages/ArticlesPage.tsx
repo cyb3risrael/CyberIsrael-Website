@@ -64,10 +64,6 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
         <div className={`flex items-center gap-4 text-xs mb-3 font-display ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
           }`}>
           <span className="flex items-center gap-1.5">
-            <FaUser size={10} />
-            {article.author}
-          </span>
-          <span className="flex items-center gap-1.5">
             <FaClock size={10} />
             {article.readTime} {t('articles.min_read')}
           </span>

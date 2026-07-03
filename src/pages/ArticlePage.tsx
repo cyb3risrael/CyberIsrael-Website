@@ -94,8 +94,6 @@ const ArticlePage: React.FC = () => {
                             </h1>
 
                             <div className="text-purple-300 text-sm mb-8 flex gap-4 flex-wrap">
-                                <span>{article.author}</span>
-                                <span>•</span>
                                 <span>{article.date}</span>
                                 <span>•</span>
                                 <span>{article.readTime} min read</span>
