@@ -129,14 +129,6 @@ const Footer: React.FC = () => {
             {t('footer.copyright')}
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className={`text-xs transition-colors duration-200 ${theme === 'dark' ? 'text-slate-500 hover:text-cyber-teal' : 'text-light-muted hover:text-light-blue'
-              }`}>
-              {t('footer.privacy')}
-            </a>
-            <a href="#" className={`text-xs transition-colors duration-200 ${theme === 'dark' ? 'text-slate-500 hover:text-cyber-teal' : 'text-light-muted hover:text-light-blue'
-              }`}>
-              {t('footer.terms')}
-            </a>
           </div>
         </div>
       </div>
