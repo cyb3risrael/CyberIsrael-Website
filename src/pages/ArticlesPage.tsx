@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { FaClock, FaUser, FaArrowRight, FaBookOpen, FaGlobe } from 'react-icons/fa'
+import { FaClock, FaArrowRight, FaBookOpen, FaGlobe } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import { articles, categoryColors, type Article } from '@/services/articlesData'
 import { useNavigate } from "react-router-dom"
@@ -16,7 +16,9 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
 
   return (
     <motion.div
-      onClick={() => navigate(article.href)}
+      onClick={() => {
+        navigate(article.href)
+      }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
@@ -69,7 +71,7 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
           </span>
           <span className="flex items-center gap-1.5">
             <FaGlobe size={13} />
-            {article.languge}
+            {article.language}
           </span>
           <span>{new Date(article.date).toLocaleDateString()}</span>
         </div>

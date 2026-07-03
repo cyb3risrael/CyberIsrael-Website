@@ -5,6 +5,15 @@ import { getArticleBySlug } from '@/services/articlesData'
 import ArticleSidebar from '@/components/layout/ArticleSidebar'
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
+import { useTranslation } from 'react-i18next'
+
+
+
+const getLangCode = (lang: string) => {
+    if (lang.includes('עברית') || lang.toLowerCase().includes('hebrew') || lang.toLowerCase().includes('he')) return 'he'
+    if (lang.toLowerCase().includes('english') || lang.toLowerCase().includes('en')) return 'en'
+    return 'en' // fallback
+}
 
 function remarkGithubAlerts() {
     return (tree: any) => {
@@ -39,36 +48,72 @@ type ArticleType = 'md' | null
 const ArticlePage: React.FC = () => {
     const { slug } = useParams()
 
-    const [type] = useState<ArticleType>('md')
+    const type: ArticleType = 'md'
     const [markdown, setMarkdown] = useState('')
     const [loading, setLoading] = useState(true)
 
     const article = slug ? getArticleBySlug(slug) : undefined
     const imageBase = slug ? `/articles/${slug}/` : '' // Folder that contains the current article's images
 
+    const { i18n } = useTranslation()
+    const [ready, setReady] = useState(false)
+
     useEffect(() => {
         if (!slug) return
-        const load = async () => {
+
+        let cancelled = false
+
+        const run = async () => {
             setLoading(true)
+            setReady(false)
 
             try {
+                const articleData = getArticleBySlug(slug)
+                if (!articleData) return
+
+                const lang = getLangCode(articleData.language)
+
+                // IMPORTANT: wait until i18n is truly ready
+                if (i18n.language !== lang) {
+                    await i18n.changeLanguage(lang)
+
+                    document.documentElement.setAttribute(
+                        'dir',
+                        lang === 'he' ? 'rtl' : 'ltr'
+                    )
+
+                    document.documentElement.setAttribute(
+                        'lang',
+                        lang
+                    )
+                    await new Promise(requestAnimationFrame) // <- key fix
+                }
+
                 const mdPath = `/articles/${slug}/${slug}.md`
                 const res = await fetch(mdPath)
-
                 if (!res.ok) throw new Error('MD not found')
 
                 const text = await res.text()
+
+                if (cancelled) return
+
                 setMarkdown(text)
+                setReady(true)
+
             } catch (err) {
+                console.error(err)
                 setMarkdown('')
             } finally {
-                setLoading(false)
+                if (!cancelled) setLoading(false)
             }
         }
 
-        load()
-    }, [slug])
+        run()
 
+        return () => {
+            cancelled = true
+        }
+    }, [slug])
     return (
         <div className="min-h-screen pt-24 pb-20 bg-gradient-to-b from-[#090510] via-[#12081e] to-[#090510]">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-8 items-start">
@@ -86,7 +131,7 @@ const ArticlePage: React.FC = () => {
                         </div>
                     )}
 
-                    {!loading && type === 'md' && article && (
+                    {!loading && type === 'md' && article && ready && (
                         <div className="w-full rounded-3xl border border-purple-500/20 bg-purple-950/20 backdrop-blur-md shadow-2xl shadow-purple-900/30 p-6 md:p-10">
 
                             <h1 className="text-3xl md:text-4xl font-bold text-purple-100 mb-6">

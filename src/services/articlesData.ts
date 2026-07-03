@@ -1,10 +1,9 @@
 export interface Article {
   id: string
   title: string
-  languge: string
+  language: string
   excerpt: string
   category: string
-  author: string
   date: string
   readTime: number
   image: string
@@ -17,10 +16,9 @@ export const articles: Article[] = [
   {
     id: '1',
     title: 'RoadMap for the software development world!',
-    languge: 'Hebrew/עברית',
+    language: 'Hebrew/עברית',
     excerpt: 'An in-depth roadmap for aspiring software developers and professionals, covering essential programming languages, frameworks, tools, and best practices to build a successful career in software development.',
     category: 'Software Development',
-    author: 'Ido Gutman',
     date: '2026-05-21',
     readTime: 13.5,
     image: '/articles/ArticleImage/RoadMapForTheSoftwareDevelopmentWorld.webp',
@@ -31,10 +29,9 @@ export const articles: Article[] = [
   {
     id: '2',
     title: 'How to get accepted for technological positions in the IDF',
-    languge: 'Hebrew/עברית',
+    language: 'Hebrew/עברית',
     excerpt: 'A guide on how to prepare for and succeed in technological positions within the IDF.',
     category: 'Guides',
-    author: 'Omer Slavkin',
     date: '2026-05-21',
     readTime: 6.5,
     image: '/articles/ArticleImage/GetAcceptedForTechnologicalPositions.webp',
@@ -44,10 +41,9 @@ export const articles: Article[] = [
   {
     id: '3',
     title: 'What is Cybersecurity? Why Study It and How to Get Started',
-    languge: 'Hebrew/עברית',
+    language: 'Hebrew/עברית',
     excerpt: 'An introductory article explaining the fundamentals of cybersecurity, its importance in todays digital world, and practical steps for beginners to start learning and building a career in cybersecurity.',
     category: 'cybersecurity',
-    author: 'Ido Gutman',
     date: '2026-05-21',
     readTime: 8,
     image: '/articles/ArticleImage/WhatIsCybersecurity.webp',
