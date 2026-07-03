@@ -269,19 +269,6 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
               {/* Meta row */}
               <div className={`flex flex-wrap items-center gap-x-6 gap-y-3 pt-5 border-t ${theme === 'dark' ? 'border-cyber-border/40' : 'border-light-border'
                 }`}>
-                {/* Author */}
-                <div className="flex items-center gap-2">
-                  <div>
-                    <p className={`text-xs font-display font-semibold ${theme === 'dark' ? 'text-slate-300' : 'text-light-text'
-                      }`}>
-                      {article.author}
-                    </p>
-                    <p className={`text-[10px] font-display tracking-widest uppercase ${theme === 'dark' ? 'text-slate-600' : 'text-slate-400'
-                      }`}>
-                      Author
-                    </p>
-                  </div>
-                </div>
 
                 {/* Date */}
                 <div className="flex items-center gap-1.5">
@@ -359,33 +346,6 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ article, children }) => {
 
           {/* ── Sidebar ──────────────────────────────────────────────────── */}
           <aside className="hidden lg:block sticky top-24 space-y-0">
-            {/* Author card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className={`rounded-2xl border p-5 mb-6 ${theme === 'dark'
-                ? 'bg-cyber-card/80 border-cyber-border/50'
-                : 'bg-white border-light-border shadow-sm'
-                }`}
-            >
-              <p className={`font-display text-xs tracking-widest uppercase mb-4 ${theme === 'dark' ? 'text-cyber-teal' : 'text-light-teal'
-                }`}>
-                Author
-              </p>
-              <div className="flex items-center gap-3 mb-3">
-                <div>
-                  <p className={`font-display font-bold text-sm ${theme === 'dark' ? 'text-white' : 'text-light-text'
-                    }`}>
-                    {article.author}
-                  </p>
-                  <p className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'}`}>
-                    CyberIsrael Contributor
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
             {/* Article info card */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
