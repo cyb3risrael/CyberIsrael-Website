@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTheme } from '@/context/ThemeContext'
@@ -6,15 +6,21 @@ import Logo from '@/components/ui/Logo'
 
 const ComingSoonPage: React.FC = () => {
     const { theme } = useTheme()
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
     }
+
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
             >
