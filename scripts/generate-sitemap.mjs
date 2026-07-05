@@ -1,41 +1,56 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
 import { writeFileSync, readFileSync } from 'fs'
+import path from 'path'
 
 const SITE_URL = 'https://cyberisrael.net'
 
-// ❌ NEVER import src/
-// ✅ ONLY read generated file
+// ✅ Read JSON instead of broken require/import chain
 const articles = JSON.parse(
     readFileSync('./dist-temp/articles.json', 'utf-8')
 )
 
-const staticRoutes = ['/', '/articles', '/impact', '/collaborate', '/coming-soon']
+const staticRoutes = [
+    '/',
+    '/articles',
+    '/impact',
+    '/collaborate',
+    '/coming-soon',
+]
 
 async function generate() {
-    const sitemap = new SitemapStream({ hostname: SITE_URL })
+    const sitemap = new SitemapStream({
+        hostname: SITE_URL,
+    })
 
-    staticRoutes.forEach(route => {
+    // static pages
+    for (const route of staticRoutes) {
         sitemap.write({
             url: route,
-            priority: route === '/' ? 1 : 0.7
+            changefreq: route === '/' ? 'daily' : 'weekly',
+            priority: route === '/' ? 1.0 : 0.7,
         })
-    })
+    }
 
-    articles.forEach(article => {
+    // dynamic articles
+    for (const article of articles) {
         sitemap.write({
             url: `/articles/${article.href}`,
+            changefreq: 'monthly',
+            priority: article.featured ? 0.9 : 0.8,
             lastmod: article.date,
-            priority: article.featured ? 0.9 : 0.8
         })
-    })
+    }
 
     sitemap.end()
 
-    const xml = await streamToPromise(sitemap).then(r => r.toString())
+    const xml = await streamToPromise(sitemap).then(d => d.toString())
 
     writeFileSync('./dist/sitemap.xml', xml)
 
-    console.log('✅ sitemap generated')
+    console.log('✅ Sitemap generated:', './dist/sitemap.xml')
 }
 
-generate()
+generate().catch(err => {
+    console.error('❌ Sitemap failed:', err)
+    process.exit(1)
+})
