@@ -55,7 +55,7 @@ const timelineEvents = [
   {
     year: '2025',
     title: 'Community Leadership Expansion',
-    desc: 'Amichai and Noam joined as managers, helping run beginner groups and support new learners.',
+    desc: 'Amichay and Noam joined as managers, helping run beginner groups and support new learners.',
     icon: '👥',
     color: '#00D4FF'
   },
@@ -68,8 +68,8 @@ const timelineEvents = [
   },
   {
     year: '2025',
-    title: '1000 Members',
-    desc: 'The community surpassed 1,000 members across Israel.',
+    title: '700 Members',
+    desc: 'The community surpassed 700 members across Israel.',
     icon: '🎯',
     color: '#8B5CF6'
   },
@@ -87,6 +87,13 @@ const timelineEvents = [
     desc: 'CyberIsrael launched Instagram and TikTok, posting weekly cybersecurity content on malware, cryptography, and more.',
     icon: '📱',
     color: '#00D4FF'
+  },
+  {
+    year: '2026',
+    title: 'Community Reaches 1,000',
+    desc: 'The community surpassed 1,000 members across Israel.',
+    icon: '🚀',
+    color: '#8B5CF6'
   },
   {
     year: '2026',
