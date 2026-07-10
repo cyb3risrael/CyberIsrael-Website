@@ -1,18 +1,12 @@
-# Graph Report - cyberisrael  (2026-07-10)
+# Graph Report - .  (2026-07-10)
 
 ## Corpus Check
-- 48 files · ~765,592 words
-- Verdict: corpus is large enough that graph structure adds value.
+- Large corpus: 70 files · ~765,592 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder.
 
 ## Summary
-- 267 nodes · 316 edges · 56 communities (19 shown, 37 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.67)
-- Token cost: 0 input · 0 output
-
-## Graph Freshness
-- Built from commit: `1d4d4ad2`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
+- 270 nodes · 318 edges · 56 communities (18 shown, 38 thin omitted)
+- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.72)
+- Token cost: 0 input · 617,024 output
 
 ## Community Hubs (Navigation)
 - Article Layout & Footer Components
@@ -82,16 +76,16 @@
 10. `Navbar()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Replacing the Logo` --shares_data_with--> `SEO/OG Meta Tags`  [INFERRED]
-  README.md → index.html
-- `EventCard()` --calls--> `useTheme()`  [EXTRACTED]
-  src/components/sections/EventsSection.tsx → src/context/ThemeContext.tsx
-- `EventsSection()` --calls--> `useTheme()`  [EXTRACTED]
-  src/components/sections/EventsSection.tsx → src/context/ThemeContext.tsx
-- `InstagramSection()` --calls--> `useTheme()`  [EXTRACTED]
-  src/components/sections/subSections/InstagramSection.tsx → src/context/ThemeContext.tsx
-- `ArticleCard()` --calls--> `useTheme()`  [EXTRACTED]
-  src/pages/ArticlesPage.tsx → src/context/ThemeContext.tsx
+- `Routing & Shell Architecture` --semantically_similar_to--> `Project Structure Tree`  [INFERRED] [semantically similar]
+  CLAUDE.md → README.md
+- `Global Providers (Theme/Lang)` --semantically_similar_to--> `Tech Stack Table`  [INFERRED] [semantically similar]
+  CLAUDE.md → README.md
+- `i18n Configuration` --semantically_similar_to--> `Languages & RTL`  [INFERRED] [semantically similar]
+  CLAUDE.md → README.md
+- `Articles System` --semantically_similar_to--> `Articles (Mock Data / Future CMS)`  [INFERRED] [semantically similar]
+  CLAUDE.md → README.md
+- `Theming (Tailwind tokens)` --semantically_similar_to--> `Themes`  [INFERRED] [semantically similar]
+  CLAUDE.md → README.md
 
 ## Import Cycles
 - None detected.
@@ -100,19 +94,19 @@
 - **Getting Started Content Hub (Cyber + Dev + IDF Tech Roles)** — public_articles_what_is_cyber_why_study_it_and_how_what_is_cyber_why_study_it_and_how_how_to_learn, public_articles_software_development_roadmap_software_development_roadmap_beginner, public_articles_get_accepted_for_technological_positions_get_accepted_for_technological_positions_intro [INFERRED 0.75]
 - **Planned Backend Stack (Not Yet Implemented)** — readme_future_backend_integration, docker_compose_future_backend_service, docker_compose_future_db_service, docker_compose_future_redis_service [EXTRACTED 1.00]
 
-## Communities (56 total, 37 thin omitted)
+## Communities (56 total, 38 thin omitted)
 
 ### Community 0 - "Article Layout & Footer Components"
-Cohesion: 0.08
-Nodes (30): ArticleLayout(), RelatedArticles(), ShareBar(), Footer(), socialLinks, RootLayout(), Particle, ParticleBackground() (+22 more)
+Cohesion: 0.07
+Nodes (33): ArticleLayout(), RelatedArticles(), ShareBar(), Footer(), socialLinks, RootLayout(), Particle, ParticleBackground() (+25 more)
 
 ### Community 1 - "TypeScript Configuration"
 Cohesion: 0.09
 Nodes (21): compilerOptions, allowImportingTsExtensions, baseUrl, isolatedModules, jsx, lib, module, moduleResolution (+13 more)
 
 ### Community 2 - "NPM Dependencies"
-Cohesion: 0.18
-Nodes (11): dependencies, framer-motion, i18next, react, react-dom, react-i18next, react-icons, react-markdown (+3 more)
+Cohesion: 0.10
+Nodes (20): dependencies, framer-motion, i18next, react, react-dom, react-i18next, react-icons, react-markdown (+12 more)
 
 ### Community 3 - "Article Page & Sidebar"
 Cohesion: 0.16
@@ -123,8 +117,8 @@ Cohesion: 0.13
 Nodes (13): ArticlePage, ArticlesPage, CollaboratePage, HomePage, ImpactPage, NotFoundPage, Navbar(), Lang (+5 more)
 
 ### Community 5 - "Dev Tooling & Linting"
-Cohesion: 0.08
-Nodes (24): devDependencies, autoprefixer, eslint, eslint-plugin-react-hooks, eslint-plugin-react-refresh, postcss, tailwindcss, @tailwindcss/typography (+16 more)
+Cohesion: 0.13
+Nodes (15): devDependencies, autoprefixer, eslint, eslint-plugin-react-hooks, eslint-plugin-react-refresh, postcss, tailwindcss, @tailwindcss/typography (+7 more)
 
 ### Community 6 - "About Stats Section"
 Cohesion: 0.14
@@ -154,41 +148,37 @@ Nodes (5): backend service (commented, Node.js), db service (commented, PostgreS
 Cohesion: 0.50
 Nodes (4): Bar-Ilan University Faculty of Engineering (Alexander Kofkin), "History of Client-Side Vulnerabilities" Lecture Topic, Photo: Speaker Presenting Client-Side Vulnerabilities History at CyberIsrael Lecture, Omer Ben Shalom (Photographer)
 
+### Community 14 - "Docker Frontend Deployment"
+Cohesion: 0.67
+Nodes (3): Docker Build Note, frontend service (nginx), Docker Deployment Instructions
+
 ### Community 15 - "Cyber Career Path Concepts"
 Cohesion: 0.67
 Nodes (3): Miunim (Sorting Tracks): Gam'a Cyber, Shchakim, Klal Chaman, Computer Professions Cluster, Roadmap: Advanced Developer Stage, What is Cyber? (Attack/Defense, Research/Development split)
-
-### Community 26 - "graphify Workflow"
-Cohesion: 0.40
-Nodes (3): Architecture, Commands, graphify
-
-### Community 27 - "Pages Overview"
-Cohesion: 0.67
-Nodes (3): NOTION_THEME_BRIDGE(), NotionHtmlEmbed(), NotionHtmlEmbedProps
 
 ## Ambiguous Edges - Review These
 - `Salary/Currency Tags (Dollar, Euro)` → `Article Topic: Getting Accepted For Technological Positions`  [AMBIGUOUS]
   public/articles/ArticleImage/GetAcceptedForTechnologicalPositions.webp · relation: suggests_salary_expectations_theme
 
 ## Knowledge Gaps
-- **146 isolated node(s):** `graphify`, `Commands`, `Architecture`, `name`, `private` (+141 more)
+- **149 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+144 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `Salary/Currency Tags (Dollar, Euro)` and `Article Topic: Getting Accepted For Technological Positions`?**
   _Edge tagged AMBIGUOUS (relation: suggests_salary_expectations_theme) - confidence is low._
-- **Why does `useTheme()` connect `Article Layout & Footer Components` to `Article Page & Sidebar`, `App Routing & Pages`, `About Stats Section`, `Instagram Section`, `Events Section`, `Pages Overview`?**
-  _High betweenness centrality (0.107) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `NPM Dependencies` to `Dev Tooling & Linting`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `graphify`, `Commands`, `Architecture` to the rest of the system?**
-  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `useTheme()` connect `Article Layout & Footer Components` to `Article Page & Sidebar`, `App Routing & Pages`, `About Stats Section`, `Instagram Section`, `Events Section`?**
+  _High betweenness centrality (0.104) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `Dev Tooling & Linting` to `NPM Dependencies`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **What connects `name`, `private`, `version` to the rest of the system?**
+  _156 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Article Layout & Footer Components` be split into smaller, more focused modules?**
-  _Cohesion score 0.07653061224489796 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07039187227866474 - nodes in this community are weakly interconnected._
 - **Should `TypeScript Configuration` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
-- **Should `App Routing & Pages` be split into smaller, more focused modules?**
-  _Cohesion score 0.13071895424836602 - nodes in this community are weakly interconnected._
+- **Should `NPM Dependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
