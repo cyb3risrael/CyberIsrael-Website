@@ -75,11 +75,18 @@ const timelineEvents = [
   },
 
   {
-    year: '2026',
+    year: '2025',
     title: 'Leadership & Scaling',
     desc: 'Adam joined as CEO alongside Omer and Ido to help scale and structure the growing community.',
     icon: '🚀',
     color: '#00FF88'
+  },
+  {
+    year: '2025',
+    title: 'Partnered with Companies to Provide Job Opportunities',
+    desc: 'Established partnerships with companies to distribute job postings through our community groups, making it easier for members to find relevant career opportunities.',
+    icon: '💼',
+    color: '#14B8A6'
   },
   {
     year: '2026',
