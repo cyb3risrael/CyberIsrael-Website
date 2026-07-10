@@ -5,8 +5,8 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 267 nodes · 316 edges · 56 communities (19 shown, 37 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.67)
+- 315 nodes · 361 edges · 58 communities (20 shown, 38 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.67)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
@@ -68,22 +68,22 @@
 - Contact & Social Links
 - Google Form Embed
 - Security Notes
+- Why Study Cyber?
+- Replacing the Logo
 
 ## God Nodes (most connected - your core abstractions)
 1. `useTheme()` - 47 edges
 2. `compilerOptions` - 18 edges
-3. `Get Accepted For Technological Positions - Hero Image` - 11 edges
-4. `compilerOptions` - 6 edges
-5. `Article Topic: Getting Accepted For Technological Positions` - 6 edges
-6. `scripts` - 5 edges
-7. `articles` - 5 edges
-8. `ArticlePage()` - 4 edges
-9. `Article` - 4 edges
-10. `Navbar()` - 3 edges
+3. `CyberIsrael — Community Website` - 14 edges
+4. `Get Accepted For Technological Positions - Hero Image` - 11 edges
+5. `**בואו נלמד איך להיכנס לתחום על אמת בצורה מסודרת לפי רמות:` - 7 edges
+6. `compilerOptions` - 6 edges
+7. `Article Topic: Getting Accepted For Technological Positions` - 6 edges
+8. `scripts` - 5 edges
+9. `articles` - 5 edges
+10. `ArticlePage()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Replacing the Logo` --shares_data_with--> `SEO/OG Meta Tags`  [INFERRED]
-  README.md → index.html
 - `EventCard()` --calls--> `useTheme()`  [EXTRACTED]
   src/components/sections/EventsSection.tsx → src/context/ThemeContext.tsx
 - `EventsSection()` --calls--> `useTheme()`  [EXTRACTED]
@@ -92,27 +92,28 @@
   src/components/sections/subSections/InstagramSection.tsx → src/context/ThemeContext.tsx
 - `ArticleCard()` --calls--> `useTheme()`  [EXTRACTED]
   src/pages/ArticlesPage.tsx → src/context/ThemeContext.tsx
+- `ArticlesPage()` --calls--> `useTheme()`  [EXTRACTED]
+  src/pages/ArticlesPage.tsx → src/context/ThemeContext.tsx
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Getting Started Content Hub (Cyber + Dev + IDF Tech Roles)** — public_articles_what_is_cyber_why_study_it_and_how_what_is_cyber_why_study_it_and_how_how_to_learn, public_articles_software_development_roadmap_software_development_roadmap_beginner, public_articles_get_accepted_for_technological_positions_get_accepted_for_technological_positions_intro [INFERRED 0.75]
 - **Planned Backend Stack (Not Yet Implemented)** — readme_future_backend_integration, docker_compose_future_backend_service, docker_compose_future_db_service, docker_compose_future_redis_service [EXTRACTED 1.00]
 
-## Communities (56 total, 37 thin omitted)
+## Communities (58 total, 38 thin omitted)
 
 ### Community 0 - "Article Layout & Footer Components"
-Cohesion: 0.08
-Nodes (30): ArticleLayout(), RelatedArticles(), ShareBar(), Footer(), socialLinks, RootLayout(), Particle, ParticleBackground() (+22 more)
+Cohesion: 0.07
+Nodes (33): ArticleLayout(), RelatedArticles(), ShareBar(), Footer(), socialLinks, RootLayout(), Particle, ParticleBackground() (+25 more)
 
 ### Community 1 - "TypeScript Configuration"
 Cohesion: 0.09
 Nodes (21): compilerOptions, allowImportingTsExtensions, baseUrl, isolatedModules, jsx, lib, module, moduleResolution (+13 more)
 
 ### Community 2 - "NPM Dependencies"
-Cohesion: 0.18
-Nodes (11): dependencies, framer-motion, i18next, react, react-dom, react-i18next, react-icons, react-markdown (+3 more)
+Cohesion: 0.10
+Nodes (20): dependencies, framer-motion, i18next, react, react-dom, react-i18next, react-icons, react-markdown (+12 more)
 
 ### Community 3 - "Article Page & Sidebar"
 Cohesion: 0.16
@@ -123,8 +124,8 @@ Cohesion: 0.13
 Nodes (13): ArticlePage, ArticlesPage, CollaboratePage, HomePage, ImpactPage, NotFoundPage, Navbar(), Lang (+5 more)
 
 ### Community 5 - "Dev Tooling & Linting"
-Cohesion: 0.08
-Nodes (24): devDependencies, autoprefixer, eslint, eslint-plugin-react-hooks, eslint-plugin-react-refresh, postcss, tailwindcss, @tailwindcss/typography (+16 more)
+Cohesion: 0.13
+Nodes (15): devDependencies, autoprefixer, eslint, eslint-plugin-react-hooks, eslint-plugin-react-refresh, postcss, tailwindcss, @tailwindcss/typography (+7 more)
 
 ### Community 6 - "About Stats Section"
 Cohesion: 0.14
@@ -147,48 +148,52 @@ Cohesion: 0.40
 Nodes (5): EventCard(), EventCardProps, EventItem, EventsSection(), eventTypes
 
 ### Community 12 - "Planned Backend Stack"
-Cohesion: 0.40
-Nodes (5): backend service (commented, Node.js), db service (commented, PostgreSQL), redis service (commented, Redis cache), Environment Variables, Future Backend Integration
+Cohesion: 0.09
+Nodes (21): Adding a new language, Adding a new theme, 📰 Articles, 📞 Contact, CyberIsrael — Community Website, 🐳 Docker Deployment, 📦 Environment Variables, 🔮 Future Backend Integration (+13 more)
 
 ### Community 13 - "Client-Side Vulnerabilities Lecture Photo"
 Cohesion: 0.50
 Nodes (4): Bar-Ilan University Faculty of Engineering (Alexander Kofkin), "History of Client-Side Vulnerabilities" Lecture Topic, Photo: Speaker Presenting Client-Side Vulnerabilities History at CyberIsrael Lecture, Omer Ben Shalom (Photographer)
 
-### Community 15 - "Cyber Career Path Concepts"
-Cohesion: 0.67
-Nodes (3): Miunim (Sorting Tracks): Gam'a Cyber, Shchakim, Klal Chaman, Computer Professions Cluster, Roadmap: Advanced Developer Stage, What is Cyber? (Attack/Defense, Research/Development split)
+### Community 16 - "Articles Data System"
+Cohesion: 0.12
+Nodes (15): RoadMap כללי לעולם הפיתוח, איך אני יכול לדעת שסיימתי?, איך אני יכול לדעת שסיימתי?, **בואו נלמד איך להיכנס לתחום על אמת בצורה מסודרת לפי רמות:, **ברוכים הבאים ל-RoadMap לעולם הפיתוח**, **המפתח הממוצע:**, **המפתח המתחיל:**, **המפתח המתקדם:** (+7 more)
+
+### Community 17 - "Providers & Tech Stack"
+Cohesion: 0.14
+Nodes (13): ~ או כמו שחלק ממכם יגידו ב-High Level עולם הסייבר מתחלק כך:, איך ללמוד? איך להיכנס לתחום? מה לעשות? מתי? ומאיפה?, בוא נספר סיפור איי שם ב- 17 ביוני 2010, **בקיצור התחום דיי משמעותי אפשר לומר אבל איך אפשר לדעת האם הוא מתאים לי?**, בראיית על, דוגמאות לתפקידים / עיסוקים (שנרחיב עליהם במאמרי המשך…), התקפה, והגנה (+5 more)
+
+### Community 18 - "i18n & RTL Docs"
+Cohesion: 0.29
+Nodes (6): איך להתקבל לתפקידים טכנולוגיים בצה”ל?, איך מגיעים לצה”ל?, אקדמיה, דגשים חשובים, הקדמה, מיונים
 
 ### Community 26 - "graphify Workflow"
 Cohesion: 0.40
 Nodes (3): Architecture, Commands, graphify
-
-### Community 27 - "Pages Overview"
-Cohesion: 0.67
-Nodes (3): NOTION_THEME_BRIDGE(), NotionHtmlEmbed(), NotionHtmlEmbedProps
 
 ## Ambiguous Edges - Review These
 - `Salary/Currency Tags (Dollar, Euro)` → `Article Topic: Getting Accepted For Technological Positions`  [AMBIGUOUS]
   public/articles/ArticleImage/GetAcceptedForTechnologicalPositions.webp · relation: suggests_salary_expectations_theme
 
 ## Knowledge Gaps
-- **146 isolated node(s):** `graphify`, `Commands`, `Architecture`, `name`, `private` (+141 more)
+- **174 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+169 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `Salary/Currency Tags (Dollar, Euro)` and `Article Topic: Getting Accepted For Technological Positions`?**
   _Edge tagged AMBIGUOUS (relation: suggests_salary_expectations_theme) - confidence is low._
-- **Why does `useTheme()` connect `Article Layout & Footer Components` to `Article Page & Sidebar`, `App Routing & Pages`, `About Stats Section`, `Instagram Section`, `Events Section`, `Pages Overview`?**
-  _High betweenness centrality (0.107) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `NPM Dependencies` to `Dev Tooling & Linting`?**
+- **Why does `useTheme()` connect `Article Layout & Footer Components` to `Article Page & Sidebar`, `App Routing & Pages`, `About Stats Section`, `Instagram Section`, `Events Section`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `Dev Tooling & Linting` to `NPM Dependencies`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `graphify`, `Commands`, `Architecture` to the rest of the system?**
-  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `name`, `private`, `version` to the rest of the system?**
+  _181 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Article Layout & Footer Components` be split into smaller, more focused modules?**
-  _Cohesion score 0.07653061224489796 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07039187227866474 - nodes in this community are weakly interconnected._
 - **Should `TypeScript Configuration` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
-- **Should `App Routing & Pages` be split into smaller, more focused modules?**
-  _Cohesion score 0.13071895424836602 - nodes in this community are weakly interconnected._
+- **Should `NPM Dependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
