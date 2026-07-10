@@ -39,3 +39,6 @@ pnpm-debug.log*
 
 # Docker
 .dockerignore
+
+# Graphify
+graphify-out/
