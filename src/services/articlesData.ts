@@ -15,9 +15,9 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: '1',
-    title: 'RoadMap for the software development world!',
+    title: 'מפת דרכים לעולם פיתוח התוכנה',
     language: 'Hebrew/עברית',
-    excerpt: 'An in-depth roadmap for aspiring software developers and professionals, covering essential programming languages, frameworks, tools, and best practices to build a successful career in software development.',
+    excerpt: 'מפת דרכים עמוקה למפתחי תוכנה שאפתנים ולמקצוענים, המכסה שפות תכנות חיוניות. פריימוורקים, כלים, ושיטות עבודה נכונות על מנת לבנות קריירה מצליחה בפיתוח תוכנה.',
     category: 'Software Development',
     date: '2026-05-21',
     readTime: 13.5,
@@ -28,9 +28,9 @@ export const articles: Article[] = [
   },
   {
     id: '2',
-    title: 'How to get accepted for technological positions in the IDF',
+    title: 'איך להתקבל לתפקידים טכנולוגיים בצה"ל',
     language: 'Hebrew/עברית',
-    excerpt: 'A guide on how to prepare for and succeed in technological positions within the IDF.',
+    excerpt: 'מדריך על איך להתכונן ולהצליח במיונים לתפקידים טכנולוגיים בצה"ל.',
     category: 'Guides',
     date: '2026-05-21',
     readTime: 6.5,
@@ -40,9 +40,9 @@ export const articles: Article[] = [
   },
   {
     id: '3',
-    title: 'What is Cybersecurity? Why Study It and How to Get Started',
+    title: 'מה זה אבטחת סייבר? למה ללמוד את זה ואיך להתחיל',
     language: 'Hebrew/עברית',
-    excerpt: 'An introductory article explaining the fundamentals of cybersecurity, its importance in todays digital world, and practical steps for beginners to start learning and building a career in cybersecurity.',
+    excerpt: 'כתבה המציגה ומסבירה את היסודות של אבטחת סייבר, החשיבות שלה בעולם הדיגיטלי של היום וצעדים פרקטיים למתחילים כדי להתחיל ללמוד ולבנות קריירה באבטחת סייבר. ',
     category: 'cybersecurity',
     date: '2026-05-21',
     readTime: 8,
