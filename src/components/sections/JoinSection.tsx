@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaDiscord, FaCheck } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
+import { socialLinks } from '@/services/socialLinks'
 
 const JoinSection: React.FC = () => {
   const { t } = useTranslation()
@@ -95,7 +96,7 @@ const JoinSection: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(0,255,136,0.4)' }}
               whileTap={{ scale: 0.96 }}
-              href="https://discord.gg/Xz8gsvpBp"
+              href={socialLinks.discord}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2 text-base px-10 py-4"
@@ -106,7 +107,7 @@ const JoinSection: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              href="https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?s=cl&p=a&ilr=2"
+              href={socialLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-base px-10 py-4"

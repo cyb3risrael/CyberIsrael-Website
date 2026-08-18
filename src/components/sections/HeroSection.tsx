@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { FaDiscord } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
 import Logo from '@/components/ui/Logo'
+import { socialLinks } from '@/services/socialLinks'
 
 const hexPositions = [
   { x: 80, y: 20, size: 60, delay: 0 },
@@ -249,7 +250,7 @@ const HeroSection: React.FC = () => {
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            href="https://discord.gg/Xz8gsvpBp"
+            href={socialLinks.discord}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary flex items-center gap-2"

@@ -4,14 +4,15 @@ import { useTranslation } from 'react-i18next'
 import { FaDiscord, FaWhatsapp, FaInstagram, FaTiktok, FaEnvelope, FaGoogleDrive } from 'react-icons/fa'
 import Logo from '@/components/ui/Logo'
 import { useTheme } from '@/context/ThemeContext'
+import { socialLinks } from '@/services/socialLinks'
 
-const socialLinks = [
-  { icon: FaDiscord, href: 'https://discord.gg/Xz8gsvpBp', label: 'Discord', color: '#5865F2' },
-  { icon: FaWhatsapp, href: 'https://chat.whatsapp.com/EdGa1iawSFj2b6RMFdp4Jk?s=cl&p=a&ilr=2', label: 'WhatsApp', color: '#25D366' },
-  { icon: FaGoogleDrive, href: 'https://drive.google.com/drive/folders/1FpbtSTb0ztKClrIKZT1HdlGbLENTj_hj?usp=sharing', label: 'Drive', color: '#A855F7' },
-  { icon: FaInstagram, href: 'https://www.instagram.com/cyb3r.israel?igsh=Mjh0aGZqOHhoOXFi', label: 'Instagram', color: '#E1306C' },
-  { icon: FaTiktok, href: 'https://www.tiktok.com/@cyb3r.israel', label: 'TikTok', color: '#FF0050' },
-  { icon: FaEnvelope, href: 'mailto:cyb3risrael@gmail.com', label: 'Email', color: '#00D4FF' },
+const socialItems = [
+  { icon: FaDiscord, href: socialLinks.discord, label: 'Discord', color: '#5865F2' },
+  { icon: FaWhatsapp, href: socialLinks.whatsapp, label: 'WhatsApp', color: '#25D366' },
+  { icon: FaGoogleDrive, href: socialLinks.drive, label: 'Drive', color: '#A855F7' },
+  { icon: FaInstagram, href: socialLinks.instagram, label: 'Instagram', color: '#E1306C' },
+  { icon: FaTiktok, href: socialLinks.tiktok, label: 'TikTok', color: '#FF0050' },
+  { icon: FaEnvelope, href: socialLinks.email, label: 'Email', color: '#00D4FF' },
 ]
 
 const Footer: React.FC = () => {
@@ -32,7 +33,7 @@ const Footer: React.FC = () => {
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-6">
-              {socialLinks.map(({ icon: Icon, href, label, color }) => (
+              {socialItems.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
@@ -102,7 +103,7 @@ const Footer: React.FC = () => {
               {t('footer.community')}
             </h3>
             <ul className="space-y-2">
-              {socialLinks.map(({ label, href }) => (
+              {socialItems.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}

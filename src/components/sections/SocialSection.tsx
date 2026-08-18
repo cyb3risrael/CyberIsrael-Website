@@ -3,13 +3,14 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaDiscord, FaWhatsapp, FaInstagram, FaTiktok, FaEnvelope, FaGoogleDrive } from 'react-icons/fa'
 import { useTheme } from '@/context/ThemeContext'
+import { socialLinks } from '@/services/socialLinks'
 
 const socialData = [
   {
     icon: FaDiscord,
     label: 'Discord',
     handle: '@CyberIsrael',
-    href: 'https://discord.gg/Xz8gsvpBp',
+    href: socialLinks.discord,
     color: '#5865F2',
     bg: 'rgba(168,85,247,0.10)',
     border: 'rgba(168,85,247,0.28)',
@@ -20,7 +21,7 @@ const socialData = [
     icon: FaWhatsapp,
     label: 'WhatsApp',
     handle: 'CyberIsrael Group',
-    href: 'https://chat.whatsapp.com/IOpf245lzQx3FgUDNvSUZ2?mode=ems_wa_t',
+    href: socialLinks.whatsapp,
     color: '#25D366',
     bg: 'rgba(37,211,102,0.1)',
     border: 'rgba(37,211,102,0.3)',
@@ -31,7 +32,7 @@ const socialData = [
     icon: FaGoogleDrive,
     label: 'Drive',
     handle: '@cyb3r.israel',
-    href: 'https://drive.google.com/drive/folders/1FpbtSTb0ztKClrIKZT1HdlGbLENTj_hj?usp=sharing',
+    href: socialLinks.drive,
     color: '#4285F4',
     bg: 'rgba(66,133,244,0.10)',
     border: 'rgba(66,133,244,0.28)',
@@ -42,7 +43,7 @@ const socialData = [
     icon: FaInstagram,
     label: 'Instagram',
     handle: '@cyb3r.israel',
-    href: 'https://www.instagram.com/cyb3r.israel?igsh=Mjh0aGZqOHhoOXFi',
+    href: socialLinks.instagram,
     color: '#C13584',
     bg: 'rgba(193,53,132,0.10)',
     border: 'rgba(193,53,132,0.28)',
@@ -53,7 +54,7 @@ const socialData = [
     icon: FaTiktok,
     label: 'TikTok',
     handle: '@cyb3r.israel',
-    href: 'https://www.tiktok.com/@cyb3r.israel',
+    href: socialLinks.tiktok,
     color: '#00F5D4',
     bg: 'rgba(0,245,212,0.10)',
     border: 'rgba(0,245,212,0.28)',
@@ -64,7 +65,7 @@ const socialData = [
     icon: FaEnvelope,
     label: 'Email',
     handle: 'cyb3risrael@gmail.com',
-    href: 'mailto:cyb3risrael@gmail.com',
+    href: socialLinks.email,
     color: '#00D4FF',
     bg: 'rgba(0,212,255,0.1)',
     border: 'rgba(0,212,255,0.3)',
