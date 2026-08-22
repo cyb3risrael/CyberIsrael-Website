@@ -6,6 +6,7 @@ import { FiMenu, FiX, FiSun, FiMoon, FiGlobe, FiFileText } from 'react-icons/fi'
 import Logo from '@/components/ui/Logo'
 import { useTheme } from '@/context/ThemeContext'
 import { useLang } from '@/context/LangContext'
+import { socialLinks } from '@/services/socialLinks'
 
 
 const Navbar: React.FC = () => {
@@ -180,7 +181,7 @@ const Navbar: React.FC = () => {
                   {lang === 'en' ? 'עברית' : 'English'}
                 </button>
                 <a
-                  href="https://discord.gg/Xz8gsvpBp"
+                  href={socialLinks.discord}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-xs py-2 px-4 flex-1 text-center"

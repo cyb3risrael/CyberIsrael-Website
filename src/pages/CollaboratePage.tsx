@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '@/context/ThemeContext'
 import Logo from '@/components/ui/Logo'
+import { socialLinks } from '@/services/socialLinks'
 
 
 const itemVariants = {
@@ -112,7 +113,7 @@ const CollaboratePage: React.FC = () => {
               : 'border-light-blue/20 bg-light-blue/5 text-light-blue'
               }`}>
               <p className="font-display text-xs tracking-widest uppercase mb-1">Direct Contact</p>
-              <a href="mailto:cyb3risrael@gmail.com" className="font-bold underline underline-offset-2">
+              <a href={socialLinks.email} className="font-bold underline underline-offset-2">
                 cyb3risrael@gmail.com
               </a>
             </div>
