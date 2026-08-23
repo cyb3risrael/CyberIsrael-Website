@@ -8,118 +8,88 @@ import AboutStats from '@/components/sections/subSections/AboutStats'
 
 /* ---------------- STATIC DATA (MODULE SCOPE) ---------------- */
 
+// Titles/descriptions live in the translations (impact.timeline_list),
+// matched by position with this array.
 const timelineEvents = [
   {
     year: '2024',
-    title: 'Community Launch',
-    desc: 'A WhatsApp group founded by Omer to help students prepare for technological military roles (Gama Cyber), built around shared learning and guidance.',
     icon: '🚀',
     color: '#00FF88'
   },
   {
     year: '2024',
-    title: 'Early Growth (100+ Members)',
-    desc: 'The community quickly grew as students joined to study cybersecurity and programming together.',
     icon: '👥',
     color: '#00D4FF'
   },
   {
     year: '2024',
-    title: 'School Outreach Begins',
-    desc: 'Omer and Gal which joined to help Omer, started giving short lectures in schools, helping students prepare for advanced tech and military tracks.',
     icon: '🎤',
     color: '#FF0080'
   },
   {
     year: '2024',
-    title: 'Zero-to-Hero Roadmap',
-    desc: 'Ido joined and created a structured cybersecurity roadmap with weekly challenges, resources, and learning paths.',
     icon: '🔧',
     color: '#FFD700'
   },
   {
     year: '2024',
-    title: '500 Members',
-    desc: 'The community surpassed 500 members and continued growing rapidly across Israel.',
     icon: '🎯',
     color: '#8B5CF6'
   },
 
   {
     year: '2025',
-    title: 'CyberIsrael Rebrand',
-    desc: 'The community evolved into CyberIsrael, expanding into structured groups for research, development, challenges, and career support.',
     icon: '🌟',
     color: '#00FF88'
   },
   {
     year: '2025',
-    title: 'Community Leadership Expansion',
-    desc: 'Amichay and Noam joined as managers, helping run beginner groups and support new learners.',
     icon: '👥',
     color: '#00D4FF'
   },
   {
     year: '2025',
-    title: 'Bar-Ilan Conference',
-    desc: 'Hosted the first CyberIsrael conference at Bar-Ilan University with 100+ attendees in partnership with the university\'s cyber club.',
     icon: '🎤',
     color: '#FF0080'
   },
   {
     year: '2025',
-    title: '700 Members',
-    desc: 'The community surpassed 700 members across Israel.',
     icon: '🎯',
     color: '#8B5CF6'
   },
 
   {
     year: '2025',
-    title: 'Leadership & Scaling',
-    desc: 'Adam joined as CEO alongside Omer and Ido to help scale and structure the growing community.',
     icon: '🚀',
     color: '#00FF88'
   },
   {
     year: '2025',
-    title: 'Partnered with Companies to Provide Job Opportunities',
-    desc: 'Established partnerships with companies to distribute job postings through our community groups, making it easier for members to find relevant career opportunities.',
     icon: '💼',
     color: '#14B8A6'
   },
   {
     year: '2026',
-    title: 'Content Platforms Launch',
-    desc: 'CyberIsrael launched Instagram and TikTok, posting weekly cybersecurity content on malware, cryptography, and more.',
     icon: '📱',
     color: '#00D4FF'
   },
   {
     year: '2026',
-    title: 'Community Reaches 1,000',
-    desc: 'The community surpassed 1,000 members across Israel.',
     icon: '🚀',
     color: '#8B5CF6'
   },
   {
     year: '2026',
-    title: 'First Discord CTF',
-    desc: 'Hosted a Discord-based cybersecurity CTF competition with over 50 participants.',
     icon: '🏁',
     color: '#FFD700'
   },
   {
     year: '2026',
-    title: '1500+ Members',
-    desc: 'The community grew beyond 1,500 members and continues expanding rapidly.',
     icon: '💎',
     color: '#8B5CF6'
   },
   {
     year: '2026',
-    title: 'Online Lecture Series',
-    desc: 'Launched structured online lectures covering cybersecurity topics and career guidance, including AI Malware by Chen Shiri.',
     icon: '🌟',
     color: '#FF0080'
   }
@@ -239,11 +209,18 @@ const GallerySection = memo(function GallerySection({
 
 /* ---------------- TIMELINE ITEM ---------------- */
 
+type TimelineEventContent = {
+  title: string
+  desc: string
+}
+
 const TimelineItem = memo(function TimelineItem({
   event,
+  content,
   index
 }: {
   event: TimelineEventType
+  content?: TimelineEventContent
   index: number
 }) {
   const isEven = (index & 1) === 0
@@ -268,10 +245,10 @@ const TimelineItem = memo(function TimelineItem({
           {event.year}
         </div>
         <div className="font-display font-bold text-sm mt-1 text-white">
-          {event.title}
+          {content?.title}
         </div>
         <div className="text-xs mt-1 text-slate-400">
-          {event.desc}
+          {content?.desc}
         </div>
       </div>
 
@@ -317,6 +294,39 @@ const ImpactPage: React.FC = () => {
     timeline_title: t('impact.timeline_title'),
     growth_section: t('impact.growth_section')
   }
+
+  const safeTimelineContent = (): TimelineEventContent[] => {
+    try {
+      const value = t('impact.timeline_list', { returnObjects: true })
+
+      if (!Array.isArray(value)) {
+        console.error('impact.timeline_list is not an array.')
+        console.log('Received value:', value)
+        return []
+      }
+
+      return value.filter((item) => {
+        const valid =
+          item &&
+          typeof item === 'object' &&
+          typeof item.title === 'string' &&
+          typeof item.desc === 'string'
+
+        if (!valid) {
+          console.error(`Invalid entry at impact.timeline_list`)
+          console.log(item)
+        }
+
+        return valid
+      }) as TimelineEventContent[]
+    } catch (err) {
+      console.error('Failed loading impact.timeline_list')
+      console.log(err)
+      return []
+    }
+  }
+
+  const timelineContent = safeTimelineContent()
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -418,7 +428,12 @@ const ImpactPage: React.FC = () => {
             <div className="space-y-10">
               {timelineInView &&
                 timelineEvents.map((event, i) => (
-                  <TimelineItem key={`${event.year}-${i}`} event={event} index={i} />
+                  <TimelineItem
+                    key={`${event.year}-${i}`}
+                    event={event}
+                    index={i}
+                    content={timelineContent[i]}
+                  />
                 ))}
             </div>
           </div>

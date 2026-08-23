@@ -156,6 +156,72 @@ const en = {
     timeline_title: 'Our Journey',
     video_title: 'Online CTF competition',
     video_desc: 'CTF competition highlights and community moments.',
+    timeline_list: [
+      {
+        title: 'Community Launch',
+        desc: 'A WhatsApp group founded by Omer to help students prepare for technological military roles (Gama Cyber), built around shared learning and guidance.',
+      },
+      {
+        title: 'Early Growth (100+ Members)',
+        desc: 'The community quickly grew as students joined to study cybersecurity and programming together.',
+      },
+      {
+        title: 'School Outreach Begins',
+        desc: "Omer and Gal which joined to help Omer, started giving short lectures in schools, helping students prepare for advanced tech and military tracks.",
+      },
+      {
+        title: 'Zero-to-Hero Roadmap',
+        desc: 'Ido joined and created a structured cybersecurity roadmap with weekly challenges, resources, and learning paths.',
+      },
+      {
+        title: '500 Members',
+        desc: 'The community surpassed 500 members and continued growing rapidly across Israel.',
+      },
+      {
+        title: 'CyberIsrael Rebrand',
+        desc: 'The community evolved into CyberIsrael, expanding into structured groups for research, development, challenges, and career support.',
+      },
+      {
+        title: 'Community Leadership Expansion',
+        desc: 'Amichay and Noam joined as managers, helping run beginner groups and support new learners.',
+      },
+      {
+        title: 'Bar-Ilan Conference',
+        desc: "Hosted the first CyberIsrael conference at Bar-Ilan University with 100+ attendees in partnership with the university's cyber club.",
+      },
+      {
+        title: '700 Members',
+        desc: 'The community surpassed 700 members across Israel.',
+      },
+      {
+        title: 'Leadership & Scaling',
+        desc: 'Adam joined as CEO alongside Omer and Ido to help scale and structure the growing community.',
+      },
+      {
+        title: 'Partnered with Companies to Provide Job Opportunities',
+        desc: 'Established partnerships with companies to distribute job postings through our community groups, making it easier for members to find relevant career opportunities.',
+      },
+      {
+        title: 'Content Platforms Launch',
+        desc: 'CyberIsrael launched Instagram and TikTok, posting weekly cybersecurity content on malware, cryptography, and more.',
+      },
+      {
+        title: 'Community Reaches 1,000',
+        desc: 'The community surpassed 1,000 members across Israel.',
+      },
+      {
+        title: 'First Discord CTF',
+        desc: 'Hosted a Discord-based cybersecurity CTF competition with over 50 participants.',
+      },
+      {
+        title: '1500+ Members',
+        desc: 'The community grew beyond 1,500 members and continues expanding rapidly.',
+      },
+      {
+        title: 'Online Lecture Series',
+        desc: 'Launched structured online lectures covering cybersecurity topics and career guidance, including AI Malware by Chen Shiri.',
+      },
+    ],
   },
   collaborate: {
     title: 'Collaborate With Us',
