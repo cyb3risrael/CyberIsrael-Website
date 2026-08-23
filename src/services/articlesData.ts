@@ -65,6 +65,9 @@ export const categoryColors: Record<string, { bg: string; text: string; border: 
   malware: { bg: 'rgba(255,165,0,0.1)', text: '#FFA500', border: 'rgba(255,165,0,0.3)' },
   osint: { bg: 'rgba(0,102,255,0.1)', text: '#0066FF', border: 'rgba(0,102,255,0.3)' },
   ctf: { bg: 'rgba(255,215,0,0.1)', text: '#FFD700', border: 'rgba(255,215,0,0.3)' },
+  'software-development': { bg: 'rgba(0,255,136,0.1)', text: '#00FF88', border: 'rgba(0,255,136,0.3)' },
+  guides: { bg: 'rgba(255,215,0,0.1)', text: '#FFD700', border: 'rgba(255,215,0,0.3)' },
+  cybersecurity: { bg: 'rgba(0,212,255,0.1)', text: '#00D4FF', border: 'rgba(0,212,255,0.3)' },
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {
