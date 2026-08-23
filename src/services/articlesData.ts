@@ -55,6 +55,18 @@ export const articles: Article[] = [
     href: 'what-is-cyber-why-study-it-and-how',
     homePreview: true,
   },
+  {
+    id: '4',
+    title: 'איך להתכונן למיוני גאמ"א סייבר?',
+    language: 'Hebrew/עברית',
+    excerpt: 'מדריך מלא למיוני גאמ"א סייבר - מסלול המחשוב של אגף המודיעין. סקירה של כל שלבי המיון, מהשאלון המקוון ועד התחקיר הביטחוני, ואיך להתכונן לכל אחד מהם בצורה הטובה ביותר.',
+    category: 'guides',
+    date: '2026-08-23',
+    readTime: 15,
+    image: '/articles/ArticleImage/GammaCyberSelections.webp',
+    tags: ['Military', 'Gamma Cyber', 'Technological Units', 'Selections'],
+    href: 'gamma-cyber-selections',
+  },
 ]
 
 export const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
