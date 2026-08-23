@@ -457,7 +457,7 @@ const ImpactPage: React.FC = () => {
 
             <p className={`text-sm font-display tracking-widest uppercase ${isDark ? 'text-slate-400' : 'text-light-muted'
               }`}>
-              Active Community Members & Growing
+              {t('impact.community_members')}
             </p>
           </div>
         </div>
