@@ -78,9 +78,9 @@
 
 [מה זה שחקים?](/articles/what-is-shchakim)
 
-[מה זה כלל חמ”ן?](/coming-soon)
+[מה זה כלל חמ”ן?](/articles/what-is-klal-haman)
 
-[מה זה מיוני אשכול מקצועות המחשב?](/coming-soon)
+[מה זה מיוני אשכול מקצועות המחשב?](/articles/what-is-computer-professions-cluster)
 
 # אקדמיה
 
@@ -89,7 +89,7 @@
 
 נפרט על כל מסלול בהרחבה במאמרים הבאים:
 
-[מה זה עתודה אקדמית?](/coming-soon)
+[מה זה עתודה אקדמית?](/articles/what-is-academic-reserve)
 
 [מה זה תלפיות, חבצלות וארזים?](/articles/talpiot-havatzalot-arazim)
 

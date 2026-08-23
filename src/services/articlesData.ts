@@ -93,6 +93,45 @@ export const articles: Article[] = [
     tags: ['Military', 'Talpiot', 'Havatzalot', 'Arazim', 'Academic Programs'],
     href: 'talpiot-havatzalot-arazim',
   },
+  {
+    id: '7',
+    title: 'מה זה כלל חמ"ן?',
+    language: 'Hebrew/עברית',
+    excerpt: 'מסלול שמאגד תחתיו תפקידים רבים באגף המודיעין - מחקר ופענוח, שפות, מסלולים טכנולוגיים ואפילו לחימה. מה המיון בודק ולמה כמעט אי אפשר להתכונן אליו.',
+    category: 'guides',
+    date: '2026-08-23',
+    readTime: 2,
+    // TODO: placeholder cover, replace with a real image
+    image: '/articles/ArticleImage/WhatIsKlalHaman.webp',
+    tags: ['Military', 'Klal Haman', 'Intelligence', 'Selections'],
+    href: 'what-is-klal-haman',
+  },
+  {
+    id: '8',
+    title: 'מה זה מיוני אשכול מקצועות המחשב?',
+    language: 'Hebrew/עברית',
+    excerpt: 'המיון שממיין ליעדי מפתח במערך התוכנה, בחטיבת ההגנה ובליבת הסייבר. לא דורש ידע קדום, אבל כן בודק יכולות אלגוריתמיות - ואיך מפתחים אותן מראש.',
+    category: 'guides',
+    date: '2026-08-23',
+    readTime: 2,
+    // TODO: placeholder cover, replace with a real image
+    image: '/articles/ArticleImage/ComputerProfessionsCluster.webp',
+    tags: ['Military', 'Computer Professions', 'Algorithms', 'Selections'],
+    href: 'what-is-computer-professions-cluster',
+  },
+  {
+    id: '9',
+    title: 'מה זה עתודה אקדמית?',
+    language: 'Hebrew/עברית',
+    excerpt: 'מסלול שבו עושים תואר לפני הצבא ומתגייסים כקצין אקדמאי. ההבדל בין עתודה רגילה לעתודה עילית, ואיך הפסיכומטרי קובע לאן אפשר להגיע.',
+    category: 'guides',
+    date: '2026-08-23',
+    readTime: 3,
+    // TODO: placeholder cover, replace with a real image
+    image: '/articles/ArticleImage/WhatIsAcademicReserve.webp',
+    tags: ['Military', 'Academic Reserve', 'Psychometric', 'Academic Programs'],
+    href: 'what-is-academic-reserve',
+  },
 ]
 
 export const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
