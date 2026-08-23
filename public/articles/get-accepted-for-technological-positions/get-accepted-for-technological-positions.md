@@ -76,7 +76,7 @@
 
 [איך להתכונן למיוני גאמ”א סייבר?](/articles/gamma-cyber-selections)
 
-[מה זה שחקים?](/coming-soon)
+[מה זה שחקים?](/articles/what-is-shchakim)
 
 [מה זה כלל חמ”ן?](/coming-soon)
 
@@ -91,7 +91,7 @@
 
 [מה זה עתודה אקדמית?](/coming-soon)
 
-[מה זה תלפיות, חבצלות וארזים?](/coming-soon)
+[מה זה תלפיות, חבצלות וארזים?](/articles/talpiot-havatzalot-arazim)
 
 [מה זה אקדמיזציה?](/coming-soon)
 

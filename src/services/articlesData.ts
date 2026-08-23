@@ -67,6 +67,32 @@ export const articles: Article[] = [
     tags: ['Military', 'Gamma Cyber', 'Technological Units', 'Selections'],
     href: 'gamma-cyber-selections',
   },
+  {
+    id: '5',
+    title: 'מה זה שחקים?',
+    language: 'Hebrew/עברית',
+    excerpt: 'סקירה של מסלול שחקים - מסלול המודיעין של צה"ל, תתי המסלולים שהוא מאגד תחתיו, ולמה דווקא כאן כמעט ואי אפשר להתכונן למיונים מראש.',
+    category: 'guides',
+    date: '2026-08-23',
+    readTime: 2,
+    // TODO: placeholder cover, replace with a real image
+    image: '/articles/ArticleImage/WhatIsShchakim.webp',
+    tags: ['Military', 'Shchakim', 'Intelligence', 'Selections'],
+    href: 'what-is-shchakim',
+  },
+  {
+    id: '6',
+    title: 'מה זה תלפיות, חבצלות וארזים?',
+    language: 'Hebrew/עברית',
+    excerpt: 'שלושת מסלולי המצוינות שמשלבים תואר ושירות בצה"ל - מה ההבדל ביניהם, במה הם שונים מעתודה אקדמית, ואיך נראים המיונים לכל אחד מהם.',
+    category: 'guides',
+    date: '2026-08-23',
+    readTime: 11,
+    // TODO: placeholder cover, replace with a real image
+    image: '/articles/ArticleImage/TalpiotHavatzalotArazim.webp',
+    tags: ['Military', 'Talpiot', 'Havatzalot', 'Arazim', 'Academic Programs'],
+    href: 'talpiot-havatzalot-arazim',
+  },
 ]
 
 export const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
