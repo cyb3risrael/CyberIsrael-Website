@@ -54,7 +54,7 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
               ? 'bg-cyber-green/20 text-cyber-green border border-cyber-green/30'
               : 'bg-light-blue/10 text-light-blue border border-light-blue/30'
               }`}>
-              FEATURED
+              {t('articles.featured')}
             </span>
           </div>
         )}

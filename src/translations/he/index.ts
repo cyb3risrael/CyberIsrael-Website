@@ -54,6 +54,7 @@ const he = {
   events: {
     title: "אירועים ופעילויות",
     subtitle: "מה שאנחנו בונים יחד",
+    upcoming: "בקרוב",
 
     labels: {
       upcoming: "אירועים קרובים",
@@ -118,6 +119,18 @@ const he = {
     join_discord: "הצטרפו לדיסקורד שלנו",
     join_whatsapp: "הצטרפו לוואטסאפ",
     drive: "כונן הקהילה עם משאבים בשבילכם!",
+    discord_title: "דיסקורד",
+    discord_desc: "הצטרפו לשרת הדיסקורד הצומח שלנו",
+    whatsapp_title: "וואטסאפ",
+    whatsapp_desc: "דיונים והתראות בזמן אמת",
+    drive_title: "דרייב",
+    drive_desc: "כונן הקהילה עם משאבים בשבילכם!",
+    instagram_title: "אינסטגרם",
+    instagram_desc: "מאחורי הקלעים, הדגשות ותוכן חינוכי",
+    tiktok_title: "טיקטוק",
+    tiktok_desc: "תוכן סייבר קצר",
+    email_title: "אימייל",
+    email_desc: "הגיעו אלינו ישירות",
   },
   join: {
     title: "הצטרפו ל-CyberIsrael",
@@ -136,6 +149,7 @@ const he = {
     subtitle: "ידע מהקהילה",
     read_more: "קראו עוד",
     min_read: "דקות קריאה",
+    featured: "מומלץ",
     by: "מאת",
     categories: {
       all: "הכל",
@@ -146,6 +160,9 @@ const he = {
       malware: "ניתוח נוזקות",
       osint: "מודיעין גלוי (OSINT)",
       ctf: "פתרונות CTF (Writeups)",
+      software_development: "פיתוח תוכנה",
+      cybersecurity: "אבטחת סייבר",
+      guides: "מדריכים",
     },
   },
   impact: {
@@ -203,7 +220,7 @@ const he = {
       },
       {
         title: "מנהיגות והרחבה",
-        desc: "אדם הצטרף כמנכ\"ל לצד עומר ואידו, כדי לסייע בהרחבה ובמיסוד של הקהילה הצומחת.",
+        desc: 'אדם הצטרף כמנכ"ל לצד עומר ואידו, כדי לסייע בהרחבה ובמיסוד של הקהילה הצומחת.',
       },
       {
         title: "שיתופי פעולה עם חברות להזדמנויות תעסוקה",
@@ -230,7 +247,7 @@ const he = {
         desc: "השקת סדרת הרצאות אונליין מסודרות בנושאי סייבר והכוונה מקצועית, כולל AI Malware עם חן שירי.",
       },
     ],
-    community_members: "חברי קהילה פעילים ומתרחבים"
+    community_members: "חברי קהילה פעילים ומתרחבים",
   },
   collaborate: {
     title: "שתפו איתנו פעולה",

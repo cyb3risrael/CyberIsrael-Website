@@ -56,7 +56,7 @@ const en = {
   events: {
     title: "Events & Activities",
     subtitle: "What we build together",
-
+    upcoming: "UPCOMING",
     labels: {
       upcoming: "Upcoming Events",
       past: "Past Events",
@@ -121,6 +121,18 @@ const en = {
     join_discord: "Join our Discord",
     join_whatsapp: "Join WhatsApp",
     drive: "Community Drive With Resources for you!",
+    discord_title: "Discord",
+    discord_desc: "Join our growing Discord server",
+    whatsapp_title: "WhatsApp",
+    whatsapp_desc: "Real-time discussions and alerts",
+    drive_title: "Drive",
+    drive_desc: "Community Drive With Resources for you!",
+    instagram_title: "Instagram",
+    instagram_desc: "Behind the scenes, highlights & educational content",
+    tiktok_title: "TikTok",
+    tiktok_desc: "Short-form cyber content",
+    email_title: "Email",
+    email_desc: "Reach us directly",
   },
   join: {
     title: "Join CyberIsrael",
@@ -140,6 +152,7 @@ const en = {
     read_more: "Read More",
     min_read: "min read",
     by: "By",
+    featured: "Featured",
     categories: {
       all: "All",
       web: "Web Security",
@@ -149,6 +162,9 @@ const en = {
       malware: "Malware Analysis",
       osint: "OSINT",
       ctf: "CTF Writeup",
+      software_development: "Software Development",
+      cybersecurity: "Cybersecurity",
+      guides: "Guides",
     },
   },
   impact: {
