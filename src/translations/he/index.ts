@@ -149,8 +149,10 @@ const he = {
     },
   },
   resources: {
+    title: "כל המשאבים שלנו במקום אחד",
     articles_title: "קראו את המאמרים שלנו באתר הזה",
     articles_cta: "עברו למאמרים",
+    past_lectures_title: "מפגשי למידה והרצאות קודמות לקהילה",
   },
   impact: {
     title: "האימפקט שלנו",

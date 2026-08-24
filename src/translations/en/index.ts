@@ -153,8 +153,10 @@ const en = {
     },
   },
   resources: {
+    title: "All of our Resources in one place",
     articles_title: "Read our articles in this webstie",
     articles_cta: "Go to Articles",
+    past_lectures_title: "Past Community Learning Sessions / Lectures",
   },
   impact: {
     title: "Our Impact",
