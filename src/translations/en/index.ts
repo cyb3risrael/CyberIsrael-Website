@@ -152,6 +152,10 @@ const en = {
       ctf: "CTF Writeup",
     },
   },
+  resources: {
+    articles_title: "Read our articles in this webstie",
+    articles_cta: "Go to Articles",
+  },
   impact: {
     title: "Our Impact",
     subtitle: "Shaping the cyber landscape",
