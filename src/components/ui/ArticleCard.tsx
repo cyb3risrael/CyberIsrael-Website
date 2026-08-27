@@ -9,10 +9,6 @@ import { categoryColors, type Article } from '@/services/articlesData'
 interface ArticleCardProps {
   article: Article
   index: number
-  /**
-   * Ignore the article's `featured` flag: render a normal-width card with no FEATURED badge.
-   * Used by the home page so its three cards look identical.
-   */
   ignoreFeatured?: boolean
 }
 
