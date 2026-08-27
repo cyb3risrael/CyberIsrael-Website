@@ -34,18 +34,6 @@ const en = {
     val3_title: 'Expose',
     val3_desc: 'Making the cyber world accessible to everyone by opening the door for curious newcomers and future talent.',
   },
-  culture: {
-    title: 'The Culture We\'re Building',
-    subtitle: 'A shared approach to learning, professionalism, collaboration, and growth in cyber.',
-    app1_title: 'People First',
-    app1_desc: 'CyberIsrael is built around community, support, collaboration, and helping others grow.',
-    app2_title: 'Accessible Knowledge',
-    app2_desc: 'We believe knowledge should be available to everyone — from complete beginners to experienced professionals.',
-    app3_title: 'Growth Through Practice',
-    app3_desc: 'Real learning comes from building, solving, competing, and experimenting together.',
-    app4_title: 'Professional Excellence',
-    app4_desc: 'We strive to raise the level of technical knowledge and professionalism across the Israeli cyber community.',
-  },
   events: {
     title: "Events & Activities",
     subtitle: "What we build together",
@@ -128,6 +116,9 @@ const en = {
   articles: {
     title: 'Articles',
     subtitle: 'Knowledge from the community',
+    home_title: 'Featured Articles',
+    home_subtitle: 'Knowledge from the community',
+    view_all: 'View All Articles',
     read_more: 'Read More',
     min_read: 'min read',
     by: 'By',
