@@ -8,69 +8,69 @@ import { socialLinks } from '@/services/socialLinks'
 const socialData = [
   {
     icon: FaDiscord,
-    label: 'Discord',
+    label: 'social.discord_title',
     handle: '@CyberIsrael',
     href: socialLinks.discord,
     color: '#5865F2',
     bg: 'rgba(168,85,247,0.10)',
     border: 'rgba(168,85,247,0.28)',
     glow: 'rgba(168,85,247,0.5)',
-    desc: 'Join our growing Discord server',
+    desc: 'social.discord_desc',
   },
   {
     icon: FaWhatsapp,
-    label: 'WhatsApp',
+    label: 'social.whatsapp_title',
     handle: 'CyberIsrael Group',
     href: socialLinks.whatsapp,
     color: '#25D366',
     bg: 'rgba(37,211,102,0.1)',
     border: 'rgba(37,211,102,0.3)',
     glow: 'rgba(37,211,102,0.4)',
-    desc: 'Real-time discussions and alerts',
+    desc: 'social.whatsapp_desc',
   },
   {
     icon: FaGoogleDrive,
-    label: 'Drive',
+    label: 'social.drive_title',
     handle: '@cyb3r.israel',
     href: socialLinks.drive,
     color: '#4285F4',
     bg: 'rgba(66,133,244,0.10)',
     border: 'rgba(66,133,244,0.28)',
     glow: 'rgba(66,133,244,0.35)',
-    desc: 'Community Drive With Resources for you!',
+    desc: 'social.drive_desc',
   },
   {
     icon: FaInstagram,
-    label: 'Instagram',
+    label: 'social.instagram_title',
     handle: '@cyb3r.israel',
     href: socialLinks.instagram,
     color: '#C13584',
     bg: 'rgba(193,53,132,0.10)',
     border: 'rgba(193,53,132,0.28)',
     glow: 'rgba(193,53,132,0.35)',
-    desc: 'Behind the scenes, highlights & educational content',
+    desc: 'social.instagram_desc',
   },
   {
     icon: FaTiktok,
-    label: 'TikTok',
+    label: 'social.tiktok_title',
     handle: '@cyb3r.israel',
     href: socialLinks.tiktok,
     color: '#00F5D4',
     bg: 'rgba(0,245,212,0.10)',
     border: 'rgba(0,245,212,0.28)',
     glow: 'rgba(0,245,212,0.35)',
-    desc: 'Short-form cyber content',
+    desc: 'social.tiktok_desc',
   },
   {
     icon: FaEnvelope,
-    label: 'Email',
+    label: 'social.email_title',
     handle: 'cyb3risrael@gmail.com',
     href: socialLinks.email,
     color: '#00D4FF',
     bg: 'rgba(0,212,255,0.1)',
     border: 'rgba(0,212,255,0.3)',
     glow: 'rgba(0,212,255,0.4)',
-    desc: 'Reach us directly',
+    desc: 'social.email_desc',
   },
 ]
 
@@ -147,7 +147,7 @@ const SocialSection: React.FC = () => {
                 </motion.div>
                 <div>
                   <div className="font-display font-bold text-sm mb-0.5" style={{ color: s.color }}>
-                    {s.label}
+                    {t(s.label)}
                   </div>
                   <div className={`text-xs font-display mb-2 ${theme === 'dark' ? 'text-slate-300' : 'text-light-text'
                     }`}>
@@ -155,7 +155,7 @@ const SocialSection: React.FC = () => {
                   </div>
                   <div className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-light-muted'
                     }`}>
-                    {s.desc}
+                    {t(s.desc)}
                   </div>
                 </div>
               </div>

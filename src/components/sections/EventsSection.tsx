@@ -95,7 +95,7 @@ const EventCard: React.FC<EventCardProps> = ({
               border: `1px solid ${color}40`,
             }}
           >
-            UPCOMING
+            {t('events.upcoming')}
           </span>
         </div>
       )}
