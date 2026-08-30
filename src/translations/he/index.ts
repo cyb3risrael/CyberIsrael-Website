@@ -152,6 +152,7 @@ const he = {
     view_all: 'לכל המאמרים',
     read_more: 'קראו עוד',
     min_read: 'דקות קריאה',
+    featured: 'מומלץ',
     by: 'מאת',
     categories: {
       all: "הכל",

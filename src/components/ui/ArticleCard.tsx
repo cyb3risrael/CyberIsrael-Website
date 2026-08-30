@@ -66,7 +66,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, index, ignoreFeature
           {isFeatured && (
             <div className="absolute top-3 right-3">
               <span className={`px-2.5 py-1 rounded-full border text-xs font-display tracking-widest uppercase ${styles.featuredBadge}`}>
-                FEATURED
+                {t('articles.featured')}
               </span>
             </div>
           )}

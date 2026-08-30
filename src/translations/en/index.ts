@@ -154,6 +154,7 @@ const en = {
     view_all: 'View All Articles',
     read_more: 'Read More',
     min_read: 'min read',
+    featured: 'Featured',
     by: 'By',
     categories: {
       all: "All",
