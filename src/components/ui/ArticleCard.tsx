@@ -38,7 +38,6 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, index, ignoreFeature
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      exit={{ opacity: 0, scale: 0.96 }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
       whileHover={{ y: -6 }}
       className={`group rounded-2xl overflow-hidden border transition-all duration-300 ${styles.card} ${isFeatured ? 'md:col-span-2' : ''}`}
