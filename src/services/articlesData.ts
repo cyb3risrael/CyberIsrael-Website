@@ -10,6 +10,7 @@ export interface Article {
   tags: string[]
   href: string
   featured?: boolean
+  homePreview?: boolean
 }
 
 export const articles: Article[] = [
@@ -25,6 +26,7 @@ export const articles: Article[] = [
     tags: ['RoadMap', 'Software Development', 'Self-Learning', 'Project-Based Learning'],
     href: 'software-development-roadmap',
     featured: true,
+    homePreview: true,
   },
   {
     id: '2',
@@ -37,6 +39,7 @@ export const articles: Article[] = [
     image: '/articles/ArticleImage/GetAcceptedForTechnologicalPositions.webp',
     tags: ['Military', 'Technological Positions&Opportunities', 'Technological Units'],
     href: 'get-accepted-for-technological-positions',
+    homePreview: true,
   },
   {
     id: '3',
@@ -50,6 +53,7 @@ export const articles: Article[] = [
     tags: ['Cybersecurity', 'Introduction', 'Career Paths', 'Getting Started'],
     featured: true,
     href: 'what-is-cyber-why-study-it-and-how',
+    homePreview: true,
   },
 ]
 
@@ -65,4 +69,8 @@ export const categoryColors: Record<string, { bg: string; text: string; border: 
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find(a => a.href === slug)
+}
+
+export function getHomePreviewArticles(): Article[] {
+  return articles.filter(article => article.homePreview)
 }
