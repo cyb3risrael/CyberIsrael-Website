@@ -59,11 +59,11 @@ const CollaboratePage: React.FC = () => {
           >
             <h2 className={`font-display text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-light-text'
               }`}>
-              Partnership Application
+              {t('collaborate.partnership_title')}
             </h2>
             <p className={`text-sm mb-6 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
               }`}>
-              For Collaborations, please fill out our detailed form:
+              {t('collaborate.partnership_description')}
             </p>
 
             <div className={`rounded-2xl overflow-hidden border ${theme === 'dark'
@@ -89,11 +89,11 @@ const CollaboratePage: React.FC = () => {
           >
             <h2 className={`font-display text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-light-text'
               }`}>
-              Guest Speaker Submission Form:
+              {t('collaborate.speaker_title')}
             </h2>
             <p className={`text-sm mb-6 ${theme === 'dark' ? 'text-slate-400' : 'text-light-muted'
               }`}>
-              For featured Guest Speakers, please fill out our detailed form:
+              {t('collaborate.speaker_description')}
             </p>
 
             <div className={`flex-1 rounded-2xl overflow-hidden border ${theme === 'dark'
@@ -112,7 +112,7 @@ const CollaboratePage: React.FC = () => {
               ? 'border-cyber-green/20 bg-cyber-green/5 text-cyber-green'
               : 'border-light-blue/20 bg-light-blue/5 text-light-blue'
               }`}>
-              <p className="font-display text-xs tracking-widest uppercase mb-1">Direct Contact</p>
+              <p className="font-display text-xs tracking-widest uppercase mb-1">{t('collaborate.direct_contact')}</p>
               <a href={socialLinks.email} className="font-bold underline underline-offset-2">
                 cyb3risrael@gmail.com
               </a>
