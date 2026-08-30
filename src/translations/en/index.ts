@@ -14,22 +14,8 @@ const en = {
     cta_join: "Join the Community",
     cta_explore: "Explore More",
     scroll: "Scroll to explore",
-    badge: "[ ONLINE ] // Israel Cyber Community",
-    title: "CyberIsrael",
-    subtitle: "Connecting people who live and breathe cyber and technology.",
-    tagline: "Community · Learning · CTFs · Conferences · Collaborations",
-    cta_join: "Join the Community",
-    cta_explore: "Explore More",
-    scroll: "Scroll to explore",
   },
   about: {
-    title: "About Us",
-    subtitle: "We are a community",
-    description: "Building Israel's cyber community",
-    stat_members: "Community Members",
-    stat_ctfs: "CTF Participants",
-    stat_events: "Events & Projects",
-    stat_years: "Years Growing",
     title: "About Us",
     subtitle: "We are a community",
     description: "Building Israel's cyber community",
@@ -50,34 +36,8 @@ const en = {
     val3_title: "Expose",
     val3_desc:
       "Making the cyber world accessible to everyone by opening the door for curious newcomers and future talent.",
-    title: "Our Values",
-    subtitle: "What we stand for",
-    val1_title: "Connect",
-    val1_desc:
-      "Creating meaningful professional and social connections between people from all backgrounds and experience levels in cyber and technology.",
-    val2_title: "Improve",
-    val2_desc:
-      "Learning together through technical content, hands-on projects, competitions, workshops, and knowledge sharing.",
-    val3_title: "Expose",
-    val3_desc:
-      "Making the cyber world accessible to everyone by opening the door for curious newcomers and future talent.",
   },
   culture: {
-    title: "The Culture We're Building",
-    subtitle:
-      "A shared approach to learning, professionalism, collaboration, and growth in cyber.",
-    app1_title: "People First",
-    app1_desc:
-      "CyberIsrael is built around community, support, collaboration, and helping others grow.",
-    app2_title: "Accessible Knowledge",
-    app2_desc:
-      "We believe knowledge should be available to everyone — from complete beginners to experienced professionals.",
-    app3_title: "Growth Through Practice",
-    app3_desc:
-      "Real learning comes from building, solving, competing, and experimenting together.",
-    app4_title: "Professional Excellence",
-    app4_desc:
-      "We strive to raise the level of technical knowledge and professionalism across the Israeli cyber community.",
     title: "The Culture We're Building",
     subtitle:
       "A shared approach to learning, professionalism, collaboration, and growth in cyber.",
@@ -145,7 +105,6 @@ const en = {
       {
         type: "online_lecture",
         title:
-         
           "AI MALWARE LECTURE with Chen Shiri (Global Researcher & Hacker)",
         desc: "Chen Shiri is a cybersecurity researcher and hacker known for research on low-level security and isolation mechanisms. His research has revealed significant flaws in widely used systems – affecting millions of people daily and shaping security best practices across the industry. This includes uncovering uncovering weaknesses in Google Colab, Google Cloud Shell, container isolation environments, and a multi-stage attack chain in AWS Kubernetes (EKS).",
         date: "Jan 2026",
@@ -215,25 +174,16 @@ const en = {
     articles_cta: "Go to Articles",
     past_lectures_title: "Past Community Learning Sessions / Lectures",
     sheets_title: "Roadmap for Gamma",
+    docs_title: "Zero to Hero Roadmap",
     slides_title: "Presentations",
     slides_presentations: [
       {
         title: "Recommended Weekly Videos",
         url: "https://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.p#slide=id.p",
       },
-    ],
-  },
-  resources: {
-    title: "All of our Resources in one place",
-    articles_title: "Read our articles in this webstie",
-    articles_cta: "Go to Articles",
-    past_lectures_title: "Past Community Learning Sessions / Lectures",
-    sheets_title: "Roadmap for Gamma",
-    slides_title: "Presentations",
-    slides_presentations: [
       {
-        title: "Recommended Weekly Videos",
-        url: "https://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.p#slide=id.p",
+        title: "Development Group",
+        url: "https://docs.google.com/presentation/d/1IGr0ndIL12qLgTE3ZlawPfCKnRBI6LKMLc2l3N23gno/edit?slide=id.p#slide=id.phttps://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.g1f3e7b6c4a_0_0#slide=id.g1f3e7b6c4a_0_0",
       },
     ],
   },

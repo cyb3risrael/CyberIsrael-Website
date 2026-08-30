@@ -172,28 +172,20 @@ const he = {
     articles_cta: "עברו למאמרים",
     past_lectures_title: "מפגשי למידה והרצאות קודמות לקהילה",
     sheets_title: "מפת דרכים עבור גאמא",
+    docs_title: "מפת דרכים מאפס למאה",
     slides_title: "מצגות",
     slides_presentations: [
       {
         title: "סרטונים מומלצים לשבוע",
-        url: "https://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.p#slide=id.p"
-      }
-    ]
-  },
-  resources: {
-    title: "כל המשאבים שלנו במקום אחד",
-    articles_title: "קראו את המאמרים שלנו באתר הזה",
-    articles_cta: "עברו למאמרים",
-    past_lectures_title: "מפגשי למידה והרצאות קודמות לקהילה",
-    sheets_title: "מפת דרכים עבור גאמא",
-    slides_title: "מצגות",
-    slides_presentations: [
+        url: "https://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.p#slide=id.p",
+      },
       {
-        title: "סרטונים מומלצים לשבוע",
-        url: "https://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.p#slide=id.p"
-      }
-    ]
+        title: "קבוצת פיתוח",
+        url: "https://docs.google.com/presentation/d/1IGr0ndIL12qLgTE3ZlawPfCKnRBI6LKMLc2l3N23gno/edit?slide=id.p#slide=id.phttps://docs.google.com/presentation/d/1W8TuB9rc-2p-nbyEIC1zIGrHahdPVe0PdggLRYINp5A/edit?slide=id.g1f3e7b6c4a_0_0#slide=id.g1f3e7b6c4a_0_0",
+      },
+    ],
   },
+
   impact: {
     title: "האימפקט שלנו",
     subtitle: "מעצבים את נוף הסייבר",
