@@ -1,6 +1,6 @@
 const he = {
   nav: {
-    home: "ביתנו",
+    home: "בית",
     articles: "מאמרים",
     impact: "האימפקט שלנו",
     collaborate: "שיתופי פעולה",
