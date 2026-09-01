@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import { getArticleBySlug } from '@/services/articlesData'
 import ArticleSidebar from '@/components/layout/ArticleSidebar'
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { visit } from "unist-util-visit";
 import { useTranslation } from 'react-i18next'
 
@@ -156,6 +157,7 @@ const ArticlePage: React.FC = () => {
                                 prose-li:text-purple-50/90
                             ">
                                 <ReactMarkdown remarkPlugins={[remarkGfm, remarkGithubAlerts]}
+                                    rehypePlugins={[rehypeRaw]}
                                     components={{
                                         img: ({ src = '', alt = '', ...props }) => (
                                             <img

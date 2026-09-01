@@ -18,7 +18,7 @@
 
 טוב, אז לצבא אפשר להגיע בשלוש דרכים שונות:
 
-![image.png](image.png)
+![image.png](image.webp)
 
 **שיבוץ** - צהל משבץ אותך למסלול או לתפקיד לפי צורכי הצבא בשיקול עם הצרכים האישיים והיכולות של כל מלש”ב
 
@@ -74,13 +74,13 @@
 
 ****נפרט על כל מסלול בהרחבה במאמרים הבאים:
 
-[איך להתכונן למיוני גאמ”א סייבר?](/coming-soon)
+[איך להתכונן למיוני גאמ”א סייבר?](/articles/gamma-cyber-selections)
 
-[מה זה שחקים?](/coming-soon)
+[מה זה שחקים?](/articles/what-is-shchakim)
 
-[מה זה כלל חמ”ן?](/coming-soon)
+[מה זה כלל חמ”ן?](/articles/what-is-klal-haman)
 
-[מה זה מיוני אשכול מקצועות המחשב?](/coming-soon)
+[מה זה מיוני אשכול מקצועות המחשב?](/articles/what-is-computer-professions-cluster)
 
 # אקדמיה
 
@@ -89,9 +89,9 @@
 
 נפרט על כל מסלול בהרחבה במאמרים הבאים:
 
-[מה זה עתודה אקדמית?](/coming-soon)
+[מה זה עתודה אקדמית?](/articles/what-is-academic-reserve)
 
-[מה זה תלפיות, חבצלות וארזים?](/coming-soon)
+[מה זה תלפיות, חבצלות וארזים?](/articles/talpiot-havatzalot-arazim)
 
 [מה זה אקדמיזציה?](/coming-soon)
 
