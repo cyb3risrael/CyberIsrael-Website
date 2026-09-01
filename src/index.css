@@ -320,3 +320,12 @@
   content: "📝 NOTE";
   color: #60a5fa;
 }
+.hl-red    { color: #ff6b6b; }
+.hl-orange { color: #ffa94d; }
+.hl-yellow { color: #ffd43b; }
+.hl-green  { color: #51cf66; }
+.hl-blue   { color: #4dabf7; }
+.hl-purple { color: #b197fc; }
+
+:is(.hl-red, .hl-orange, .hl-yellow, .hl-green, .hl-blue, .hl-purple)
+  :is(strong, em, code) { color: inherit; }
